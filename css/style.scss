@@ -10,29 +10,47 @@
     */
 }
 
-.left {
-    background-color:#2196F3;
+@mixin side-space {
     padding:20px;
     float:left;
     width:20%; /* The width is 20%, by default */
+}
+
+.left {
+    background-color:#2196F3;
+    @include side-space;
   }
 
   .right {
     background-color:#4CAF50;
-    padding:20px;
-    float:left;
-    width:20%; /* The width is 20%, by default */
+    @include side-space;
   }
 
 .contents {
     float: left;
     width: 60%;
-    padding: 0 20px;
+
+    .desc_text {
+        padding:20px;
+        float:left;
+        width:70%;
+      }
+    
+    .desc_img {
+        padding:20px;
+        float:left;
+        width:30%;
+
+        img {
+            max-width:100%;
+            height:auto;
+        }
+    }
 }
 
 @media only screen and (max-width:620px) {
     /* For mobile phones: */
-    .contents, .left, .right {
+    .contents, .left, .right, .desc_text, .desc_img {
       width: 100%;
       font-size: 3.5vw;
     }
@@ -62,8 +80,7 @@
 
 /* Accordion clickable panel style */
 .accordion {
-    background-color: #eee;
-    color: #444;
+    background-color: #fff;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -71,6 +88,7 @@
     border: none;
     outline: none;
     transition: 0.4s;
+    margin-top: 10px;
     
     &:hover {
         background-color: #ccc;
@@ -84,4 +102,107 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    border-bottom: 2px solid #ffe756;
+
+
+    .theme_change {
+        width: 100%;
+        padding-top: 300px;
+        align-content: center;
+
+        button {
+            background-color: red;
+            color: #fff;
+            padding: 10px;
+        }
+    }
+
+    .accord_content {
+
+        border: 2px solid #ffe756;
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin: 20px 0;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+
+        .accord_content_img {
+            position: absolute;
+            top: 12.5px;
+            left: 5%;
+            margin: 15px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .accord_content_text {
+            margin-left: 15px;
+        }
+        
+        /* custom checkmark */
+        .checkmark {
+            position: absolute;
+            top: 35%;
+            left: 1%;
+            height: 25px;
+            width: 25px;
+            border-top: 2px solid #787878;
+            border-left: 2px solid #b3b3b3;
+            border-right: 2px solid #b3b3b3;
+            border-bottom: 2px solid #dbdbdb;
+            background-color: #efefef;
+    
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+            /* checkmark indicator style */
+            &:after {
+                left: 9px;
+                top: 5px;
+                width: 5px;
+                height: 10px;
+                border: 1px solid #3f2916;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+         }
+        
+        /* hides browser's default checkbox */
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+
+            /* show the checkmark when checked */
+            &:checked ~ .checkmark:after {
+                display: block;
+            }
+        }
+
+        /* on checkmark hover, make background gray */
+        &:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        /* when checked, give it yellow background */
+        input:checked ~ .checkmark {
+            background-color: #fff6bf;
+            border: 1px solid #f0ce00;
+        }
+
+    }
 }
