@@ -1,0 +1,93 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*
+    p {
+        font-size:2vw
+    }
+    h2 {
+        font-size:3vw
+    }
+    */
+}
+
+.left {
+  background-color: #2196F3;
+  padding: 20px;
+  float: left;
+  width: 20%;
+  /* The width is 20%, by default */
+}
+
+.right {
+  background-color: #4CAF50;
+  padding: 20px;
+  float: left;
+  width: 20%;
+  /* The width is 20%, by default */
+}
+
+.contents {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .contents, .left, .right {
+    width: 100%;
+    font-size: 3.5vw;
+  }
+}
+
+footer {
+  background-color: #3b3530;
+  float: left;
+  width: 100%;
+}
+
+footer .footer_text {
+  float: left;
+  width: 60%;
+  padding: 15px 15px 5px 15px;
+  position: inherit;
+  left: 20%;
+}
+
+footer a {
+  color: #ffe756;
+}
+
+footer p {
+  color: #fff;
+}
+
+/* Accordion clickable panel style */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.accordion:hover {
+  background-color: #ccc;
+}
+
+/* Sliding content style */
+.accord_panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+/*# sourceMappingURL=style.css.map */
