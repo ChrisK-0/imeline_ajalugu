@@ -141,16 +141,16 @@ footer p {
 }
 
 .accord_panel .accord_content .accord_content_img {
-  position: absolute;
-  top: 12.5px;
-  left: 5%;
-  margin: 15px;
-  width: 50px;
-  height: 50px;
+  margin-top: 10%;
+  margin-left: 25px;
+  width: 60px;
+  height: 60px;
 }
 
 .accord_panel .accord_content .accord_content_text {
-  margin-left: 15px;
+  position: inherit;
+  height: 50px;
+  text-align: justify;
 }
 
 .accord_panel .accord_content .checkmark {
