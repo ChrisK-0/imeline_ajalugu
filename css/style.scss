@@ -1,13 +1,5 @@
 * {
     box-sizing: border-box;
-    /*
-    p {
-        font-size:2vw
-    }
-    h2 {
-        font-size:3vw
-    }
-    */
 }
 
 @mixin side-space {
@@ -46,6 +38,12 @@
             height:auto;
         }
     }
+
+    ._valmis {
+        background-color: red;
+    }
+
+
 }
 
 @media only screen and (max-width:620px) {
@@ -53,6 +51,14 @@
     .contents, .left, .right, .desc_text, .desc_img {
       width: 100%;
       font-size: 3.5vw;
+    }
+
+    .accord_panel {
+        .theme_change {   
+            button {
+                left: 30%;
+            }
+        }
     }
   }
 
@@ -89,31 +95,57 @@
     outline: none;
     transition: 0.4s;
     margin-top: 10px;
+    width:100%;
     
     &:hover {
         background-color: #ccc;
     }
+
+    .accord_panel_header {
+        font-family: sans-serif;
+    }
+    // Opened accordion span header will have yellow-ish background
+    .accord_panel_header_active {
+        background-color: yellow;
+    }
+
+    .selected_themes {
+        float:right;
+        color: red;
+    }
 }
 
+/* Important - Accordion panel has display:none, this class will negate that and show the panel with JS */
+.accord_show {
+    display: block !important;
+}
 /* Sliding content style */
 .accord_panel {
     padding: 0 18px;
     background-color: white;
-    max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     border-bottom: 2px solid #ffe756;
+    /* For JS accordion */
+    display:none;
+
 
 
     .theme_change {
         width: 100%;
-        padding-top: 300px;
         align-content: center;
+        margin: 0;
+        position: relative;
+
 
         button {
             background-color: red;
             color: #fff;
             padding: 10px;
+            position: inherit;
+            top: 50%;
+            left: 40%;
+            margin-bottom: 20px;
         }
     }
 

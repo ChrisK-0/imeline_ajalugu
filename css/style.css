@@ -1,14 +1,6 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  /*
-    p {
-        font-size:2vw
-    }
-    h2 {
-        font-size:3vw
-    }
-    */
 }
 
 .left {
@@ -49,11 +41,18 @@
   height: auto;
 }
 
+.contents ._valmis {
+  background-color: red;
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   .contents, .left, .right, .desc_text, .desc_img {
     width: 100%;
     font-size: 3.5vw;
+  }
+  .accord_panel .theme_change button {
+    left: 30%;
   }
 }
 
@@ -91,34 +90,59 @@ footer p {
   -webkit-transition: 0.4s;
   transition: 0.4s;
   margin-top: 10px;
+  width: 100%;
 }
 
 .accordion:hover {
   background-color: #ccc;
 }
 
+.accordion .accord_panel_header {
+  font-family: sans-serif;
+}
+
+.accordion .accord_panel_header_active {
+  background-color: yellow;
+}
+
+.accordion .selected_themes {
+  float: right;
+  color: red;
+}
+
+/* Important - Accordion panel has display:none, this class will negate that and show the panel with JS */
+.accord_show {
+  display: block !important;
+}
+
 /* Sliding content style */
 .accord_panel {
   padding: 0 18px;
   background-color: white;
-  max-height: 0;
   overflow: hidden;
   -webkit-transition: max-height 0.2s ease-out;
   transition: max-height 0.2s ease-out;
   border-bottom: 2px solid #ffe756;
+  /* For JS accordion */
+  display: none;
 }
 
 .accord_panel .theme_change {
   width: 100%;
-  padding-top: 300px;
   -ms-flex-line-pack: center;
       align-content: center;
+  margin: 0;
+  position: relative;
 }
 
 .accord_panel .theme_change button {
   background-color: red;
   color: #fff;
   padding: 10px;
+  position: inherit;
+  top: 50%;
+  left: 40%;
+  margin-bottom: 20px;
 }
 
 .accord_panel .accord_content {

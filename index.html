@@ -10,10 +10,11 @@
 </head>
 <body>
 
+    <!-- left side spacer -->
     <div class="left"></div>
 
     <!-- Site content -->
-    <div class="contents"> 
+    <div class="contents" id="contents"> 
 
         <!-- page cover and description -->
         <div class="content_cover">
@@ -26,48 +27,227 @@
             <p>Kui Sul endal on ajakiri juba tellitud, telli tasuta number heale sõbrale, kolleegile või sugulasele.</p>
         </div>
 
-        <button class="accordion"><span class="accord_panel_header">Teemad #1</span></button>
+
+<!-- THEME SELECTION #1 -->
+        <button class="accordion" id="accordion1">
+            <span class="accord_panel_header" id="accord_head1">Teemad #1</span>
+            <span class="selected_themes" id="accord_span_1">0/3</span>
+        </button>
         <div id="acc_1" class="accord_panel">
 
-            <label class="accord_content">
-                <input type="checkbox" value="acc_1_nr1">
+            <label class="accord_content" for="acc_1_nr1">
+                <input type="checkbox" name="accord_section1" value="acc_1_nr1" id="acc_1_nr1">
                 <span class="checkmark"></span>
                 <img class="accord_content_img">
                 <span class="accord_content_text">
-                    <p>Syndmuse pealkiri</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, iste molestias nesciunt aperiam est enim quos, animi consequuntur fugit ullam, temporibus excepturi in sapiente suscipit alias. Veniam quidem dignissimos deserunt!</p>
+                    <p>Syndmuse pealkiri 1</p>
+                    <p>Syndmuse kirjeldus 1</p>
                 </span>
             </label>
-
-            <label class="accord_content">
-                <input type="checkbox" value="acc_1_nr2">
+            
+            <label class="accord_content" for="acc_1_nr2">
+                <input type="checkbox" name="accord_section1" value="acc_1_nr2" id="acc_1_nr2">
                 <span class="checkmark"></span>
                 <img class="accord_content_img">
                 <span class="accord_content_text">
-                    <p>Syndmuse pealkiri</p>
-                    <p>Syndmuse kirjeldus</p>
+                    <p>Syndmuse pealkiri 2</p>
+                    <p>Syndmuse kirjeldus 2</p>
                 </span>
             </label>
 
-            <label class="accord_content">
-                <input type="checkbox" value="acc_1_nr3">
+            <label class="accord_content" for="acc_1_nr3">
+                <input type="checkbox" name="accord_section1" value="acc_1_nr3" id="acc_1_nr3">
                 <span class="checkmark"></span>
                 <img class="accord_content_img">
                 <span class="accord_content_text">
-                    <p>Syndmuse pealkiri</p>
-                    <p>Syndmuse kirjeldus</p>
+                    <p>Syndmuse pealkiri 3</p>
+                    <p>Syndmuse kirjeldus 3</p>
                 </span>
             </label>
 
+            <label class="accord_content" for="acc_1_nr4">
+                <input type="checkbox" name="accord_section1" value="acc_1_nr4" id="acc_1_nr4">
+                <span class="checkmark"></span>
+                <img class="accord_content_img">
+                <span class="accord_content_text">
+                    <p>Syndmuse pealkiri 4</p>
+                    <p>Syndmuse kirjeldus 4</p>
+                </span>
+            </label>
 
-
+            <!-- next theme button -->
             <div class="theme_change">
-                <button class="next_theme">Järgmine teema</button>
+                <button class="next_theme" id="next_theme1">Järgmine teema</button>
             </div>
 
         </div>
 
-        
+<!-- THEME SELECTION #2 -->
+        <button class="accordion" id="accordion2">
+            <span class="accord_panel_header" id="accord_head2">Teemad #2</span>
+            <span class="selected_themes" id="accord_span_2">0/3</span>
+        </button>
+        <div id="acc_2" class="accord_panel">
+
+            <label class="accord_content" for="acc_2_nr1">
+                <input type="checkbox" name="accord_section2" value="acc_2_nr1" id="acc_2_nr1">
+                <span class="checkmark"></span>
+                <img class="accord_content_img">
+                <span class="accord_content_text">
+                    <p>Syndmuse pealkiri 1</p>
+                    <p>Syndmuse kirjeldus 1</p>
+                </span>
+            </label>
+            
+            <label class="accord_content" for="acc_2_nr2">
+                <input type="checkbox" name="accord_section1" value="acc_2_nr2" id="acc_2_nr2">
+                <span class="checkmark"></span>
+                <img class="accord_content_img">
+                <span class="accord_content_text">
+                    <p>Syndmuse pealkiri 2</p>
+                    <p>Syndmuse kirjeldus 2</p>
+                </span>
+            </label>
+
+            <label class="accord_content" for="acc_2_nr3">
+                <input type="checkbox" name="accord_section2" value="acc_2_nr3" id="acc_2_nr3">
+                <span class="checkmark"></span>
+                <img class="accord_content_img">
+                <span class="accord_content_text">
+                    <p>Syndmuse pealkiri 3</p>
+                    <p>Syndmuse kirjeldus 3</p>
+                </span>
+            </label>
+
+            <label class="accord_content" for="acc_2_nr4">
+                <input type="checkbox" name="accord_section2" value="acc_2_nr4" id="acc_2_nr4">
+                <span class="checkmark"></span>
+                <img class="accord_content_img">
+                <span class="accord_content_text">
+                    <p>Syndmuse pealkiri 4</p>
+                    <p>Syndmuse kirjeldus 4</p>
+                </span>
+            </label>
+
+            <!-- next theme button -->
+            <div class="theme_change">
+                <button class="next_theme" id="next_theme2">Järgmine teema</button>
+            </div>
+
+        </div>
+
+<!-- THEME SELECTION #3 -->
+        <button class="accordion" id="accordion3">
+            <span class="accord_panel_header" id="accord_head3">Teemad #3</span>
+            <span class="selected_themes" id="accord_span_3">0/3</span>
+        </button>
+        <div id="acc_3" class="accord_panel">
+
+            <label class="accord_content" for="acc_3_nr1">
+                <input type="checkbox" name="accord_section3" value="acc_3_nr1" id="acc_3_nr1">
+                <span class="checkmark"></span>
+                <img class="accord_content_img">
+                <span class="accord_content_text">
+                    <p>Syndmuse pealkiri 1</p>
+                    <p>Syndmuse kirjeldus 1</p>
+                </span>
+            </label>
+            
+            <label class="accord_content" for="acc_3_nr2">
+                <input type="checkbox" name="accord_section3" value="acc_3_nr2" id="acc_3_nr2">
+                <span class="checkmark"></span>
+                <img class="accord_content_img">
+                <span class="accord_content_text">
+                    <p>Syndmuse pealkiri 2</p>
+                    <p>Syndmuse kirjeldus 2</p>
+                </span>
+            </label>
+
+            <label class="accord_content" for="acc_3_nr3">
+                <input type="checkbox" name="accord_section3" value="acc_3_nr3" id="acc_3_nr3">
+                <span class="checkmark"></span>
+                <img class="accord_content_img">
+                <span class="accord_content_text">
+                    <p>Syndmuse pealkiri 3</p>
+                    <p>Syndmuse kirjeldus 3</p>
+                </span>
+            </label>
+
+            <label class="accord_content" for="acc_3_nr4">
+                <input type="checkbox" name="accord_section3" value="acc_3_nr4" id="acc_3_nr4">
+                <span class="checkmark"></span>
+                <img class="accord_content_img">
+                <span class="accord_content_text">
+                    <p>Syndmuse pealkiri 4</p>
+                    <p>Syndmuse kirjeldus 4</p>
+                </span>
+            </label>
+
+            <!-- next theme button -->
+            <div class="theme_change">
+                <button class="next_theme" id="next_theme3">Järgmine teema</button>
+            </div>
+
+        </div>
+
+<!-- THEME SELECTION #4 -->
+        <button class="accordion" id="accordion4">
+            <span class="accord_panel_header" id="accord_head4">Teemad #4</span>
+            <span class="selected_themes" id="accord_span_4">0/3</span>
+        </button>
+        <div id="acc_4" class="accord_panel">
+
+            <label class="accord_content" for="acc_4_nr1">
+                <input type="checkbox" name="accord_section4" value="acc_4_nr1" id="acc_4_nr1">
+                <span class="checkmark"></span>
+                <img class="accord_content_img">
+                <span class="accord_content_text">
+                    <p>Syndmuse pealkiri 1</p>
+                    <p>Syndmuse kirjeldus 1</p>
+                </span>
+            </label>
+            
+            <label class="accord_content" for="acc_4_nr2">
+                <input type="checkbox" name="accord_section4" value="acc_4_nr2" id="acc_4_nr2">
+                <span class="checkmark"></span>
+                <img class="accord_content_img">
+                <span class="accord_content_text">
+                    <p>Syndmuse pealkiri 2</p>
+                    <p>Syndmuse kirjeldus 2</p>
+                </span>
+            </label>
+
+            <label class="accord_content" for="acc_4_nr3">
+                <input type="checkbox" name="accord_section4" value="acc_4_nr3" id="acc_4_nr3">
+                <span class="checkmark"></span>
+                <img class="accord_content_img">
+                <span class="accord_content_text">
+                    <p>Syndmuse pealkiri 3</p>
+                    <p>Syndmuse kirjeldus 3</p>
+                </span>
+            </label>
+
+            <label class="accord_content" for="acc_4_nr4">
+                <input type="checkbox" name="accord_section4" value="acc_4_nr4" id="acc_4_nr4">
+                <span class="checkmark"></span>
+                <img class="accord_content_img">
+                <span class="accord_content_text">
+                    <p>Syndmuse pealkiri 4</p>
+                    <p>Syndmuse kirjeldus 4</p>
+                </span>
+            </label>
+
+        </div>
+
+
+
+
+
+
+        <button id="button_test" class="click">Test</button>
+        <p id="demo"></p>
+
+        <input type="button" id="button_send" value="Valmis!" class="">
 
         <div class="description">
             <div class="desc_text">
@@ -85,6 +265,7 @@
         
     </div>
 
+    <!-- right side spacer-->
     <div class="right"></div>
 
     <!-- Footer content -->
