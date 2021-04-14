@@ -35,3 +35,20 @@ Next theme button
 
 "Valmis!" button
 !["Valmis!" button](https://i.imgur.com/0abRjqy.gif)
+
+
+## Day 3
+
+### Front-end visual continuation
+
+Copied looks from the given PSD file, with the exception of accordion block header having a gradient background and accordion panel checkbox div texts are all over the place.
+Made a "Vali oma lemmikartiklid" anchor element to scroll to the head of the accordion on click (requirement). JS has not been done for it.
+
+Top of the page
+![Top of the page](https://i.imgur.com/TRBbW6Y.png)
+
+Button styling (and broken checkbox paragraphs)
+![Button styling](https://i.imgur.com/oTOhWZ4.png)
+
+Footer is centered along with the rest of the page
+![Footer is centered along with the rest of the page](https://i.imgur.com/JoZ9AnC.png)

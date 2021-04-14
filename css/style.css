@@ -1,33 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .contents, .left, .right, .desc_text, .desc_img, .content_cover, footer {
+    width: 100%;
+    font-size: 3.5vw;
+  }
+  .accord_panel .theme_change button {
+    left: 30%;
+  }
+}
+
 .left {
-  background-color: #2196F3;
   padding: 20px;
   float: left;
-  width: 20%;
-  /* The width is 20%, by default */
+  width: 30%;
 }
 
 .right {
-  background-color: #4CAF50;
   padding: 20px;
   float: left;
-  width: 20%;
-  /* The width is 20%, by default */
+  width: 30%;
+}
+
+.cover_bg {
+  background-image: url(/imgs/cover_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+}
+
+.content_cover {
+  float: left;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 50px;
+}
+
+.content_cover .cover_note {
+  float: left;
+  text-align: center;
+  width: 225px;
+  height: 75px;
+  background: #cc3e0f, #931b00;
+  background: -webkit-linear-gradient(90deg, #cc3e0f 0%, #931b00 100%);
+  background-image: -ms-linear-gradient(90deg, #cc3e0f 0%, #931b00 100%);
+}
+
+.content_cover .cover_note p {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 42.567px;
+  text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  line-height: 0;
+  color: white;
+  transform: matrix(1.17461, 0, 0, 1.17461, 0, 0);
+  -moz-transform: matrix(1.17461, 0, 0, 1.17461, 0, 0);
+  -webkit-transform: matrix(1.17461, 0, 0, 1.17461, 0, 0);
+  -ms-transform: matrix(1.17461, 0, 0, 1.17461, 0, 0);
+}
+
+.content_cover .ribbon_effect {
+  position: relative;
+  bottom: 10px;
+  width: 100%;
+  float: left;
+}
+
+.content_cover .ribbon_effect .ribbon_down {
+  float: left;
+  width: 0;
+  height: 0;
+  border-left: 112.5px solid transparent;
+  border-right: 112.5px solid transparent;
+  border-top: 20px solid #cc3e0f;
+}
+
+.content_cover .cover_main {
+  float: left;
+  width: 40%;
+}
+
+.content_cover .cover_main .cover_text {
+  float: left;
+  width: 100%;
+  /* glow machine broke
+            .cover_glow {
+                background-image: url(/imgs/cover_glow.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                width: 100%;
+            }
+            */
+}
+
+.content_cover .cover_main .cover_text .cover_header {
+  width: 100%;
+  float: left;
+  margin-top: 80px;
+  font-size: 5.5vw;
+  font-family: "Bienetresocial";
+  line-height: 0;
+}
+
+.content_cover .cover_main .cover_text .cover_para {
+  float: left;
+  font-size: 20px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: #222222;
+  line-height: 1.5;
+  text-shadow: 0.707px 0.707px 1px rgba(255, 255, 255, 0.004);
+  width: 60%;
+  opacity: 0.89;
+}
+
+.content_cover .cover_main .cover_text .cover_glow {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+.content_cover .cover_main .goto_accord {
+  float: left;
+  width: 100%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.content_cover .cover_main .goto_accord p {
+  float: left;
+  font-size: 30px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: #a62300;
+  font-weight: bold;
+  line-height: 0.7;
+  text-shadow: 0.707px 0.707px 1px rgba(255, 255, 255, 0.004);
+}
+
+.content_cover .cover_main .goto_accord p .goto_accord_arrow {
+  margin-right: 10px;
+  float: left;
+  width: 25px;
+  height: 30px;
 }
 
 .contents {
   float: left;
-  width: 60%;
+  width: 40%;
 }
 
 .contents .desc_text {
   padding: 20px;
   float: left;
   width: 70%;
+}
+
+.contents .desc_text .desc_para {
+  line-height: 1.5;
+  font-size: 20px;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.contents .desc_text .desc_para .desc_sentence {
+  line-height: 1.5;
+  font-size: 20px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: #951c00;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .contents .desc_img {
@@ -41,19 +187,66 @@
   height: auto;
 }
 
-.contents ._valmis {
-  background-color: red;
+.contents .content_btn_spacing {
+  width: 35%;
+  float: left;
+  padding: 20px;
 }
 
-@media only screen and (max-width: 620px) {
-  /* For mobile phones: */
-  .contents, .left, .right, .desc_text, .desc_img {
-    width: 100%;
-    font-size: 3.5vw;
-  }
-  .accord_panel .theme_change button {
-    left: 30%;
-  }
+.contents .valmis_btn_spacing {
+  width: 30%;
+  float: left;
+}
+
+.contents .valmis_btn_spacing .valmis_button {
+  color: #e2e2e2;
+  padding: 20px 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  font-weight: bold;
+  line-height: 0.8;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid #999999;
+  border-radius: 6px;
+  background: #b1b1b1;
+  -webkit-box-shadow: inset 0px 1px 1px 0px rgba(192, 192, 192, 0.75);
+          box-shadow: inset 0px 1px 1px 0px rgba(192, 192, 192, 0.75);
+}
+
+.contents .valmis_btn_spacing ._valmis {
+  padding: 15px 45px;
+  color: #fff;
+  position: relative;
+  margin-bottom: 20px;
+  font-weight: bold;
+  line-height: 0.8;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid #7b1700;
+  border-radius: 6px;
+  background: #b72a00;
+  background: -ms-linear-gradient(90deg, #b72a00 0%, #951c00 100%);
+  -webkit-box-shadow: inset 0px 1px 1px 0px rgba(197, 82, 48, 0.75);
+          box-shadow: inset 0px 1px 1px 0px rgba(197, 82, 48, 0.75);
+}
+
+.contents .accord_head .accord_head_h {
+  font-family: "BienetresocialBold";
+  font-size: 30px;
+  color: #3f2916;
+  line-height: 0.7;
+}
+
+.contents .accord_head .accord_head_p {
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: #222222;
+  line-height: 1.5;
+  font-size: 16px;
 }
 
 footer {
@@ -64,33 +257,33 @@ footer {
 
 footer .footer_text {
   float: left;
-  width: 60%;
-  padding: 15px 15px 5px 15px;
-  position: inherit;
-  left: 20%;
+  width: 40%;
+  padding: 25px 0;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 
-footer a {
+footer .footer_text a {
   color: #ffe756;
 }
 
-footer p {
+footer .footer_text p {
   color: #fff;
+  font-size: 16px;
 }
 
 /* Accordion clickable panel style */
 .accordion {
+  width: 100%;
+  height: 100%;
   background-color: #fff;
   cursor: pointer;
-  padding: 18px;
-  width: 100%;
   text-align: left;
   border: none;
   outline: none;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  margin-top: 10px;
-  width: 100%;
+  margin: 25px 0 0 0;
+  border-bottom: 1px solid #ffe756;
 }
 
 .accordion:hover {
@@ -99,15 +292,31 @@ footer p {
 
 .accordion .accord_panel_header {
   font-family: sans-serif;
+  font-family: "BienetresocialBold";
+  font-size: 20px;
+  color: #3f2916;
+  line-height: 1.05;
+  padding: 10px;
+  position: relative;
+  left: -1%;
+  float: left;
+  font-weight: bold;
 }
 
 .accordion .accord_panel_header_active {
-  background-color: yellow;
+  border: 1px solid #ffeb6b;
+  border-radius: 10px 10px 0 0;
+  background: #ffeb6b;
+  background: -ms-linear-gradient(90deg, #ffeb6b 0%, #ffef80 100%);
 }
 
 .accordion .selected_themes {
   float: right;
-  color: red;
+  color: #3f2916;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 24px;
+  line-height: 0.875;
+  padding: 10px;
 }
 
 /* Important - Accordion panel has display:none, this class will negate that and show the panel with JS */
@@ -117,42 +326,56 @@ footer p {
 
 /* Sliding content style */
 .accord_panel {
-  padding: 0 18px;
+  width: 100%;
+  height: 100%;
   background-color: white;
   overflow: hidden;
-  -webkit-transition: max-height 0.2s ease-out;
-  transition: max-height 0.2s ease-out;
   border-bottom: 2px solid #ffe756;
   /* For JS accordion */
   display: none;
 }
 
 .accord_panel .theme_change {
-  width: 100%;
+  width: 30%;
+  float: left;
   -ms-flex-line-pack: center;
       align-content: center;
   margin: 0;
-  position: relative;
+  position: inherit;
 }
 
-.accord_panel .theme_change button {
-  background-color: red;
+.accord_panel .theme_change .next_theme {
+  line-height: 0;
+  width: 100%;
+  padding: 20px 10px;
   color: #fff;
-  padding: 10px;
-  position: inherit;
-  top: 50%;
-  left: 40%;
+  position: relative;
   margin-bottom: 20px;
+  font-weight: bold;
+  line-height: 0.8;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid #7b1700;
+  border-radius: 6px;
+  background: #b72a00;
+  background: -ms-linear-gradient(90deg, #b72a00 0%, #951c00 100%);
+  -webkit-box-shadow: inset 0px 1px 1px 0px rgba(197, 82, 48, 0.75);
+          box-shadow: inset 0px 1px 1px 0px rgba(197, 82, 48, 0.75);
 }
 
 .accord_panel .accord_content {
-  border: 2px solid #ffe756;
+  float: left;
+  border-bottom: 2px solid #ffe756;
   width: 100%;
   height: 100%;
   display: block;
   position: relative;
+  top: 0;
+  left: 0;
+  margin: 20px 0 20px 0;
   padding-left: 35px;
-  margin: 20px 0;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -164,23 +387,42 @@ footer p {
   /* when checked, give it yellow background */
 }
 
-.accord_panel .accord_content .accord_content_img {
-  margin-top: 10%;
-  margin-left: 25px;
-  width: 60px;
-  height: 60px;
+.accord_panel .accord_content .accord_content_text {
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-align: justify;
+  position: relative;
+  left: 5%;
+  height: 100%;
+  width: 70%;
 }
 
-.accord_panel .accord_content .accord_content_text {
-  position: inherit;
-  height: 50px;
-  text-align: justify;
+.accord_panel .accord_content .accord_content_text .accord_content_text_head {
+  font-weight: bold;
+  position: relative;
+  float: left;
+  width: 60%;
+}
+
+.accord_panel .accord_content .accord_content_text .accord_content_text_para {
+  float: left;
+}
+
+.accord_panel .accord_content .accord_content_text .accord_content_img_box {
+  float: left;
+  width: 10%;
+  height: 50%;
+}
+
+.accord_panel .accord_content .accord_content_text .accord_content_img_box .accord_content_img {
+  margin-left: 0px;
+  width: 100px;
+  height: 100px;
 }
 
 .accord_panel .accord_content .checkmark {
   position: absolute;
   top: 35%;
-  left: 1%;
+  left: 0%;
   height: 25px;
   width: 25px;
   border-top: 2px solid #787878;
