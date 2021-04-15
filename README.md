@@ -7,6 +7,7 @@
 
 Made index.html base. HTML has a footer, some text, template for magazine theme selection (JS) and a little bit of styling.
 
+
 Accordion closed view
 ![Accordion closed view](https://i.imgur.com/djgsnY6.png)
 
@@ -27,6 +28,7 @@ Specifics:
 * Test button for adding checked themes into arrays
   * Checked themes are put into arrays, each accordion has its own array variable in JS. This is what brings the counter and atleast 1 checkbox in every block to life.
 
+
 Accordion theme counter
 ![Accordion theme counter](https://i.imgur.com/iLfCffW.png)
 
@@ -44,6 +46,7 @@ Next theme button
 Copied looks from the given PSD file, with the exception of accordion block header having a gradient background and accordion panel checkbox div texts are all over the place.
 Made a "Vali oma lemmikartiklid" anchor element to scroll to the head of the accordion on click (requirement). JS has not been done for it.
 
+
 Top of the page
 ![Top of the page](https://i.imgur.com/TRBbW6Y.png)
 
@@ -52,3 +55,18 @@ Button styling (and broken checkbox paragraphs)
 
 Footer is centered along with the rest of the page
 ![Footer is centered along with the rest of the page](https://i.imgur.com/JoZ9AnC.png)
+
+
+## Day 4
+
+### Popup/lightbox, even better CSS for visual presentation
+
+Now includes popup. Replaced some CSS options from "float:left" with "display:flex".
+* Removed the "test" button and script
+
+
+Accordion blocks now look proper and are responsive
+![Accordion blocks](https://i.imgur.com/cY0YP7l.png)
+
+Popup
+![Popup](https://i.imgur.com/wzDoBXa.png)

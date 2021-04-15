@@ -1,34 +1,44 @@
 // x/3 selected themes font
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
 
+$color-white: #fff;
+
 * {
     box-sizing: border-box;
 }
 
-@media only screen and (max-width:620px) {
-    /* For mobile phones: */
-    .contents, .left, .right, .desc_text, .desc_img, .content_cover, footer {
-      width: 100%;
-      font-size: 3.5vw;
+@media only screen and (max-width:1000px) {
+    /* For smaller screens */
+
+    .contents,
+    .desc_text,
+    .desc_img,
+    .content_cover,
+    footer {
+        width: 100%;
+        float: none;
+        display: flex;
+        justify-content: center;
+        flex-flow: column wrap;
+        align-items: center;
     }
 
-    .accord_panel {
-        .theme_change {   
-            button {
-                left: 30%;
-            }
-        }
+    .left,
+    .right {
+        width: 0;
+        display: none;
     }
-  }
+
+}
 
 @mixin side-space {
-    padding:20px;
-    float:left;
-    width:30%;
+    padding: 20px;
+    float: left;
+    width: 30%;
 }
 
 @mixin redButton {
-    color: #fff;
+    color: $color-white;
     position: relative;
     margin-bottom: 20px;
 
@@ -41,11 +51,11 @@
 
     border: 1px solid rgb(123, 23, 0);
     border-radius: 6px;
-    
-    background: rgb(183,42,0);
-    background: -moz-linear-gradient(90deg, rgba(183,42,0,1) 0%, rgba(149,28,0,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(183,42,0,1) 0%, rgba(149,28,0,1) 100%);
-    background: -ms-linear-gradient(90deg, rgba(183,42,0,1) 0%, rgba(149,28,0,1) 100%);
+
+    background: rgb(183, 42, 0);
+    background: -moz-linear-gradient(90deg, rgba(183, 42, 0, 1) 0%, rgba(149, 28, 0, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(183, 42, 0, 1) 0%, rgba(149, 28, 0, 1) 100%);
+    background: -ms-linear-gradient(90deg, rgba(183, 42, 0, 1) 0%, rgba(149, 28, 0, 1) 100%);
     box-shadow: inset 0px 1px 1px 0px rgba(197, 82, 48, 0.75);
 }
 
@@ -59,7 +69,7 @@
 }
 
 .cover_bg {
-    background-image: url(/imgs/cover_bg.png);
+    background-image: url(../imgs/cover_bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
@@ -74,16 +84,16 @@
 
 
     .cover_note {
-        
-        float:left;
+
+        float: left;
         text-align: center;
         width: 225px;
-        height: 75px;      
+        height: 75px;
 
         background: rgb(204, 62, 15), rgb(147, 27, 0);
-        background: -moz-linear-gradient( 90deg, rgb(204, 62, 15) 0%, rgb(147, 27, 0) 100%);
-        background: -webkit-linear-gradient( 90deg, rgb(204, 62, 15) 0%, rgb(147, 27, 0) 100%);
-        background-image: -ms-linear-gradient( 90deg, rgb(204, 62, 15) 0%, rgb(147, 27, 0) 100%);
+        background: -moz-linear-gradient(90deg, rgb(204, 62, 15) 0%, rgb(147, 27, 0) 100%);
+        background: -webkit-linear-gradient(90deg, rgb(204, 62, 15) 0%, rgb(147, 27, 0) 100%);
+        background-image: -ms-linear-gradient(90deg, rgb(204, 62, 15) 0%, rgb(147, 27, 0) 100%);
 
         p {
             font-family: 'PT Sans Narrow', sans-serif;
@@ -91,12 +101,12 @@
             text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
             font-weight: bold;
             line-height: 0;
-            color: rgb(255, 255, 255);
+            color: $color-white;
 
-            transform: matrix(1.17461408039124,0,0,1.17461408039124,0,0);
-            -moz-transform: matrix( 1.17461408039124,0,0,1.17461408039124,0,0);
-            -webkit-transform: matrix( 1.17461408039124,0,0,1.17461408039124,0,0);
-            -ms-transform: matrix( 1.17461408039124,0,0,1.17461408039124,0,0);
+            transform: matrix(1.17461408039124, 0, 0, 1.17461408039124, 0, 0);
+            -moz-transform: matrix(1.17461408039124, 0, 0, 1.17461408039124, 0, 0);
+            -webkit-transform: matrix(1.17461408039124, 0, 0, 1.17461408039124, 0, 0);
+            -ms-transform: matrix(1.17461408039124, 0, 0, 1.17461408039124, 0, 0);
         }
     }
 
@@ -104,15 +114,15 @@
         position: relative;
         bottom: 10px;
         width: 100%;
-        float:left;
+        float: left;
 
         .ribbon_down {
-            float:left;
-            width: 0; 
-            height: 0; 
+            float: left;
+            width: 0;
+            height: 0;
             border-left: 112.5px solid transparent;
             border-right: 112.5px solid transparent;
-            
+
             border-top: 20px solid rgb(204, 62, 15);
         }
     }
@@ -125,60 +135,55 @@
         .cover_text {
             float: left;
             width: 100%;
+        }
 
-            .cover_header {
-                width: 100%;
-                float: left;
-                margin-top: 80px;
+        .cover_header {
+            @media only screen and (min-width:1000px) {
                 font-size: 5.5vw;
-                font-family: "Bienetresocial";
-
-                line-height: 0;
-            }
-    
-            .cover_para {               
-                float: left;
-                font-size: 20px;
-                font-family: 'PT Sans Narrow', sans-serif;
-                color: rgb(34, 34, 34);
-                line-height: 1.5;
-                text-shadow: 0.707px 0.707px 1px rgba(255, 255, 255, 0.004);
-                width: 60%;
-
-                opacity: 0.89;
-
-                
             }
 
-            .cover_glow {
-                background-color: #fff;
-                width: 100%;
-                height: 100%;
-            }
+            width: 100%;
+            float: left;
+            margin-top: 80px;
+            font-size: 50px;
+            font-family: "Bienetresocial";
+            line-height: 0;
+        }
 
-            /* glow machine broke
-            .cover_glow {
-                background-image: url(/imgs/cover_glow.png);
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
+        .cover_para {
+            float: left;
+            font-size: 20px;
+            font-family: 'PT Sans Narrow', sans-serif;
+            color: rgb(34, 34, 34);
+            line-height: 1.5;
+            text-shadow: 0.707px 0.707px 1px rgba(255, 255, 255, 0.004);
+            width: 60%;
 
-                width: 100%;
-            }
-            */
+            opacity: 0.89;
+
 
         }
+
+        .cover_glow {
+            background-color: $color-white;
+            width: 100%;
+            height: 100%;
+        }
+
+
+
+
 
         .goto_accord {
             float: left;
             width: 100%;
             align-content: center;
-            
+
             p {
                 float: left;
                 font-size: 30px;
                 font-family: 'PT Sans Narrow', sans-serif;
-                color: rgb(166, 35, 0);
+                color: #a62300;
                 font-weight: bold;
                 line-height: 0.7;
                 text-shadow: 0.707px 0.707px 1px rgba(255, 255, 255, 0.004);
@@ -196,14 +201,23 @@
     }
 }
 
-.contents {
-    float: left;
-    width: 40%;
+.description {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+
 
     .desc_text {
-        padding:20px;
-        float:left;
-        width:70%;
+        padding: 20px;
+        width: 70%;
+        flex-shrink: 3;
+
+
+        display: flex;
+        flex-flow: row wrap;
 
         @mixin description_decoration {
             line-height: 1.5;
@@ -213,62 +227,73 @@
 
         .desc_para {
             @include description_decoration;
+            flex-grow: 3;
 
             .desc_sentence {
                 @include description_decoration;
-                color: rgb(149, 28, 0);
+                color: #951c00;
                 text-decoration: underline;
                 font-weight: bold;
             }
         }
-      }
-    
+    }
+
     .desc_img {
-        padding:20px;
-        float:left;
-        width:30%;
+        padding: 10px;
+
 
         img {
-            max-width:100%;
-            height:auto;
+            margin-left: 30px;
+            width: 100px;
+            height: 100px;
+            flex-shrink: 1;
         }
     }
 
-    .content_btn_spacing {
-        width: 35%;
-        float: left;
-        padding:20px;
+}
+
+.contents {
+    @media only screen and (min-width:1000px) {
+        width: 40%;
     }
 
+    float: left;
+
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+
+
+
     .valmis_btn_spacing {
-        width: 30%;
-        float: left;
-        
+        display: flex;
+        justify-content: center;
+
 
         .valmis_button {
             color: #e2e2e2;
             padding: 20px 10px;
-            margin-bottom: 20px;
-            width: 100%;
-    
+            margin: 20px 0;
+            width: 150px;
+
             font-weight: bold;
             line-height: 0.8;
             text-align: center;
             font-size: 30px;
             font-family: 'PT Sans Narrow', sans-serif;
             text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
-    
+
             border: 1px solid #999999;
             border-radius: 6px;
             background: #b1b1b1;
             box-shadow: inset 0px 1px 1px 0px rgba(192, 192, 192, 0.75);
         }
 
-            // gets applied to "Valmis!" button when atleast 1 checkbox is checked in every accordion block
-    ._valmis {
-        padding: 15px 45px;
-        @include redButton;
-    }
+        // gets applied to "Valmis!" button when atleast 1 checkbox is checked in every accordion block
+        ._valmis {
+            padding: 15px 45px;
+            @include redButton;
+        }
     }
 
 
@@ -278,13 +303,13 @@
         .accord_head_h {
             font-family: "BienetresocialBold";
             font-size: 30px;
-            color: rgb(63, 41, 22);
+            color: #3f2916;
             line-height: 0.7;
         }
-        
+
         .accord_head_p {
             font-family: 'PT Sans Narrow', sans-serif;
-            color: rgb(34, 34, 34);
+            color: #222222;
             line-height: 1.5;
             font-size: 16px;
         }
@@ -292,10 +317,15 @@
 
 }
 
-  footer {
-    background-color: rgb(59, 53, 48);
+footer {
+    background-color: #3b3530;
     float: left;
     width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 
     .footer_text {
         float: left;
@@ -306,40 +336,83 @@
 
         a {
             color: #ffe756;
+            text-decoration: underline;
+            cursor: pointer;
         }
-    
+
         p {
-            color: #fff;
+            color: $color-white;
             font-size: 16px;
         }
 
     }
+}
 
 
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Modal Content/Box */
+.modal_content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+/* The Close Button */
+.closeModal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeModal:hover,
+.closeModal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* Accordion clickable panel style */
 .accordion {
-    width:100%;
+    width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: $color-white;
     cursor: pointer;
     text-align: left;
     border: none;
     outline: none;
     transition: 0.4s;
     margin: 25px 0 0 0;
-    border-bottom: 1px solid rgb(255, 231, 86);
-    
+    border-bottom: 1px solid #ffe756;
+
     &:hover {
         background-color: #ccc;
     }
 
-   .accord_panel_header {
+    .accord_panel_header {
         font-family: sans-serif;
         font-family: "BienetresocialBold";
         font-size: 20px;
-        color: rgb(63, 41, 22);
+        color: #3f2916;
         line-height: 1.05;
         padding: 10px;
         position: relative;
@@ -347,20 +420,20 @@
         float: left;
         font-weight: bold;
     }
-    
+
     // Opened accordion span header will have yellow-ish background
     .accord_panel_header_active {
         border: 1px solid #ffeb6b;
         border-radius: 10px 10px 0 0;
 
-        background: rgb(255,235,107);
-        background: -moz-linear-gradient( 90deg, rgba(255,235,107,1) 0%, rgba(255,239,128,1) 100%);
-        background: -webkit-linear-gradient( 90deg, rgba(255,235,107,1) 0%, rgba(255,239,128,1) 100%);
-        background: -ms-linear-gradient( 90deg, rgba(255,235,107,1) 0%, rgba(255,239,128,1) 100%);
+        background: #ffeb6b;
+        background: -moz-linear-gradient(90deg, rgba(255, 235, 107, 1) 0%, rgba(255, 239, 128, 1) 100%);
+        background: -webkit-linear-gradient(90deg, rgba(255, 235, 107, 1) 0%, rgba(255, 239, 128, 1) 100%);
+        background: -ms-linear-gradient(90deg, rgba(255, 235, 107, 1) 0%, rgba(255, 239, 128, 1) 100%);
     }
 
     .selected_themes {
-        float:right;
+        float: right;
         color: #3f2916;
         font-family: 'PT Sans Narrow', sans-serif;
         font-size: 24px;
@@ -373,93 +446,100 @@
 .accord_show {
     display: block !important;
 }
+
+.goto_accord {
+    cursor: pointer;
+}
+
 /* Sliding content style */
 .accord_panel {
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: $color-white;
     overflow: hidden;
     border-bottom: 2px solid #ffe756;
 
     /* For JS accordion */
-    display:none;
+    display: none;
 
     .theme_change {
-        width: 30%;
-        float: left;
-        align-content: center;
-        margin: 0;
-        position: inherit;
+        display: flex;
+        justify-content: center;
 
         .next_theme {
-            line-height: 0;
-            width: 100%;
+            margin-top: 20px;
+            width: 220px;
             padding: 20px 10px;
             @include redButton;
         }
     }
 
-    .accord_content {
-        float: left;
-        border-bottom: 2px solid #ffe756;
-        width: 100%;
-        height: 100%;
-        display: block;
-        position: relative;
-        top: 0;
-        left: 0;
-        margin: 20px 0 20px 0;
 
-        padding-left: 35px;
+
+    .accord_content {
+        border-bottom: 2px solid #ffe756;
+
+
+        padding: 10px 0 10px 35px;
+
+        position: relative;
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+
         cursor: pointer;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
 
+
+        .accord_content_img {
+            margin-left: 30px;
+            width: 100px;
+            height: 100px;
+            flex-grow: 1;
+            flex-basis: auto;
+        }
+
         .accord_content_text {
             font-family: 'PT Sans Narrow', sans-serif;
             text-align: justify;
-            position: relative;
-            left: 5%;
-            
+            margin-left: 20px;
+
+
             height: 100%;
-            width: 70%;
-            
+
+            display: flex;
+            flex-flow: column nowrap;
+
+
             .accord_content_text_head {
                 font-weight: bold;
-                position: relative;
-                float: left;
-                width: 60%;
+                flex-basis: auto;
+                flex-grow: 1;
+                margin-bottom: -10px;
+
             }
 
             .accord_content_text_para {
-                float: left;
+                line-height: 1.5;
+                flex-basis: auto;
+                flex-grow: 1;
             }
-
-            .accord_content_img_box {
-                float: left;
-                width: 10%;
-                height: 50%;
-
-                .accord_content_img {
-                    margin-left: 0px;
-                    width: 100px;
-                    height: 100px;
-                }
-    
-            }
-
 
 
         }
-        
 
-        
+
+
         /* custom checkmark */
         .checkmark {
+
+            margin-left: 20px;
             position: absolute;
-            top: 35%;
+            top: 40%;
             left: 0%;
             height: 25px;
             width: 25px;
@@ -468,7 +548,7 @@
             border-right: 2px solid #b3b3b3;
             border-bottom: 2px solid #dbdbdb;
             background-color: #efefef;
-    
+
             &:after {
                 content: "";
                 position: absolute;
@@ -487,8 +567,8 @@
                 -ms-transform: rotate(45deg);
                 transform: rotate(45deg);
             }
-         }
-        
+        }
+
         /* hides browser's default checkbox */
         input {
             position: absolute;
@@ -498,18 +578,18 @@
             width: 0;
 
             /* show the checkmark when checked */
-            &:checked ~ .checkmark:after {
+            &:checked~.checkmark:after {
                 display: block;
             }
         }
 
         /* on checkmark hover, make background gray */
-        &:hover input ~ .checkmark {
+        &:hover input~.checkmark {
             background-color: #ccc;
         }
 
         /* when checked, give it yellow background */
-        input:checked ~ .checkmark {
+        input:checked~.checkmark {
             background-color: #fff6bf;
             border: 1px solid #f0ce00;
         }

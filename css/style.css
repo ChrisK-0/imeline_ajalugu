@@ -4,14 +4,33 @@
           box-sizing: border-box;
 }
 
-@media only screen and (max-width: 620px) {
-  /* For mobile phones: */
-  .contents, .left, .right, .desc_text, .desc_img, .content_cover, footer {
+@media only screen and (max-width: 1000px) {
+  /* For smaller screens */
+  .contents,
+  .desc_text,
+  .desc_img,
+  .content_cover,
+  footer {
     width: 100%;
-    font-size: 3.5vw;
+    float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .accord_panel .theme_change button {
-    left: 30%;
+  .left,
+  .right {
+    width: 0;
+    display: none;
   }
 }
 
@@ -28,7 +47,7 @@
 }
 
 .cover_bg {
-  background-image: url(/imgs/cover_bg.png);
+  background-image: url(../imgs/cover_bg.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 100%;
@@ -57,7 +76,7 @@
   text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   line-height: 0;
-  color: white;
+  color: #fff;
   transform: matrix(1.17461, 0, 0, 1.17461, 0, 0);
   -moz-transform: matrix(1.17461, 0, 0, 1.17461, 0, 0);
   -webkit-transform: matrix(1.17461, 0, 0, 1.17461, 0, 0);
@@ -88,28 +107,24 @@
 .content_cover .cover_main .cover_text {
   float: left;
   width: 100%;
-  /* glow machine broke
-            .cover_glow {
-                background-image: url(/imgs/cover_glow.png);
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-
-                width: 100%;
-            }
-            */
 }
 
-.content_cover .cover_main .cover_text .cover_header {
+.content_cover .cover_main .cover_header {
   width: 100%;
   float: left;
   margin-top: 80px;
-  font-size: 5.5vw;
+  font-size: 50px;
   font-family: "Bienetresocial";
   line-height: 0;
 }
 
-.content_cover .cover_main .cover_text .cover_para {
+@media only screen and (min-width: 1000px) {
+  .content_cover .cover_main .cover_header {
+    font-size: 5.5vw;
+  }
+}
+
+.content_cover .cover_main .cover_para {
   float: left;
   font-size: 20px;
   font-family: 'PT Sans Narrow', sans-serif;
@@ -120,7 +135,7 @@
   opacity: 0.89;
 }
 
-.content_cover .cover_main .cover_text .cover_glow {
+.content_cover .cover_main .cover_glow {
   background-color: #fff;
   width: 100%;
   height: 100%;
@@ -150,24 +165,47 @@
   height: 30px;
 }
 
-.contents {
-  float: left;
-  width: 40%;
+.description {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
-.contents .desc_text {
+.description .desc_text {
   padding: 20px;
-  float: left;
   width: 70%;
+  -ms-flex-negative: 3;
+      flex-shrink: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 
-.contents .desc_text .desc_para {
+.description .desc_text .desc_para {
   line-height: 1.5;
   font-size: 20px;
   font-family: 'PT Sans Narrow', sans-serif;
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
 }
 
-.contents .desc_text .desc_para .desc_sentence {
+.description .desc_text .desc_para .desc_sentence {
   line-height: 1.5;
   font-size: 20px;
   font-family: 'PT Sans Narrow', sans-serif;
@@ -176,33 +214,52 @@
   font-weight: bold;
 }
 
-.contents .desc_img {
-  padding: 20px;
-  float: left;
-  width: 30%;
+.description .desc_img {
+  padding: 10px;
 }
 
-.contents .desc_img img {
-  max-width: 100%;
-  height: auto;
+.description .desc_img img {
+  margin-left: 30px;
+  width: 100px;
+  height: 100px;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
 }
 
-.contents .content_btn_spacing {
-  width: 35%;
+.contents {
   float: left;
-  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+@media only screen and (min-width: 1000px) {
+  .contents {
+    width: 40%;
+  }
 }
 
 .contents .valmis_btn_spacing {
-  width: 30%;
-  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .contents .valmis_btn_spacing .valmis_button {
   color: #e2e2e2;
   padding: 20px 10px;
-  margin-bottom: 20px;
-  width: 100%;
+  margin: 20px 0;
+  width: 150px;
   font-weight: bold;
   line-height: 0.8;
   text-align: center;
@@ -253,6 +310,21 @@ footer {
   background-color: #3b3530;
   float: left;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 footer .footer_text {
@@ -264,11 +336,55 @@ footer .footer_text {
 
 footer .footer_text a {
   color: #ffe756;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 footer .footer_text p {
   color: #fff;
   font-size: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Modal Content/Box */
+.modal_content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+}
+
+/* The Close Button */
+.closeModal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeModal:hover,
+.closeModal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* Accordion clickable panel style */
@@ -324,11 +440,15 @@ footer .footer_text p {
   display: block !important;
 }
 
+.goto_accord {
+  cursor: pointer;
+}
+
 /* Sliding content style */
 .accord_panel {
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: #fff;
   overflow: hidden;
   border-bottom: 2px solid #ffe756;
   /* For JS accordion */
@@ -336,17 +456,17 @@ footer .footer_text p {
 }
 
 .accord_panel .theme_change {
-  width: 30%;
-  float: left;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  margin: 0;
-  position: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .accord_panel .theme_change .next_theme {
-  line-height: 0;
-  width: 100%;
+  margin-top: 20px;
+  width: 220px;
   padding: 20px 10px;
   color: #fff;
   position: relative;
@@ -366,16 +486,19 @@ footer .footer_text p {
 }
 
 .accord_panel .accord_content {
-  float: left;
   border-bottom: 2px solid #ffe756;
-  width: 100%;
-  height: 100%;
-  display: block;
+  padding: 10px 0 10px 35px;
   position: relative;
-  top: 0;
-  left: 0;
-  margin: 20px 0 20px 0;
-  padding-left: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -387,41 +510,54 @@ footer .footer_text p {
   /* when checked, give it yellow background */
 }
 
+.accord_panel .accord_content .accord_content_img {
+  margin-left: 30px;
+  width: 100px;
+  height: 100px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+}
+
 .accord_panel .accord_content .accord_content_text {
   font-family: 'PT Sans Narrow', sans-serif;
   text-align: justify;
-  position: relative;
-  left: 5%;
+  margin-left: 20px;
   height: 100%;
-  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
 .accord_panel .accord_content .accord_content_text .accord_content_text_head {
   font-weight: bold;
-  position: relative;
-  float: left;
-  width: 60%;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-bottom: -10px;
 }
 
 .accord_panel .accord_content .accord_content_text .accord_content_text_para {
-  float: left;
-}
-
-.accord_panel .accord_content .accord_content_text .accord_content_img_box {
-  float: left;
-  width: 10%;
-  height: 50%;
-}
-
-.accord_panel .accord_content .accord_content_text .accord_content_img_box .accord_content_img {
-  margin-left: 0px;
-  width: 100px;
-  height: 100px;
+  line-height: 1.5;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .accord_panel .accord_content .checkmark {
+  margin-left: 20px;
   position: absolute;
-  top: 35%;
+  top: 40%;
   left: 0%;
   height: 25px;
   width: 25px;
