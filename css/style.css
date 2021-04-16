@@ -34,13 +34,7 @@
   }
 }
 
-.left {
-  padding: 20px;
-  float: left;
-  width: 30%;
-}
-
-.right {
+.left, .right {
   padding: 20px;
   float: left;
   width: 30%;
@@ -71,7 +65,7 @@
 }
 
 .content_cover .cover_note p {
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   font-size: 42.567px;
   text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
   font-weight: bold;
@@ -127,7 +121,7 @@
 .content_cover .cover_main .cover_para {
   float: left;
   font-size: 20px;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   color: #222222;
   line-height: 1.5;
   text-shadow: 0.707px 0.707px 1px rgba(255, 255, 255, 0.004);
@@ -141,24 +135,24 @@
   height: 100%;
 }
 
-.content_cover .cover_main .goto_accord {
+.goto_accord {
   float: left;
   width: 100%;
   -ms-flex-line-pack: center;
       align-content: center;
 }
 
-.content_cover .cover_main .goto_accord p {
+.goto_accord p {
   float: left;
   font-size: 30px;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   color: #a62300;
   font-weight: bold;
   line-height: 0.7;
   text-shadow: 0.707px 0.707px 1px rgba(255, 255, 255, 0.004);
 }
 
-.content_cover .cover_main .goto_accord p .goto_accord_arrow {
+.goto_accord p .goto_accord_arrow {
   margin-right: 10px;
   float: left;
   width: 25px;
@@ -199,7 +193,7 @@
 .description .desc_text .desc_para {
   line-height: 1.5;
   font-size: 20px;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   -webkit-box-flex: 3;
       -ms-flex-positive: 3;
           flex-grow: 3;
@@ -208,7 +202,7 @@
 .description .desc_text .desc_para .desc_sentence {
   line-height: 1.5;
   font-size: 20px;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   color: #951c00;
   text-decoration: underline;
   font-weight: bold;
@@ -264,7 +258,7 @@
   line-height: 0.8;
   text-align: center;
   font-size: 30px;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
   border: 1px solid #999999;
   border-radius: 6px;
@@ -282,7 +276,7 @@
   line-height: 0.8;
   text-align: center;
   font-size: 30px;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
   border: 1px solid #7b1700;
   border-radius: 6px;
@@ -300,7 +294,7 @@
 }
 
 .contents .accord_head .accord_head_p {
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   color: #222222;
   line-height: 1.5;
   font-size: 16px;
@@ -331,7 +325,7 @@ footer .footer_text {
   float: left;
   width: 40%;
   padding: 25px 0;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
 }
 
 footer .footer_text a {
@@ -407,7 +401,6 @@ footer .footer_text p {
 }
 
 .accordion .accord_panel_header {
-  font-family: sans-serif;
   font-family: "BienetresocialBold";
   font-size: 20px;
   color: #3f2916;
@@ -429,7 +422,7 @@ footer .footer_text p {
 .accordion .selected_themes {
   float: right;
   color: #3f2916;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   font-size: 24px;
   line-height: 0.875;
   padding: 10px;
@@ -475,7 +468,7 @@ footer .footer_text p {
   line-height: 0.8;
   text-align: center;
   font-size: 30px;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
   border: 1px solid #7b1700;
   border-radius: 6px;
@@ -485,7 +478,7 @@ footer .footer_text p {
           box-shadow: inset 0px 1px 1px 0px rgba(197, 82, 48, 0.75);
 }
 
-.accord_panel .accord_content {
+.accord_content {
   border-bottom: 2px solid #ffe756;
   padding: 10px 0 10px 35px;
   position: relative;
@@ -510,7 +503,7 @@ footer .footer_text p {
   /* when checked, give it yellow background */
 }
 
-.accord_panel .accord_content .accord_content_img {
+.accord_content .accord_content_img {
   margin-left: 30px;
   width: 100px;
   height: 100px;
@@ -521,8 +514,8 @@ footer .footer_text p {
       flex-basis: auto;
 }
 
-.accord_panel .accord_content .accord_content_text {
-  font-family: 'PT Sans Narrow', sans-serif;
+.accord_content .accord_content_text {
+  font-family: "PT Sans Narrow", sans-serif;
   text-align: justify;
   margin-left: 20px;
   height: 100%;
@@ -535,7 +528,7 @@ footer .footer_text p {
           flex-flow: column nowrap;
 }
 
-.accord_panel .accord_content .accord_content_text .accord_content_text_head {
+.accord_content .accord_content_text .accord_content_text_head {
   font-weight: bold;
   -ms-flex-preferred-size: auto;
       flex-basis: auto;
@@ -545,7 +538,7 @@ footer .footer_text p {
   margin-bottom: -10px;
 }
 
-.accord_panel .accord_content .accord_content_text .accord_content_text_para {
+.accord_content .accord_content_text .accord_content_text_para {
   line-height: 1.5;
   -ms-flex-preferred-size: auto;
       flex-basis: auto;
@@ -554,7 +547,7 @@ footer .footer_text p {
           flex-grow: 1;
 }
 
-.accord_panel .accord_content .checkmark {
+.accord_content .checkmark {
   margin-left: 20px;
   position: absolute;
   top: 40%;
@@ -569,13 +562,13 @@ footer .footer_text p {
   /* checkmark indicator style */
 }
 
-.accord_panel .accord_content .checkmark:after {
+.accord_content .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-.accord_panel .accord_content .checkmark:after {
+.accord_content .checkmark:after {
   left: 9px;
   top: 5px;
   width: 5px;
@@ -586,7 +579,7 @@ footer .footer_text p {
   transform: rotate(45deg);
 }
 
-.accord_panel .accord_content input {
+.accord_content input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -595,15 +588,15 @@ footer .footer_text p {
   /* show the checkmark when checked */
 }
 
-.accord_panel .accord_content input:checked ~ .checkmark:after {
+.accord_content input:checked ~ .checkmark:after {
   display: block;
 }
 
-.accord_panel .accord_content:hover input ~ .checkmark {
+.accord_content:hover input ~ .checkmark {
   background-color: #ccc;
 }
 
-.accord_panel .accord_content input:checked ~ .checkmark {
+.accord_content input:checked ~ .checkmark {
   background-color: #fff6bf;
   border: 1px solid #f0ce00;
 }

@@ -70,3 +70,10 @@ Accordion blocks now look proper and are responsive
 
 Popup
 ![Popup](https://i.imgur.com/wzDoBXa.png)
+
+
+## Day 5
+
+### Code refinemenet
+
+Fixed CSS image path notation, made some SASS variables and renamed variables in accoridon.js from word_word to wordWord (camel case).

@@ -1,14 +1,14 @@
 // accordion opening/closing animation
-var acc = document.getElementsByClassName("accordion");
-var acc_panel = document.getElementsByClassName('accord_panel');
-var acc_header = document.getElementsByClassName('accord_panel_header');
+var accordionBtn = document.getElementsByClassName("accordion");
+var accordionPanel = document.getElementsByClassName('accord_panel');
+var accordionHeader = document.getElementsByClassName('accord_panel_header');
 
-for (var i = 0; i < acc.length; i++) {
-  acc[i].onclick = function () {
+for (var i = 0; i < accordionBtn.length; i++) {
+  accordionBtn[i].onclick = function () {
     var setClasses = !this.classList.contains('active');
-    setClass(acc, 'active', 'remove');
-    setClass(acc_panel, 'accord_show', 'remove');
-    setClass(acc_header, 'accord_panel_header_active', 'remove');
+    setClass(accordionBtn, 'active', 'remove');
+    setClass(accordionPanel, 'accord_show', 'remove');
+    setClass(accordionHeader, 'accord_panel_header_active', 'remove');
 
     if (setClasses) {
       this.classList.toggle("active");
@@ -91,21 +91,21 @@ Everything below should also be shorter, but I didnt have time/knowledge on maki
 
 
 // Variables for next theme button functions to keep code shorter
-var acc_next_1 = document.getElementById('accordion1');
-var acc_panel_next_1 = document.getElementById('acc_1');
-var acc_head_1 = document.getElementById("accord_head1");
+var getAccordion1 = document.getElementById('accordion1');
+var accordionPanel1 = document.getElementById('acc_1');
+var accordionHeader1 = document.getElementById("accord_head1");
 
-var acc_next_2 = document.getElementById('accordion2');
-var acc_panel_next_2 = document.getElementById('acc_2');
-var acc_head_2 = document.getElementById("accord_head2");
+var getAccordion2 = document.getElementById('accordion2');
+var accordionPanel2 = document.getElementById('acc_2');
+var accordionHeader2 = document.getElementById("accord_head2");
 
-var acc_next_3 = document.getElementById('accordion3');
-var acc_panel_next_3 = document.getElementById('acc_3');
-var acc_head_3 = document.getElementById("accord_head3");
+var getAccordion3 = document.getElementById('accordion3');
+var accordionPanel3 = document.getElementById('acc_3');
+var accordionHeader3 = document.getElementById("accord_head3");
 
-var acc_next_4 = document.getElementById('accordion4');
-var acc_panel_next_4 = document.getElementById('acc_4');
-var acc_head_4 = document.getElementById("accord_head4");
+var getAccordion4 = document.getElementById('accordion4');
+var accordionPanel4 = document.getElementById('acc_4');
+var accordionHeader4 = document.getElementById("accord_head4");
 
 
 /* Attempt for a smaller, one function for opening the next accordion. Currently crashes the browser as it is
@@ -135,33 +135,33 @@ function nextTheme() {
 
 // Next theme button function - removes classes that bring the accordion down and adds classes to the next one that brings that one down. Also removes/adds classes for Theme header color.
 function open_next_theme1() {
-  acc_next_1.classList.remove("active");
-  acc_panel_next_1.classList.remove("accord_show");
-  acc_head_1.classList.remove("accord_panel_header_active");
+  getAccordion1.classList.remove("active");
+  accordionPanel1.classList.remove("accord_show");
+  accordionHeader1.classList.remove("accord_panel_header_active");
 
-  acc_next_2.classList.add("active");
-  acc_panel_next_2.classList.add("accord_show");
-  acc_head_2.classList.add("accord_panel_header_active");
+  getAccordion2.classList.add("active");
+  accordionPanel2.classList.add("accord_show");
+  accordionHeader2.classList.add("accord_panel_header_active");
 }
 
 function open_next_theme2() {
-  acc_next_2.classList.remove("active");
-  acc_panel_next_2.classList.remove("accord_show");
-  acc_head_2.classList.remove("accord_panel_header_active");
+  getAccordion2.classList.remove("active");
+  accordionPanel2.classList.remove("accord_show");
+  accordionHeader2.classList.remove("accord_panel_header_active");
 
-  acc_next_3.classList.add("active");
-  acc_panel_next_3.classList.add("accord_show");
-  acc_head_3.classList.add("accord_panel_header_active");
+  getAccordion3.classList.add("active");
+  accordionPanel3.classList.add("accord_show");
+  accordionHeader3.classList.add("accord_panel_header_active");
 }
 
 function open_next_theme3() {
-  acc_next_3.classList.remove("active");
-  acc_panel_next_3.classList.remove("accord_show");
-  acc_head_3.classList.remove("accord_panel_header_active");
+  getAccordion3.classList.remove("active");
+  accordionPanel3.classList.remove("accord_show");
+  accordionHeader3.classList.remove("accord_panel_header_active");
 
-  acc_next_4.classList.add("active");
-  acc_panel_next_4.classList.add("accord_show");
-  acc_head_4.classList.add("accord_panel_header_active");
+  getAccordion4.classList.add("active");
+  accordionPanel4.classList.add("accord_show");
+  accordionHeader4.classList.add("accord_panel_header_active");
 }
 
 
@@ -173,16 +173,16 @@ document.getElementById("next_theme3").onclick = function () { open_next_theme3(
 
 
 // Each accordion has its own Array, "Valmis!" button becomes available if every accordion array has atleast 1 item in it
-var acc_1_array = [];
-var acc_2_array = [];
-var acc_3_array = [];
-var acc_4_array = [];
+var accordionArray1 = [];
+var accordionArray2 = [];
+var accordionArray3 = [];
+var accordionArray4 = [];
 
 // Checked accordion checkboxes to be collected
-var acc_1_boxes = document.querySelectorAll("input[type=checkbox][name=accord_section1]");
-var acc_2_boxes = document.querySelectorAll("input[type=checkbox][name=accord_section2]");
-var acc_3_boxes = document.querySelectorAll("input[type=checkbox][name=accord_section3]");
-var acc_4_boxes = document.querySelectorAll("input[type=checkbox][name=accord_section4]");
+var accordionCheckboxes1 = document.querySelectorAll("input[type=checkbox][name=accord_section1]");
+var accordionCheckboxes2 = document.querySelectorAll("input[type=checkbox][name=accord_section2]");
+var accordionCheckboxes3 = document.querySelectorAll("input[type=checkbox][name=accord_section3]");
+var accordionCheckboxes4 = document.querySelectorAll("input[type=checkbox][name=accord_section4]");
 
 /*
 Here are 3 event listeners. Each accordion has it's own special collector, which adds and removes checkbox values from arrays.
@@ -190,25 +190,25 @@ This was made, to make the "Valmis!" button available when every accordion has a
 the accordion arrays are empty, and if they are not empty, the button is clickable. Otherwise the button is disabled.
 */
 // Event listener and collector for the first array.
-acc_1_boxes.forEach(function (checkbox) {
+accordionCheckboxes1.forEach(function (checkbox) {
   checkbox.addEventListener('change', function () {
-    acc_1_array =
-      Array.from(acc_1_boxes) // Convert checkboxes to an array to use filter and map.
+    accordionArray1 =
+      Array.from(accordionCheckboxes1) // Convert checkboxes to an array to use filter and map.
         .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
         .map(i => i.value) // Use Array.map to extract only the checkbox values from the array of objects.
 
-    console.log(acc_1_array)
+    console.log(accordionArray1)
 
     // Counter for the selected events in each accordion block
-    var x = acc_1_array.length;
-    if (acc_1_array.length === 0) {
+    var x = accordionArray1.length;
+    if (accordionArray1.length === 0) {
       document.getElementById("accord_span_1").innerHTML = "0 / 3";
-    } else if (acc_1_array.length < 4) {
+    } else if (accordionArray1.length < 4) {
       document.getElementById("accord_span_1").innerHTML = x + " / 3";
     }
 
     /* Attempt to disable all unchecked boxes when there are 3 checkboxes checked
-    else if (acc_1_array.length === 3) {
+    else if (accordionArray1.length === 3) {
 
       var checkedInput = document.getElementsByTagName("input").checked;
       checkedInput.disabled = true;
@@ -219,16 +219,16 @@ acc_1_boxes.forEach(function (checkbox) {
   })
 });
 
-acc_2_boxes.forEach(function (checkbox) {
+accordionCheckboxes2.forEach(function (checkbox) {
   checkbox.addEventListener('change', function () {
-    acc_2_array =
-      Array.from(acc_2_boxes)
+    accordionArray2 =
+      Array.from(accordionCheckboxes2)
         .filter(i => i.checked)
         .map(i => i.value)
 
-    console.log(acc_2_array)
+    console.log(accordionArray2)
 
-    var x = acc_2_array.length;
+    var x = accordionArray2.length;
     if (x.length === 0) {
       document.getElementById("accord_span_2").innerHTML = "0 / 3";
     } else if (x < 4) {
@@ -237,37 +237,37 @@ acc_2_boxes.forEach(function (checkbox) {
   })
 });
 
-acc_3_boxes.forEach(function (checkbox) {
+accordionCheckboxes3.forEach(function (checkbox) {
   checkbox.addEventListener('change', function () {
-    acc_3_array =
-      Array.from(acc_3_boxes)
+    accordionArray3 =
+      Array.from(accordionCheckboxes3)
         .filter(i => i.checked)
         .map(i => i.value)
 
-    console.log(acc_3_array)
+    console.log(accordionArray3)
 
-    var x = acc_3_array.length;
-    if (acc_3_array.length === 0) {
+    var x = accordionArray3.length;
+    if (accordionArray3.length === 0) {
       document.getElementById("accord_span_3").innerHTML = "0 / 3";
-    } else if (acc_3_array.length < 4) {
+    } else if (accordionArray3.length < 4) {
       document.getElementById("accord_span_3").innerHTML = x + " / 3";
     }
   })
 });
 
-acc_4_boxes.forEach(function (checkbox) {
+accordionCheckboxes4.forEach(function (checkbox) {
   checkbox.addEventListener('change', function () {
-    acc_4_array =
-      Array.from(acc_4_boxes)
+    accordionArray4 =
+      Array.from(accordionCheckboxes4)
         .filter(i => i.checked)
         .map(i => i.value)
 
-    console.log(acc_4_array)
+    console.log(accordionArray4)
 
-    var x = acc_4_array.length;
-    if (acc_4_array.length === 0) {
+    var x = accordionArray4.length;
+    if (accordionArray4.length === 0) {
       document.getElementById("accord_span_4").innerHTML = "0 / 3";
-    } else if (acc_4_array.length < 4) {
+    } else if (accordionArray4.length < 4) {
       document.getElementById("accord_span_4").innerHTML = x + " / 3";
     }
   })
@@ -276,15 +276,15 @@ acc_4_boxes.forEach(function (checkbox) {
 
 
 // Variable that selects all checkboxes
-var valmis_button_state = document.querySelectorAll("input[type=checkbox]");
+var allCheckboxes = document.querySelectorAll("input[type=checkbox]");
 // Variable for "Valmis!" button element id, for shorter code
 var ValmisID = document.getElementById("button_send");
 
 // Event listener for every checkbox to determine if there is atleast 1 theme checked in every accordion
 // Also enable "Valmis!" button if atleast 1 checkbox is checked in every accordion
-valmis_button_state.forEach(function (checkbox) {
+allCheckboxes.forEach(function (checkbox) {
   checkbox.addEventListener('change', function () {
-    if (acc_1_array.length != 0 && acc_2_array.length != 0 && acc_3_array.length != 0 && acc_4_array.length != 0) {
+    if (accordionArray1.length != 0 && accordionArray2.length != 0 && accordionArray3.length != 0 && accordionArray4.length != 0) {
       ValmisID.disabled = false;
       ValmisID.classList.add("_valmis");
 

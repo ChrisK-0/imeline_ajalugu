@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
 
 $color-white: #fff;
+$fontSans: 'PT Sans Narrow', sans-serif;
 
 * {
     box-sizing: border-box;
@@ -46,13 +47,13 @@ $color-white: #fff;
     line-height: 0.8;
     text-align: center;
     font-size: 30px;
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: $fontSans;
     text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
 
-    border: 1px solid rgb(123, 23, 0);
+    border: 1px solid #7b1700;
     border-radius: 6px;
 
-    background: rgb(183, 42, 0);
+    background: #b72a00;
     background: -moz-linear-gradient(90deg, rgba(183, 42, 0, 1) 0%, rgba(149, 28, 0, 1) 100%);
     background: -webkit-linear-gradient(90deg, rgba(183, 42, 0, 1) 0%, rgba(149, 28, 0, 1) 100%);
     background: -ms-linear-gradient(90deg, rgba(183, 42, 0, 1) 0%, rgba(149, 28, 0, 1) 100%);
@@ -60,11 +61,7 @@ $color-white: #fff;
 }
 
 
-.left {
-    @include side-space;
-}
-
-.right {
+.left, .right {
     @include side-space;
 }
 
@@ -96,7 +93,7 @@ $color-white: #fff;
         background-image: -ms-linear-gradient(90deg, rgb(204, 62, 15) 0%, rgb(147, 27, 0) 100%);
 
         p {
-            font-family: 'PT Sans Narrow', sans-serif;
+            font-family: $fontSans;
             font-size: 42.567px;
             text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
             font-weight: bold;
@@ -123,7 +120,7 @@ $color-white: #fff;
             border-left: 112.5px solid transparent;
             border-right: 112.5px solid transparent;
 
-            border-top: 20px solid rgb(204, 62, 15);
+            border-top: 20px solid #cc3e0f;
         }
     }
 
@@ -153,15 +150,12 @@ $color-white: #fff;
         .cover_para {
             float: left;
             font-size: 20px;
-            font-family: 'PT Sans Narrow', sans-serif;
-            color: rgb(34, 34, 34);
+            font-family: $fontSans;
+            color: #222222;
             line-height: 1.5;
             text-shadow: 0.707px 0.707px 1px rgba(255, 255, 255, 0.004);
             width: 60%;
-
             opacity: 0.89;
-
-
         }
 
         .cover_glow {
@@ -169,33 +163,28 @@ $color-white: #fff;
             width: 100%;
             height: 100%;
         }
+    }
+}
 
+.goto_accord {
+    float: left;
+    width: 100%;
+    align-content: center;
 
+    p {
+        float: left;
+        font-size: 30px;
+        font-family: $fontSans;
+        color: #a62300;
+        font-weight: bold;
+        line-height: 0.7;
+        text-shadow: 0.707px 0.707px 1px rgba(255, 255, 255, 0.004);
 
-
-
-        .goto_accord {
+        .goto_accord_arrow {
+            margin-right: 10px;
             float: left;
-            width: 100%;
-            align-content: center;
-
-            p {
-                float: left;
-                font-size: 30px;
-                font-family: 'PT Sans Narrow', sans-serif;
-                color: #a62300;
-                font-weight: bold;
-                line-height: 0.7;
-                text-shadow: 0.707px 0.707px 1px rgba(255, 255, 255, 0.004);
-
-                .goto_accord_arrow {
-                    margin-right: 10px;
-                    float: left;
-                    width: 25px;
-                    height: 30px;
-                }
-
-            }
+            width: 25px;
+            height: 30px;
         }
 
     }
@@ -222,7 +211,7 @@ $color-white: #fff;
         @mixin description_decoration {
             line-height: 1.5;
             font-size: 20px;
-            font-family: 'PT Sans Narrow', sans-serif;
+            font-family: $fontSans;
         }
 
         .desc_para {
@@ -280,7 +269,7 @@ $color-white: #fff;
             line-height: 0.8;
             text-align: center;
             font-size: 30px;
-            font-family: 'PT Sans Narrow', sans-serif;
+            font-family: $fontSans;
             text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
 
             border: 1px solid #999999;
@@ -308,7 +297,7 @@ $color-white: #fff;
         }
 
         .accord_head_p {
-            font-family: 'PT Sans Narrow', sans-serif;
+            font-family: $fontSans;
             color: #222222;
             line-height: 1.5;
             font-size: 16px;
@@ -332,7 +321,7 @@ footer {
         width: 40%;
         padding: 25px 0;
 
-        font-family: 'PT Sans Narrow', sans-serif;
+        font-family: $fontSans;
 
         a {
             color: #ffe756;
@@ -409,7 +398,7 @@ footer {
     }
 
     .accord_panel_header {
-        font-family: sans-serif;
+
         font-family: "BienetresocialBold";
         font-size: 20px;
         color: #3f2916;
@@ -435,7 +424,7 @@ footer {
     .selected_themes {
         float: right;
         color: #3f2916;
-        font-family: 'PT Sans Narrow', sans-serif;
+        font-family: $fontSans;
         font-size: 24px;
         line-height: 0.875;
         padding: 10px;
@@ -473,126 +462,123 @@ footer {
             @include redButton;
         }
     }
+}
+.accord_content {
+    border-bottom: 2px solid #ffe756;
 
 
+    padding: 10px 0 10px 35px;
 
-    .accord_content {
-        border-bottom: 2px solid #ffe756;
+    position: relative;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
 
-        padding: 10px 0 10px 35px;
+    .accord_content_img {
+        margin-left: 30px;
+        width: 100px;
+        height: 100px;
+        flex-grow: 1;
+        flex-basis: auto;
+    }
 
-        position: relative;
+    .accord_content_text {
+        font-family: $fontSans;
+        text-align: justify;
+        margin-left: 20px;
+
+
+        height: 100%;
 
         display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+        flex-flow: column nowrap;
 
 
-        .accord_content_img {
-            margin-left: 30px;
-            width: 100px;
-            height: 100px;
-            flex-grow: 1;
+        .accord_content_text_head {
+            font-weight: bold;
             flex-basis: auto;
-        }
-
-        .accord_content_text {
-            font-family: 'PT Sans Narrow', sans-serif;
-            text-align: justify;
-            margin-left: 20px;
-
-
-            height: 100%;
-
-            display: flex;
-            flex-flow: column nowrap;
-
-
-            .accord_content_text_head {
-                font-weight: bold;
-                flex-basis: auto;
-                flex-grow: 1;
-                margin-bottom: -10px;
-
-            }
-
-            .accord_content_text_para {
-                line-height: 1.5;
-                flex-basis: auto;
-                flex-grow: 1;
-            }
-
+            flex-grow: 1;
+            margin-bottom: -10px;
 
         }
 
-
-
-        /* custom checkmark */
-        .checkmark {
-
-            margin-left: 20px;
-            position: absolute;
-            top: 40%;
-            left: 0%;
-            height: 25px;
-            width: 25px;
-            border-top: 2px solid #787878;
-            border-left: 2px solid #b3b3b3;
-            border-right: 2px solid #b3b3b3;
-            border-bottom: 2px solid #dbdbdb;
-            background-color: #efefef;
-
-            &:after {
-                content: "";
-                position: absolute;
-                display: none;
-            }
-
-            /* checkmark indicator style */
-            &:after {
-                left: 9px;
-                top: 5px;
-                width: 5px;
-                height: 10px;
-                border: 1px solid #3f2916;
-                border-width: 0 3px 3px 0;
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                transform: rotate(45deg);
-            }
+        .accord_content_text_para {
+            line-height: 1.5;
+            flex-basis: auto;
+            flex-grow: 1;
         }
 
-        /* hides browser's default checkbox */
-        input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-            height: 0;
-            width: 0;
-
-            /* show the checkmark when checked */
-            &:checked~.checkmark:after {
-                display: block;
-            }
-        }
-
-        /* on checkmark hover, make background gray */
-        &:hover input~.checkmark {
-            background-color: #ccc;
-        }
-
-        /* when checked, give it yellow background */
-        input:checked~.checkmark {
-            background-color: #fff6bf;
-            border: 1px solid #f0ce00;
-        }
 
     }
+
+
+
+    /* custom checkmark */
+    .checkmark {
+
+        margin-left: 20px;
+        position: absolute;
+        top: 40%;
+        left: 0%;
+        height: 25px;
+        width: 25px;
+        border-top: 2px solid #787878;
+        border-left: 2px solid #b3b3b3;
+        border-right: 2px solid #b3b3b3;
+        border-bottom: 2px solid #dbdbdb;
+        background-color: #efefef;
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* checkmark indicator style */
+        &:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: 1px solid #3f2916;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+
+    /* hides browser's default checkbox */
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        /* show the checkmark when checked */
+        &:checked~.checkmark:after {
+            display: block;
+        }
+    }
+
+    /* on checkmark hover, make background gray */
+    &:hover input~.checkmark {
+        background-color: #ccc;
+    }
+
+    /* when checked, give it yellow background */
+    input:checked~.checkmark {
+        background-color: #fff6bf;
+        border: 1px solid #f0ce00;
+    }
+
 }
