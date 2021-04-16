@@ -1,7 +1,8 @@
 // accordion opening/closing animation
-var accordionBtn = document.getElementsByClassName("accordion");
+var accordionBtn = document.getElementsByClassName('accordion');
 var accordionPanel = document.getElementsByClassName('accord_panel');
 var accordionHeader = document.getElementsByClassName('accord_panel_header');
+var themeChangeBtn = document.getElementsByClassName('next_theme');
 
 for (var i = 0; i < accordionBtn.length; i++) {
   accordionBtn[i].onclick = function () {
@@ -9,11 +10,13 @@ for (var i = 0; i < accordionBtn.length; i++) {
     setClass(accordionBtn, 'active', 'remove');
     setClass(accordionPanel, 'accord_show', 'remove');
     setClass(accordionHeader, 'accord_panel_header_active', 'remove');
+    setClass(themeChangeBtn, 'themeBtnActive', 'remove');
 
     if (setClasses) {
       this.classList.toggle("active");
       this.nextElementSibling.classList.toggle("accord_show");
       this.children[0].classList.toggle("accord_panel_header_active");
+      this.nextElementSibling.children[4].children[0].classList.toggle("themeBtnActive");
     }
   }
 }
@@ -22,6 +25,41 @@ function setClass(els, className, fnName) {
     els[i].classList[fnName](className);
   }
 }
+
+// Next theme button. Closest the current one and opens the next one
+themeChangeBtn[0].onclick = function () { nextTheme() };
+themeChangeBtn[1].onclick = function () { nextTheme() };
+themeChangeBtn[2].onclick = function () { nextTheme() };
+
+var getAccordion = document.getElementsByClassName("active");
+var getPanel = document.getElementsByClassName("accord_show");
+var getHeader = document.getElementsByClassName("accord_panel_header_active");
+var nextBtn = document.getElementsByClassName("themeBtnActive");
+
+function nextTheme() {
+  // gets next elements before the 3 special classes are removed with nextElementSibling
+  var getNextAccordion = getAccordion[0].nextElementSibling.nextElementSibling;
+  var getNextPanel = getPanel[0].nextElementSibling.nextElementSibling;
+  var getNextHeader = getAccordion[0].nextElementSibling.nextElementSibling.children[0];
+
+  // this closes the currently open accordion with theme change button
+  nextBtn[0].onclick = function () {
+    // adds 3 actives to the next ones
+    getNextPanel.classList.add("accord_show");
+    getNextHeader.classList.add("accord_panel_header_active");
+    getNextAccordion.classList.add("active");
+
+    // removes the first found active class and since now there are 2, it removes the 3 classes from the first to close it, because only 1 accordion should be open at a time
+    getAccordion[0].classList.remove("active");
+    getPanel[0].classList.remove("accord_show");
+    getHeader[0].classList.remove("accord_panel_header_active");
+    nextBtn[0].classList.remove("themeBtnActive");
+  }
+
+
+
+}
+
 
 // change accordion label block background on checked
 function isChecked(elem) {
@@ -37,26 +75,26 @@ function gotoAccord() {
 }
 
 
-// Get the modal
+// get the modal
 var getModal = document.getElementById("policyModal");
 
-// Get the button that opens the modal
+// get the button that opens the modal
 var openModal = document.getElementById("policyOpen");
 
-// Get the <span> element that closes the modal
+// get the <span> element that closes the modal
 var modalSpan = document.getElementsByClassName("closeModal")[0];
 
-// When the user clicks on the button, open the modal
+// when the user clicks on the button, open the modal
 openModal.onclick = function () {
   getModal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
+// when the user clicks on <span> (x), close the modal
 modalSpan.onclick = function () {
   getModal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// when the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == getModal) {
     getModal.style.display = "none";
@@ -64,12 +102,11 @@ window.onclick = function (event) {
 }
 
 
-
 // variable for inital set
 var SelectSpans = document.getElementsByClassName("selected_themes");
 var AccSpanDefault = "0 / 3";
 
-// Sets the spans to 0 on page inital load
+// sets the spans to 0 on page inital load
 document.addEventListener('DOMContentLoaded', function () {
   var i;
 
@@ -80,96 +117,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
 /* --------------------------------------------------------------------------------------------------
 Above this line are automated, short scripts that dont require repeating. 
 Everything below should also be shorter, but I didnt have time/knowledge on making the code shorter .
 --------------------------------------------------------------------------------------------------  */
-
-
-
-
-
-// Variables for next theme button functions to keep code shorter
-var getAccordion1 = document.getElementById('accordion1');
-var accordionPanel1 = document.getElementById('acc_1');
-var accordionHeader1 = document.getElementById("accord_head1");
-
-var getAccordion2 = document.getElementById('accordion2');
-var accordionPanel2 = document.getElementById('acc_2');
-var accordionHeader2 = document.getElementById("accord_head2");
-
-var getAccordion3 = document.getElementById('accordion3');
-var accordionPanel3 = document.getElementById('acc_3');
-var accordionHeader3 = document.getElementById("accord_head3");
-
-var getAccordion4 = document.getElementById('accordion4');
-var accordionPanel4 = document.getElementById('acc_4');
-var accordionHeader4 = document.getElementById("accord_head4");
-
-
-/* Attempt for a smaller, one function for opening the next accordion. Currently crashes the browser as it is
-var blockArray = [];
-for (i = 0; 1 < 4 ;i++) {
-  blockArray.push( {blockID: i, blockName: "a"+i});
-}
-var blockIndex = 3;
-
-
-function open_next_theme() {
-  blockIndex++;
-  show(blockIndex, blockArray);
-}
-document.getElementById("next_theme1").onclick = function() {open_next_theme()};
-document.getElementById("next_theme2").onclick = function() {open_next_theme()};
-document.getElementById("next_theme3").onclick = function() {open_next_theme()};
-
-function nextTheme() {
-  var getActive = docoument.getElementsByClassName("active");
-  for (i = 0; i < x.length; i-- ) {
-    getActive[i].classList.remove("active");
-  }
-}
-*/
-
-
-// Next theme button function - removes classes that bring the accordion down and adds classes to the next one that brings that one down. Also removes/adds classes for Theme header color.
-function open_next_theme1() {
-  getAccordion1.classList.remove("active");
-  accordionPanel1.classList.remove("accord_show");
-  accordionHeader1.classList.remove("accord_panel_header_active");
-
-  getAccordion2.classList.add("active");
-  accordionPanel2.classList.add("accord_show");
-  accordionHeader2.classList.add("accord_panel_header_active");
-}
-
-function open_next_theme2() {
-  getAccordion2.classList.remove("active");
-  accordionPanel2.classList.remove("accord_show");
-  accordionHeader2.classList.remove("accord_panel_header_active");
-
-  getAccordion3.classList.add("active");
-  accordionPanel3.classList.add("accord_show");
-  accordionHeader3.classList.add("accord_panel_header_active");
-}
-
-function open_next_theme3() {
-  getAccordion3.classList.remove("active");
-  accordionPanel3.classList.remove("accord_show");
-  accordionHeader3.classList.remove("accord_panel_header_active");
-
-  getAccordion4.classList.add("active");
-  accordionPanel4.classList.add("accord_show");
-  accordionHeader4.classList.add("accord_panel_header_active");
-}
-
-
-// Clicking next theme button will close the current one and open the next one
-document.getElementById("next_theme1").onclick = function () { open_next_theme1() };
-document.getElementById("next_theme2").onclick = function () { open_next_theme2() };
-document.getElementById("next_theme3").onclick = function () { open_next_theme3() };
-
 
 
 // Each accordion has its own Array, "Valmis!" button becomes available if every accordion array has atleast 1 item in it

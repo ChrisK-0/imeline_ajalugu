@@ -412,13 +412,6 @@ footer .footer_text p {
   font-weight: bold;
 }
 
-.accordion .accord_panel_header_active {
-  border: 1px solid #ffeb6b;
-  border-radius: 10px 10px 0 0;
-  background: #ffeb6b;
-  background: -ms-linear-gradient(90deg, #ffeb6b 0%, #ffef80 100%);
-}
-
 .accordion .selected_themes {
   float: right;
   color: #3f2916;
@@ -428,8 +421,16 @@ footer .footer_text p {
   padding: 10px;
 }
 
-/* Important - Accordion panel has display:none, this class will negate that and show the panel with JS */
+.accord_panel_header_active {
+  border: 1px solid #ffeb6b;
+  border-radius: 10px 10px 0 0;
+  display: block !important;
+  background: #ffeb6b;
+  background: -ms-linear-gradient(90deg, #ffeb6b 0%, #ffef80 100%);
+}
+
 .accord_show {
+  /* Important - Accordion panel has display:none, this class will negate that and show the panel with JS */
   display: block !important;
 }
 

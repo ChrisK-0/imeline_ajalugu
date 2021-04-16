@@ -77,3 +77,5 @@ Popup
 ### Code refinemenet
 
 Fixed CSS image path notation, made some SASS variables and renamed variables in accoridon.js from word_word to wordWord (camel case).
+
+Patch - Made next accordion button JS a lot shorter
