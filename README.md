@@ -79,3 +79,18 @@ Popup
 Fixed CSS image path notation, made some SASS variables and renamed variables in accoridon.js from word_word to wordWord (camel case).
 
 Patch - Made next accordion button JS a lot shorter
+
+
+## Day 6
+
+### Code refinement
+
+#### CSS
+Finally added "IMELINE" to the "Ajalugu" header with transformations. 
+Updated the cover image file in description.
+Other adjustments to the positioning code.
+
+#### JS
+Re-made checkbox background JS code from HTML to JS file (removed onChange from HTML).
+Removed get... variable names from inccorect locations and adjusted the code accordingly. (Tried to make the code gloabl-friendly)
+Other small adjustments.
