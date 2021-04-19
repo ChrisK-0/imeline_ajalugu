@@ -32,28 +32,28 @@ themeChangeBtn[1].onclick = function () { nextTheme() };
 themeChangeBtn[2].onclick = function () { nextTheme() };
 
 // getting next accordion elements
-var getAccordion = document.getElementsByClassName("active");
-var getPanel = document.getElementsByClassName("accord_show");
-var getHeader = document.getElementsByClassName("accord_panel_header_active");
+var activeAccordion = document.getElementsByClassName("active");
+var openedPanel = document.getElementsByClassName("accord_show");
+var activeHeader = document.getElementsByClassName("accord_panel_header_active");
 var nextBtn = document.getElementsByClassName("themeBtnActive");
 
 function nextTheme() {
   // gets next elements before the 3 special classes are removed with nextElementSibling
-  var getNextAccordion = getAccordion[0].nextElementSibling.nextElementSibling;
-  var getNextPanel = getPanel[0].nextElementSibling.nextElementSibling;
-  var getNextHeader = getAccordion[0].nextElementSibling.nextElementSibling.children[0];
+  var nextAccordion = activeAccordion[0].nextElementSibling.nextElementSibling;
+  var nextPanel = openedPanel[0].nextElementSibling.nextElementSibling;
+  var nextHeader = activeAccordion[0].nextElementSibling.nextElementSibling.children[0];
 
   // this closes the currently open accordion with theme change button
   nextBtn[0].onclick = function () {
     // adds 3 actives to the next ones
-    getNextPanel.classList.add("accord_show");
-    getNextHeader.classList.add("accord_panel_header_active");
-    getNextAccordion.classList.add("active");
+    nextPanel.classList.add("accord_show");
+    nextHeader.classList.add("accord_panel_header_active");
+    nextAccordion.classList.add("active");
 
     // removes the first found active class and since now there are 2, it removes the 3 classes from the first to close it, because only 1 accordion should be open at a time
-    getAccordion[0].classList.remove("active");
-    getPanel[0].classList.remove("accord_show");
-    getHeader[0].classList.remove("accord_panel_header_active");
+    activeAccordion[0].classList.remove("active");
+    openedPanel[0].classList.remove("accord_show");
+    activeHeader[0].classList.remove("accord_panel_header_active");
     nextBtn[0].classList.remove("themeBtnActive");
   }
 
