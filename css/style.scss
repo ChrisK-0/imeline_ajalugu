@@ -174,18 +174,16 @@ $fontSans: 'PT Sans Narrow', sans-serif;
 }
 
 .description {
+    margin-top: 50px;
     width: 100%;
-
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    align-items: stretch;
     justify-content: flex-start;
 
-
     .desc_text {
-        padding: 20px;
-        width: 70%;
-        flex-shrink: 3;
+        width: 100%;
+        max-width: 420px;
 
 
         display: flex;
@@ -211,14 +209,17 @@ $fontSans: 'PT Sans Narrow', sans-serif;
     }
 
     .desc_img {
-        padding: 10px;
-
+        display: flex;
+        flex-flow: row nowrap;
 
         img {
-            margin-left: 30px;
-            width: 100px;
-            height: 100px;
-            flex-shrink: 1;
+            padding-left: 40px;
+            align-self: flex-end;
+            max-width: 500px;
+            max-height: 200px;
+            margin-bottom: -30px;
+
+            z-index: -1;
         }
     }
 
@@ -291,6 +292,7 @@ $fontSans: 'PT Sans Narrow', sans-serif;
 }
 
 footer {
+    z-index: 2;
     background-color: #3b3530;
     width: 100%;
     display: flex;
@@ -298,6 +300,7 @@ footer {
     justify-content: center;
     align-items: center;
     align-content: center;
+    padding: 10px;
 
     .footer_text {
         width: 100%;
@@ -471,8 +474,8 @@ footer {
 
     .accord_content_img {
         margin-left: 30px;
-        width: 100px;
-        height: 100px;
+        width: 84px;
+        height: 84px;
         flex-grow: 1;
         flex-basis: auto;
     }
