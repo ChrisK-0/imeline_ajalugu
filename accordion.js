@@ -31,6 +31,7 @@ themeChangeBtn[0].onclick = function () { nextTheme() };
 themeChangeBtn[1].onclick = function () { nextTheme() };
 themeChangeBtn[2].onclick = function () { nextTheme() };
 
+// getting next accordion elements
 var getAccordion = document.getElementsByClassName("active");
 var getPanel = document.getElementsByClassName("accord_show");
 var getHeader = document.getElementsByClassName("accord_panel_header_active");
@@ -56,15 +57,30 @@ function nextTheme() {
     nextBtn[0].classList.remove("themeBtnActive");
   }
 
-
-
 }
 
 
-// change accordion label block background on checked
-function isChecked(elem) {
-  elem.parentNode.style.backgroundColor = (elem.checked) ? "#fff8cd" : '';
+
+// Whenver a checkbox is checked, it will gain background coloring
+// checkbox background color variables
+var gatherInputs = document.getElementsByClassName("accordionInput");
+
+// checkbox background color function
+function isChecked() {
+
+  if (this.checked === true) {
+    this.parentElement.style.backgroundColor = "#fff8cd";
+  } else {
+    this.parentElement.style.backgroundColor = "";
+  }
+
 }
+
+// checkbox background color event listener
+for (var i = 0; i < gatherInputs.length; i++) {
+  gatherInputs[i].addEventListener("change", isChecked);
+}
+
 
 
 // scrolls to accordion on red anchor text click
@@ -109,17 +125,6 @@ window.onclick = function (event) {
 
   }
 }
-
-
-
-
-
-
-/* --------------------------------------------------------------------------------------------------
-Above this line are automated, short scripts that dont require repeating. 
-Everything below should also be shorter, but I didnt have time/knowledge on making the code shorter .
---------------------------------------------------------------------------------------------------  */
-
 
 // Each accordion has its own Array, "Valmis!" button becomes available if every accordion array has atleast 1 item in it
 var accordionArray1 = [];
@@ -243,3 +248,11 @@ allCheckboxes.forEach(function (checkbox) {
     }
   })
 });
+
+
+// Valmis! button on click refreshes the page
+ValmisID.onclick = refreshPage;
+
+function refreshPage() {
+  location.href='index.html';
+}
