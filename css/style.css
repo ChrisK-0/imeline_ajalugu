@@ -209,7 +209,7 @@
       flex-shrink: 1;
 }
 
-.contents, .content_cover {
+.contents, .content_cover, .footer_text {
   max-width: 750px;
 }
 
@@ -308,7 +308,7 @@ footer {
 }
 
 footer .footer_text {
-  width: 40%;
+  width: 100%;
   padding: 25px 0;
   font-family: "PT Sans Narrow", sans-serif;
 }

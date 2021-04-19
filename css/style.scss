@@ -224,7 +224,7 @@ $fontSans: 'PT Sans Narrow', sans-serif;
 
 }
 
-.contents, .content_cover {
+.contents, .content_cover, .footer_text {
     max-width: 750px;
 }
 
@@ -300,7 +300,7 @@ footer {
     align-content: center;
 
     .footer_text {
-        width: 40%;
+        width: 100%;
         padding: 25px 0;
 
         font-family: $fontSans;
