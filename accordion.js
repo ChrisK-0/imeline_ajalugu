@@ -102,18 +102,7 @@ window.onclick = function (event) {
 }
 
 
-// variable for inital set
-var SelectSpans = document.getElementsByClassName("selected_themes");
-var AccSpanDefault = "0 / 3";
 
-// sets the spans to 0 on page inital load
-document.addEventListener('DOMContentLoaded', function () {
-  var i;
-
-  for (i = 0; i < SelectSpans.length; i++) {
-    SelectSpans[i].innerHTML = AccSpanDefault;
-  }
-}, false);
 
 
 

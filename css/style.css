@@ -27,17 +27,6 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  .left,
-  .right {
-    width: 0;
-    display: none;
-  }
-}
-
-.left, .right {
-  padding: 20px;
-  float: left;
-  width: 30%;
 }
 
 .cover_bg {
@@ -48,14 +37,20 @@
 }
 
 .content_cover {
-  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
   width: 100%;
   height: 100%;
   margin-bottom: 50px;
+  margin: 0 auto;
 }
 
 .content_cover .cover_note {
-  float: left;
   text-align: center;
   width: 225px;
   height: 75px;
@@ -93,17 +88,12 @@
   border-top: 20px solid #cc3e0f;
 }
 
-.content_cover .cover_main {
-  float: left;
-  width: 40%;
-}
-
-.content_cover .cover_main .cover_text {
+.content_cover .cover_text {
   float: left;
   width: 100%;
 }
 
-.content_cover .cover_main .cover_header {
+.content_cover .cover_header {
   width: 100%;
   float: left;
   margin-top: 80px;
@@ -113,33 +103,32 @@
 }
 
 @media only screen and (min-width: 1000px) {
-  .content_cover .cover_main .cover_header {
+  .content_cover .cover_header {
     font-size: 5.5vw;
   }
 }
 
-.content_cover .cover_main .cover_para {
+.content_cover .cover_para {
   float: left;
   font-size: 20px;
   font-family: "PT Sans Narrow", sans-serif;
   color: #222222;
+  text-shadow: 4px 2px 4px #fff;
   line-height: 1.5;
-  text-shadow: 0.707px 0.707px 1px rgba(255, 255, 255, 0.004);
   width: 60%;
-  opacity: 0.89;
 }
 
-.content_cover .cover_main .cover_glow {
+.content_cover .cover_glow {
   background-color: #fff;
   width: 100%;
   height: 100%;
 }
 
 .goto_accord {
-  float: left;
   width: 100%;
   -ms-flex-line-pack: center;
       align-content: center;
+  margin-bottom: 100px;
 }
 
 .goto_accord p {
@@ -220,8 +209,12 @@
       flex-shrink: 1;
 }
 
+.contents, .content_cover {
+  max-width: 750px;
+}
+
 .contents {
-  float: left;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -232,12 +225,6 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-}
-
-@media only screen and (min-width: 1000px) {
-  .contents {
-    width: 40%;
-  }
 }
 
 .contents .valmis_btn_spacing {
@@ -302,7 +289,6 @@
 
 footer {
   background-color: #3b3530;
-  float: left;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -322,7 +308,6 @@ footer {
 }
 
 footer .footer_text {
-  float: left;
   width: 40%;
   padding: 25px 0;
   font-family: "PT Sans Narrow", sans-serif;
