@@ -112,17 +112,29 @@ $fontSans: 'PT Sans Narrow', sans-serif;
 
 
         .cover_text {
-            float: left;
             width: 100%;
         }
 
-        .cover_header {
-            @media only screen and (min-width:1000px) {
-                font-size: 5.5vw;
-            }
+        .coverHeaderTransf {
+            font-size: 10px;
+            position: absolute;
+            top: 14px;
+            left: -4px;
 
+
+            transform-origin: 0 0;
+            transform: rotate(-65deg);
+
+            // legacy
+            -webkit-transform: rotate(-65deg);
+            -moz-transform: rotate(-65deg);
+            -ms-transform: rotate(-65deg);
+            -o-transform: rotate(-65deg);
+        }
+
+        .cover_header {
+            position: relative;
             width: 100%;
-            float: left;
             margin-top: 80px;
             font-size: 50px;
             font-family: "Bienetresocial";
@@ -436,7 +448,7 @@ footer {
     height: 100%;
     background-color: $color-white;
     overflow: hidden;
-    border-bottom: 2px solid #ffe756;
+    border-bottom: 1px solid #ffe756;
 
     /* For JS accordion */
     display: none;
@@ -454,7 +466,7 @@ footer {
     }
 }
 .accord_content {
-    border-bottom: 2px solid #ffe756;
+    border-bottom: 1px solid #ffe756;
 
 
     padding: 10px 0 10px 35px;
