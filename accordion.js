@@ -84,10 +84,10 @@ for (var i = 0; i < gatherInputs.length; i++) {
 
 
 // scrolls to accordion on red anchor text click
-document.getElementById("goto_accord_anchor").onclick = function () { gotoAccord() };
-function gotoAccord() {
-  var elem = document.getElementById("accord_title");
-  elem.scrollIntoView({ behavior: "smooth", block: "start" });
+document.getElementById("goto_accord_anchor").onclick = scrollToAccord;
+function scrollToAccord() {
+  var scrollDestination = document.getElementById("accord_title");
+  scrollDestination.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 
