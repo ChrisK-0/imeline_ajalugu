@@ -234,7 +234,7 @@
           flex-flow: column wrap;
 }
 
-.contents .valmis_btn_spacing {
+.contents .doneBtnDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -243,17 +243,29 @@
           justify-content: center;
 }
 
-.contents .valmis_btn_spacing .valmis_button {
+.contents .doneBtnDiv .doneButton {
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: bold;
+  line-height: 0.8;
+  font-size: 30px;
+  font-family: "PT Sans Narrow", sans-serif;
+  text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid #7b1700;
+  border-radius: 6px;
+  background: #b72a00;
+  background: -ms-linear-gradient(90deg, #b72a00 0%, #951c00 100%);
+  -webkit-box-shadow: inset 0px 1px 1px 0px rgba(197, 82, 48, 0.75);
+          box-shadow: inset 0px 1px 1px 0px rgba(197, 82, 48, 0.75);
   color: #e2e2e2;
-  padding: 20px 10px;
+  position: relative;
+  padding: 20px 0;
   margin: 20px 0;
   width: 150px;
   font-weight: bold;
   line-height: 0.8;
   text-align: center;
   font-size: 30px;
-  font-family: "PT Sans Narrow", sans-serif;
-  text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
   border: 1px solid #999999;
   border-radius: 6px;
   background: #b1b1b1;
@@ -261,14 +273,11 @@
           box-shadow: inset 0px 1px 1px 0px rgba(192, 192, 192, 0.75);
 }
 
-.contents .valmis_btn_spacing ._valmis {
-  padding: 15px 45px;
+.contents .doneBtnDiv .doneBtnReady {
   color: #fff;
-  position: relative;
   margin-bottom: 20px;
   font-weight: bold;
   line-height: 0.8;
-  text-align: center;
   font-size: 30px;
   font-family: "PT Sans Narrow", sans-serif;
   text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
@@ -457,11 +466,9 @@ footer .footer_text p {
   width: 220px;
   padding: 20px 10px;
   color: #fff;
-  position: relative;
   margin-bottom: 20px;
   font-weight: bold;
   line-height: 0.8;
-  text-align: center;
   font-size: 30px;
   font-family: "PT Sans Narrow", sans-serif;
   text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);

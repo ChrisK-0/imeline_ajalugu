@@ -218,7 +218,7 @@ accordionCheckboxes4.forEach(function (checkbox) {
 // Variable that selects all checkboxes
 var allCheckboxes = document.querySelectorAll("input[type=checkbox]");
 // Variable for "Valmis!" button element id, for shorter code
-var ValmisID = document.getElementById("button_send");
+var ValmisID = document.getElementById("doneButton");
 
 // Event listener for every checkbox to determine if there is atleast 1 theme checked in every accordion
 // Also enable "Valmis!" button if atleast 1 checkbox is checked in every accordion
@@ -226,11 +226,11 @@ allCheckboxes.forEach(function (checkbox) {
   checkbox.addEventListener('change', function () {
     if (accordionArray1.length != 0 && accordionArray2.length != 0 && accordionArray3.length != 0 && accordionArray4.length != 0) {
       ValmisID.disabled = false;
-      ValmisID.classList.add("_valmis");
+      ValmisID.classList.add("doneBtnReady");
 
     } else {
       ValmisID.disabled = true;
-      ValmisID.classList.remove("_valmis");
+      ValmisID.classList.remove("doneBtnReady");
     }
   })
 });

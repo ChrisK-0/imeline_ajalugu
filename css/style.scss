@@ -28,12 +28,10 @@ $fontSans: 'PT Sans Narrow', sans-serif;
 
 @mixin redButton {
     color: $color-white;
-    position: relative;
     margin-bottom: 20px;
 
     font-weight: bold;
     line-height: 0.8;
-    text-align: center;
     font-size: 30px;
     font-family: $fontSans;
     text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
@@ -239,14 +237,16 @@ $fontSans: 'PT Sans Narrow', sans-serif;
 
 
 
-    .valmis_btn_spacing {
+    .doneBtnDiv {
         display: flex;
         justify-content: center;
 
 
-        .valmis_button {
+        .doneButton {
+            @include redButton;
             color: #e2e2e2;
-            padding: 20px 10px;
+            position: relative;
+            padding: 20px 0;
             margin: 20px 0;
             width: 150px;
 
@@ -254,18 +254,18 @@ $fontSans: 'PT Sans Narrow', sans-serif;
             line-height: 0.8;
             text-align: center;
             font-size: 30px;
-            font-family: $fontSans;
-            text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
 
             border: 1px solid #999999;
             border-radius: 6px;
             background: #b1b1b1;
             box-shadow: inset 0px 1px 1px 0px rgba(192, 192, 192, 0.75);
+
+            ////////////////////////////////////////////////
+
         }
 
         // gets applied to "Valmis!" button when atleast 1 checkbox is checked in every accordion block
-        ._valmis {
-            padding: 15px 45px;
+        .doneBtnReady {
             @include redButton;
         }
     }
