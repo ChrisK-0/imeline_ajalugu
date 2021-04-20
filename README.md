@@ -94,3 +94,21 @@ Other adjustments to the positioning code.
 Re-made checkbox background JS code from HTML to JS file (removed onChange from HTML).
 Removed get... variable names from inccorect locations and adjusted the code accordingly. (Tried to make the code gloabl-friendly)
 Other small adjustments.
+
+
+## Day 7
+
+### Code refinement
+
+#### CSS
+Active header no longer has a tiny gap between the first label and the button elements
+
+#### JS
+Adjusted the next_theme button function and manually opening an accordion function to log text instead of sending an error
+Counter made under one function
+* It is unreasonably long, but works (planning to make it shorter)
+* When 3 checkboxes are checked, a 4th (checkboxes not checked) will get disabled attribute
+
+
+Counter and checkbox disabling in action (I am clicking the 4th one, even if it's hard to tell from a GIF)
+![Counter GIF](https://i.imgur.com/zLwaPhF.gif)
