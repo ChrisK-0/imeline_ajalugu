@@ -18,13 +18,13 @@ for (var i = 0; i < accordionBtn.length; i++) {
       this.classList.toggle("active");
       this.nextElementSibling.classList.toggle("accord_show");
       this.children[0].classList.toggle("accord_panel_header_active");
-      if ( !!findThemeBtnDiv ) {
+      if (!!findThemeBtnDiv) {
         findThemeBtnDiv.children[0].classList.toggle("themeBtnActive");
       } else {
         console.log("There is no next accordion to give theme change button active class");
       }
 
-      
+
     }
   }
 }
@@ -130,7 +130,7 @@ modalSpan.onclick = closeModal;
 
 // when the user clicks ESC on their keyboard, close the modal
 window.addEventListener('keydown', function (event) {
-  if (event.key === 'Escape' ) {
+  if (event.key === 'Escape') {
     closeModal();
   }
 });
@@ -145,123 +145,222 @@ window.onclick = function (event) {
 
 
 
+// Checked accordion checkboxes to be collected
+var queryCheckBoxes = document.querySelectorAll("input[type=checkbox][class=accordionInput]");
+var classCheckBoxes = document.getElementsByClassName("accordionInput");
+
+var accordionCheckBoxes1 = document.querySelectorAll("input[type=checkbox][name=accord_section1]");
+var checkBoxesName1 = document.getElementsByName("accord_section1");
+
+var accordionCheckBoxes2 = document.querySelectorAll("input[type=checkbox][name=accord_section2]");
+var checkBoxesName2 = document.getElementsByName("accord_section2");
+
+var accordionCheckBoxes3 = document.querySelectorAll("input[type=checkbox][name=accord_section3]");
+var checkBoxesName3 = document.getElementsByName("accord_section3");
+
+var accordionCheckBoxes4 = document.querySelectorAll("input[type=checkbox][name=accord_section4]");
+var checkBoxesName4 = document.getElementsByName("accord_section4");
+
+
 // Each accordion has its own Array, "Valmis!" button becomes available if every accordion array has atleast 1 item in it
 var accordionArray1 = [];
 var accordionArray2 = [];
 var accordionArray3 = [];
 var accordionArray4 = [];
 
-// Checked accordion checkboxes to be collected
-var accordionCheckboxes1 = document.querySelectorAll("input[type=checkbox][name=accord_section1]");
-var accordionCheckboxes2 = document.querySelectorAll("input[type=checkbox][name=accord_section2]");
-var accordionCheckboxes3 = document.querySelectorAll("input[type=checkbox][name=accord_section3]");
-var accordionCheckboxes4 = document.querySelectorAll("input[type=checkbox][name=accord_section4]");
+// counter inner HTML variables
+var counterSpan1 = document.getElementById("accord_span_1"); // .innerHTML;
+var counterSpan2 = document.getElementById("accord_span_2");
+var counterSpan3 = document.getElementById("accord_span_3");
+var counterSpan4 = document.getElementById("accord_span_4");
 
 /*
 Here are 4 event listeners. Each accordion has it's own special collector, which adds and removes checkbox values from arrays.
 This was made, to make the "Valmis!" button available when every accordion has atleast 1 checkbox checked. It works by checking, that none of 
 the accordion arrays are empty, and if they are not empty, the button is clickable. Otherwise the button is disabled.
 */
-// Event listener and collector for the first array.
-accordionCheckboxes1.forEach(function (checkbox) {
+queryCheckBoxes.forEach(function (checkbox) {
   checkbox.addEventListener('change', function () {
+
+    // Accordion #1 -----------------------------------------------
     accordionArray1 =
-      Array.from(accordionCheckboxes1) // Convert checkboxes to an array to use filter and map.
+      Array.from(accordionCheckBoxes1) // Convert checkboxes to an array to use filter and map.
+        .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
+        .map(i => i.value); // Use Array.map to extract only the checkbox values from the array of objects.
+
+    console.log('\n'+"Array1: " + accordionArray1);
+
+    // Counter for the selected events in each accordion block.
+    // If counter is equal to 0, set it to 0 / 3
+    if (accordionArray1.length === 0) {
+      counterSpan1.innerHTML = "0 / 3";
+    }
+    // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
+    else if (accordionArray1.length === 3) {
+
+      counterSpan1.innerHTML = "3 / 3";
+
+      for (var i = 0; i < checkBoxesName1.length; i++) {
+
+        // disables unchecked checkboxes when array has length of 3 (3 checkboxes are checked)
+        if (checkBoxesName1[i].checked == false) {
+          checkBoxesName1[i].disabled = true;
+        }
+      }
+
+    }
+    // If it is less than 3, increment it by 1 whenever a checkbox gets checked. Also remove disabled from disabled checkboxes
+    else if (accordionArray1.length < 3) {
+
+      for (var i = 0; i < checkBoxesName1.length; i++) {
+        if (checkBoxesName1[i].disabled == true) {
+          checkBoxesName1[i].disabled = false;
+        }
+      }
+
+      counterSpan1.innerHTML = accordionArray1.length + " / 3";
+    }
+
+
+    // Accordion #2 -----------------------------------------------
+    accordionArray2 =
+      Array.from(accordionCheckBoxes2) // Convert checkboxes to an array to use filter and map.
         .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
         .map(i => i.value) // Use Array.map to extract only the checkbox values from the array of objects.
 
-    console.log(accordionArray1)
+    console.log("Array2: " + accordionArray2)
 
-    // Counter for the selected events in each accordion block
-    var x = accordionArray1.length;
-    if (accordionArray1.length === 0) {
-      document.getElementById("accord_span_1").innerHTML = "0 / 3";
-    } else if (accordionArray1.length < 4) {
-      document.getElementById("accord_span_1").innerHTML = x + " / 3";
+    // Counter for the selected events in each accordion block.
+    // If counter is equal to 0, set it to 0 / 3
+    if (accordionArray2.length === 0) {
+      counterSpan2.innerHTML = "0 / 3";
     }
+    // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
+    else if (accordionArray2.length === 3) {
 
+      counterSpan2.innerHTML = "3 / 3";
 
-    for (var i = 0 ; i < accordionCheckboxes1.length ; i++) {
-      console.log("yes");
-    }
-    // hello
+      for (var i = 0; i < checkBoxesName2.length; i++) {
 
-    /* Attempt to disable all unchecked boxes when there are 3 checkboxes checked
-    else if (accordionArray1.length === 3) {
-
-      var checkedInput = document.getElementsByTagName("input").checked;
-      checkedInput.disabled = true;
+        // disables unchecked checkboxes when array has length of 3 (3 checkboxes are checked)
+        if (checkBoxesName2[i].checked == false) {
+          checkBoxesName2[i].disabled = true;
+        }
+      }
 
     }
-    */
+    // If it is less than 3, increment it by 1 whenever a checkbox gets checked. Also remove disabled from disabled checkboxes
+    else if (accordionArray2.length < 3) {
 
-  })
-});
+      for (var i = 0; i < checkBoxesName2.length; i++) {
+        if (checkBoxesName2[i].disabled == true) {
+          checkBoxesName2[i].disabled = false;
+        }
+      }
 
-accordionCheckboxes2.forEach(function (checkbox) {
-  checkbox.addEventListener('change', function () {
-    accordionArray2 =
-      Array.from(accordionCheckboxes2)
-        .filter(i => i.checked)
-        .map(i => i.value)
-
-    console.log(accordionArray2)
-
-    var x = accordionArray2.length;
-    if (x.length === 0) {
-      document.getElementById("accord_span_2").innerHTML = "0 / 3";
-    } else if (x < 4) {
-      document.getElementById("accord_span_2").innerHTML = x + " / 3";
+      counterSpan2.innerHTML = accordionArray2.length + " / 3";
     }
-  })
-});
 
-accordionCheckboxes3.forEach(function (checkbox) {
-  checkbox.addEventListener('change', function () {
+    // Accordion #3 -----------------------------------------------
     accordionArray3 =
-      Array.from(accordionCheckboxes3)
-        .filter(i => i.checked)
-        .map(i => i.value)
+      Array.from(accordionCheckBoxes3) // Convert checkboxes to an array to use filter and map.
+        .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
+        .map(i => i.value) // Use Array.map to extract only the checkbox values from the array of objects.
 
-    console.log(accordionArray3)
+    console.log("Array3: " + accordionArray3)
 
-    var x = accordionArray3.length;
+    // Counter for the selected events in each accordion block.
+    // If counter is equal to 0, set it to 0 / 3
     if (accordionArray3.length === 0) {
-      document.getElementById("accord_span_3").innerHTML = "0 / 3";
-    } else if (accordionArray3.length < 4) {
-      document.getElementById("accord_span_3").innerHTML = x + " / 3";
+      counterSpan3.innerHTML = "0 / 3";
     }
-  })
-});
+    // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
+    else if (accordionArray3.length === 3) {
 
-accordionCheckboxes4.forEach(function (checkbox) {
-  checkbox.addEventListener('change', function () {
+      counterSpan3.innerHTML = "3 / 3";
+
+      for (var i = 0; i < checkBoxesName3.length; i++) {
+
+        // disables unchecked checkboxes when array has length of 3 (3 checkboxes are checked)
+        if (checkBoxesName3[i].checked == false) {
+          checkBoxesName3[i].disabled = true;
+        }
+      }
+
+    }
+    // If it is less than 3, increment it by 1 whenever a checkbox gets checked. Also remove disabled from disabled checkboxes
+    else if (accordionArray3.length < 3) {
+
+      for (var i = 0; i < checkBoxesName3.length; i++) {
+        if (checkBoxesName3[i].disabled == true) {
+          checkBoxesName3[i].disabled = false;
+        }
+      }
+
+      counterSpan3.innerHTML = accordionArray3.length + " / 3";
+    }
+
+    // Accordion #4 -----------------------------------------------
     accordionArray4 =
-      Array.from(accordionCheckboxes4)
-        .filter(i => i.checked)
-        .map(i => i.value)
+      Array.from(accordionCheckBoxes4) // Convert checkboxes to an array to use filter and map.
+        .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
+        .map(i => i.value) // Use Array.map to extract only the checkbox values from the array of objects.
 
-    console.log(accordionArray4)
+    console.log("Array4: " + accordionArray4)
 
-    var x = accordionArray4.length;
+    // Counter for the selected events in each accordion block.
+    // If counter is equal to 0, set it to 0 / 3
     if (accordionArray4.length === 0) {
-      document.getElementById("accord_span_4").innerHTML = "0 / 3";
-    } else if (accordionArray4.length < 4) {
-      document.getElementById("accord_span_4").innerHTML = x + " / 3";
+      counterSpan4.innerHTML = "0 / 3";
     }
+    // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
+    else if (accordionArray4.length === 3) {
+
+      counterSpan4.innerHTML = "3 / 3";
+
+      for (var i = 0; i < checkBoxesName4.length; i++) {
+
+        // disables unchecked checkboxes when array has length of 3 (3 checkboxes are checked)
+        if (checkBoxesName4[i].checked == false) {
+          checkBoxesName4[i].disabled = true;
+        }
+      }
+
+    }
+    // If it is less than 3, increment it by 1 whenever a checkbox gets checked. Also remove disabled from disabled checkboxes
+    else if (accordionArray4.length < 3) {
+
+      for (var i = 0; i < checkBoxesName1.length; i++) {
+        if (checkBoxesName4[i].disabled == true) {
+          checkBoxesName4[i].disabled = false;
+        }
+      }
+
+      counterSpan4.innerHTML = accordionArray4.length + " / 3";
+    }
+
   })
 });
 
 
 
-// Variable that selects all checkboxes
-var allCheckboxes = document.querySelectorAll("input[type=checkbox]");
+
+
+
+
+
+
+
+
+
+
 // Variable for "Valmis!" button element id, for shorter code
 var ValmisID = document.getElementById("doneButton");
 
 // Event listener for every checkbox to determine if there is atleast 1 theme checked in every accordion
 // Also enable "Valmis!" button if atleast 1 checkbox is checked in every accordion
-allCheckboxes.forEach(function (checkbox) {
+// accordion checkbox selector variable on line 149
+queryCheckBoxes.forEach(function (checkbox) {
   checkbox.addEventListener('change', function () {
     if (accordionArray1.length != 0 && accordionArray2.length != 0 && accordionArray3.length != 0 && accordionArray4.length != 0) {
       ValmisID.disabled = false;
@@ -279,5 +378,5 @@ allCheckboxes.forEach(function (checkbox) {
 ValmisID.onclick = refreshPage;
 
 function refreshPage() {
-  location.href='index.html';
+  location.href = 'index.html';
 }
