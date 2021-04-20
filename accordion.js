@@ -181,6 +181,10 @@ accordionCheckboxes1.forEach(function (checkbox) {
     }
 
 
+    for (var i = 0 ; i < accordionCheckboxes1.length ; i++) {
+      console.log("yes");
+    }
+    // hello
 
     /* Attempt to disable all unchecked boxes when there are 3 checkboxes checked
     else if (accordionArray1.length === 3) {
