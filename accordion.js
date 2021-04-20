@@ -12,17 +12,18 @@ for (var i = 0; i < accordionBtn.length; i++) {
     setClass(accordionHeader, 'accord_panel_header_active', 'remove');
     setClass(themeChangeBtn, 'themeBtnActive', 'remove');
 
+    var findThemeBtnDiv = this.nextElementSibling.children[4];
+
     if (setClasses) {
       this.classList.toggle("active");
       this.nextElementSibling.classList.toggle("accord_show");
       this.children[0].classList.toggle("accord_panel_header_active");
-      if (typeof this.nextElementSibling.children[4].children[0] !== "undefined") {
-        this.nextElementSibling.children[4].children[0].classList.toggle("themeBtnActive");
-
+      if ( !!findThemeBtnDiv ) {
+        findThemeBtnDiv.children[0].classList.toggle("themeBtnActive");
       } else {
-        console.log("Next theme does not have a theme change button");
-        
+        console.log("There is no next accordion to give theme change button active class");
       }
+
       
     }
   }
@@ -178,6 +179,8 @@ accordionCheckboxes1.forEach(function (checkbox) {
     } else if (accordionArray1.length < 4) {
       document.getElementById("accord_span_1").innerHTML = x + " / 3";
     }
+
+
 
     /* Attempt to disable all unchecked boxes when there are 3 checkboxes checked
     else if (accordionArray1.length === 3) {
