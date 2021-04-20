@@ -16,7 +16,14 @@ for (var i = 0; i < accordionBtn.length; i++) {
       this.classList.toggle("active");
       this.nextElementSibling.classList.toggle("accord_show");
       this.children[0].classList.toggle("accord_panel_header_active");
-      this.nextElementSibling.children[4].children[0].classList.toggle("themeBtnActive");
+      if (typeof this.nextElementSibling.children[4].children[0] !== "undefined") {
+        this.nextElementSibling.children[4].children[0].classList.toggle("themeBtnActive");
+
+      } else {
+        console.log("Next theme does not have a theme change button");
+        
+      }
+      
     }
   }
 }
@@ -26,38 +33,46 @@ function setClass(els, className, fnName) {
   }
 }
 
-// Next theme button. Closest the current one and opens the next one
-themeChangeBtn[0].onclick = function () { nextTheme() };
-themeChangeBtn[1].onclick = function () { nextTheme() };
-themeChangeBtn[2].onclick = function () { nextTheme() };
 
-// getting next accordion elements
+
+// gathers first currently active accordion details
 var activeAccordion = document.getElementsByClassName("active");
 var openedPanel = document.getElementsByClassName("accord_show");
 var activeHeader = document.getElementsByClassName("accord_panel_header_active");
-var nextBtn = document.getElementsByClassName("themeBtnActive");
+var activeThemeBtn = document.getElementsByClassName("themeBtnActive");
 
+// declared function for the theme change buttons
 function nextTheme() {
   // gets next elements before the 3 special classes are removed with nextElementSibling
   var nextAccordion = activeAccordion[0].nextElementSibling.nextElementSibling;
   var nextPanel = openedPanel[0].nextElementSibling.nextElementSibling;
   var nextHeader = activeAccordion[0].nextElementSibling.nextElementSibling.children[0];
 
-  // this closes the currently open accordion with theme change button
-  nextBtn[0].onclick = function () {
-    // adds 3 actives to the next ones
-    nextPanel.classList.add("accord_show");
-    nextHeader.classList.add("accord_panel_header_active");
-    nextAccordion.classList.add("active");
+  // adds 3 actives to the next ones
+  nextPanel.classList.add("accord_show");
+  nextHeader.classList.add("accord_panel_header_active");
+  nextAccordion.classList.add("active");
 
-    // removes the first found active class and since now there are 2, it removes the 3 classes from the first to close it, because only 1 accordion should be open at a time
-    activeAccordion[0].classList.remove("active");
-    openedPanel[0].classList.remove("accord_show");
-    activeHeader[0].classList.remove("accord_panel_header_active");
-    nextBtn[0].classList.remove("themeBtnActive");
+  // removes the first found active class and since now there are 2, it removes the 3 classes from the first to close it, because only 1 accordion should be open at a time
+  activeAccordion[0].classList.remove("active");
+  openedPanel[0].classList.remove("accord_show");
+  activeHeader[0].classList.remove("accord_panel_header_active");
+
+
+
+  if (typeof activeThemeBtn[0] !== "undefined") {
+    activeThemeBtn[0].classList.remove("themeBtnActive");
+  } else {
+    console.log("There is no next theme button");
   }
 
 }
+
+// Next theme button. Closest the current one and opens the next one
+// variable for classes declared on line 5
+themeChangeBtn[0].onclick = function () { nextTheme() };
+themeChangeBtn[1].onclick = function () { nextTheme() };
+themeChangeBtn[2].onclick = function () { nextTheme() };
 
 
 
@@ -83,12 +98,14 @@ for (var i = 0; i < gatherInputs.length; i++) {
 
 
 
+
 // scrolls to accordion on red anchor text click
 document.getElementById("goto_accord_anchor").onclick = scrollToAccord;
 function scrollToAccord() {
   var scrollDestination = document.getElementById("accord_title");
   scrollDestination.scrollIntoView({ behavior: "smooth", block: "start" });
 }
+
 
 
 // get the modal
@@ -101,7 +118,6 @@ var modalSpan = document.getElementsByClassName("closeModal")[0];
 function closeModal() {
   modal.style.display = "none";
 };
-
 
 // when the user clicks on the anchor text, open the modal
 openModal.onclick = function () {
@@ -126,6 +142,8 @@ window.onclick = function (event) {
   }
 }
 
+
+
 // Each accordion has its own Array, "Valmis!" button becomes available if every accordion array has atleast 1 item in it
 var accordionArray1 = [];
 var accordionArray2 = [];
@@ -139,7 +157,7 @@ var accordionCheckboxes3 = document.querySelectorAll("input[type=checkbox][name=
 var accordionCheckboxes4 = document.querySelectorAll("input[type=checkbox][name=accord_section4]");
 
 /*
-Here are 3 event listeners. Each accordion has it's own special collector, which adds and removes checkbox values from arrays.
+Here are 4 event listeners. Each accordion has it's own special collector, which adds and removes checkbox values from arrays.
 This was made, to make the "Valmis!" button available when every accordion has atleast 1 checkbox checked. It works by checking, that none of 
 the accordion arrays are empty, and if they are not empty, the button is clickable. Otherwise the button is disabled.
 */
