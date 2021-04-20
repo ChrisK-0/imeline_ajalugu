@@ -391,28 +391,32 @@ footer {
     transition: 0.4s;
     margin: 25px 0 0 0;
     border-bottom: 1px solid #ffe756;
+    padding-bottom: 0px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 
     &:hover {
         background-color: #ccc;
     }
 
     .accord_panel_header {
-
         font-family: "BienetresocialBold";
         font-size: 20px;
         color: #3f2916;
-        line-height: 1.05;
         padding: 10px;
         position: relative;
         left: -1%;
-        float: left;
         font-weight: bold;
+
+        // to counter the 1px from the active class
+        border: 1px none;
     }
 
 
 
     .selected_themes {
-        float: right;
         color: #3f2916;
         font-family: $fontSans;
         font-size: 24px;
@@ -423,17 +427,18 @@ footer {
 
 
 
-    // Opened accordion span header will have yellow-ish background
-    .accord_panel_header_active {
-        border: 1px solid #ffeb6b;
-        border-radius: 10px 10px 0 0;
-        display: block !important;
+// Opened accordion span header will have yellow-ish background
+.accord_panel_header_active {
+    border: px solid #ffeb6b;
+    border-radius: 10px 10px 0 0;
+    display: block !important;
 
-        background: #ffeb6b;
-        background: -moz-linear-gradient(90deg, rgba(255, 235, 107, 1) 0%, rgba(255, 239, 128, 1) 100%);
-        background: -webkit-linear-gradient(90deg, rgba(255, 235, 107, 1) 0%, rgba(255, 239, 128, 1) 100%);
-        background: -ms-linear-gradient(90deg, rgba(255, 235, 107, 1) 0%, rgba(255, 239, 128, 1) 100%);
-    }
+    background: #ffeb6b;
+    background: -moz-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
+    background: -ms-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
+    box-shadow: inset 0px 1px 1px 0px rgba(255, 231, 86, 0.75);
+}
 
 .accord_show {
     /* Important - Accordion panel has display:none, this class will negate that and show the panel with JS */

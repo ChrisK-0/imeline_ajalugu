@@ -406,6 +406,17 @@ footer .footer_text p {
   transition: 0.4s;
   margin: 25px 0 0 0;
   border-bottom: 1px solid #ffe756;
+  padding-bottom: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .accordion:hover {
@@ -416,16 +427,14 @@ footer .footer_text p {
   font-family: "BienetresocialBold";
   font-size: 20px;
   color: #3f2916;
-  line-height: 1.05;
   padding: 10px;
   position: relative;
   left: -1%;
-  float: left;
   font-weight: bold;
+  border: 1px none;
 }
 
 .accordion .selected_themes {
-  float: right;
   color: #3f2916;
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 24px;
@@ -434,11 +443,13 @@ footer .footer_text p {
 }
 
 .accord_panel_header_active {
-  border: 1px solid #ffeb6b;
+  border: px solid #ffeb6b;
   border-radius: 10px 10px 0 0;
   display: block !important;
   background: #ffeb6b;
-  background: -ms-linear-gradient(90deg, #ffeb6b 0%, #ffef80 100%);
+  background: -ms-linear-gradient(90deg, #ffef80 0%, #ffe756 100%);
+  -webkit-box-shadow: inset 0px 1px 1px 0px rgba(255, 231, 86, 0.75);
+          box-shadow: inset 0px 1px 1px 0px rgba(255, 231, 86, 0.75);
 }
 
 .accord_show {
