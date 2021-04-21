@@ -112,3 +112,19 @@ Counter made under one function
 
 Counter and checkbox disabling in action (I am clicking the 4th one, even if it's hard to tell from a GIF)
 ![Counter GIF](https://i.imgur.com/zLwaPhF.gif)
+
+
+## Day 8
+
+### Re-writing
+
+" I am working on the code locally, no commits will be made, unless progress is made "
+
+Currently the code is hard-coded for the currently setup 4 accordion blocks and 4 accordion themes. I started re-doing the last bit of code that is yet to be automated. Currently JS file has to be modified, when more accordion blocks are added.
+Working on an automated code, that does not require changing lines in the JS file. 
+Functions under this code are:
+* Theme counter
+* When 3 themes are checked, other checkboxes will get disabled attribute
+* Disabled checkboxes get gray-ish background
+* Enabling Valmis! button when every accordion has atleast 1 checkbox
+
