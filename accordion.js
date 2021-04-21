@@ -83,7 +83,6 @@ var gatherInputs = document.getElementsByClassName("accordionInput");
 
 // checkbox background color function
 function isChecked() {
-
   if (this.checked === true) {
     this.parentElement.style.backgroundColor = "#fff8cd";
   } else {
@@ -193,12 +192,12 @@ queryCheckBoxes.forEach(function (checkbox) {
     // Counter for the selected events in each accordion block.
     // If counter is equal to 0, set it to 0 / 3
     if (accordionArray1.length === 0) {
-      counterSpan1.innerHTML = "0 / 3";
+      counterSpan1.innerHTML = "0";
     }
     // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
     else if (accordionArray1.length === 3) {
 
-      counterSpan1.innerHTML = "3 / 3";
+      counterSpan1.innerHTML = "3";
 
       for (var i = 0; i < checkBoxesName1.length; i++) {
 
@@ -218,7 +217,7 @@ queryCheckBoxes.forEach(function (checkbox) {
         }
       }
 
-      counterSpan1.innerHTML = accordionArray1.length + " / 3";
+      counterSpan1.innerHTML = accordionArray1.length;
     }
 
 
@@ -233,12 +232,12 @@ queryCheckBoxes.forEach(function (checkbox) {
     // Counter for the selected events in each accordion block.
     // If counter is equal to 0, set it to 0 / 3
     if (accordionArray2.length === 0) {
-      counterSpan2.innerHTML = "0 / 3";
+      counterSpan2.innerHTML = "0";
     }
     // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
     else if (accordionArray2.length === 3) {
 
-      counterSpan2.innerHTML = "3 / 3";
+      counterSpan2.innerHTML = "3";
 
       for (var i = 0; i < checkBoxesName2.length; i++) {
 
@@ -258,7 +257,7 @@ queryCheckBoxes.forEach(function (checkbox) {
         }
       }
 
-      counterSpan2.innerHTML = accordionArray2.length + " / 3";
+      counterSpan2.innerHTML = accordionArray2.length;
     }
 
     // Accordion #3 -----------------------------------------------
@@ -272,12 +271,12 @@ queryCheckBoxes.forEach(function (checkbox) {
     // Counter for the selected events in each accordion block.
     // If counter is equal to 0, set it to 0 / 3
     if (accordionArray3.length === 0) {
-      counterSpan3.innerHTML = "0 / 3";
+      counterSpan3.innerHTML = "0";
     }
     // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
     else if (accordionArray3.length === 3) {
 
-      counterSpan3.innerHTML = "3 / 3";
+      counterSpan3.innerHTML = "3";
 
       for (var i = 0; i < checkBoxesName3.length; i++) {
 
@@ -297,7 +296,7 @@ queryCheckBoxes.forEach(function (checkbox) {
         }
       }
 
-      counterSpan3.innerHTML = accordionArray3.length + " / 3";
+      counterSpan3.innerHTML = accordionArray3.length;
     }
 
     // Accordion #4 -----------------------------------------------
@@ -311,12 +310,12 @@ queryCheckBoxes.forEach(function (checkbox) {
     // Counter for the selected events in each accordion block.
     // If counter is equal to 0, set it to 0 / 3
     if (accordionArray4.length === 0) {
-      counterSpan4.innerHTML = "0 / 3";
+      counterSpan4.innerHTML = "0";
     }
     // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
     else if (accordionArray4.length === 3) {
 
-      counterSpan4.innerHTML = "3 / 3";
+      counterSpan4.innerHTML = "3";
 
       for (var i = 0; i < checkBoxesName4.length; i++) {
 
@@ -336,10 +335,11 @@ queryCheckBoxes.forEach(function (checkbox) {
         }
       }
 
-      counterSpan4.innerHTML = accordionArray4.length + " / 3";
+      counterSpan4.innerHTML = accordionArray4.length;
     }
 
   })
+
 });
 
 

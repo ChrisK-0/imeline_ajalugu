@@ -442,6 +442,10 @@ footer .footer_text p {
   padding: 10px;
 }
 
+.accordion .selected_themes span {
+  padding: 0;
+}
+
 .accord_panel_header_active {
   border: px solid #ffeb6b;
   border-radius: 10px 10px 0 0;
@@ -567,6 +571,7 @@ footer .footer_text p {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  padding-right: 25px;
 }
 
 .accord_content .checkmark {
