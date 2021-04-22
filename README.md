@@ -128,3 +128,12 @@ Functions under this code are:
 * Disabled checkboxes get gray-ish background
 * Enabling Valmis! button when every accordion has atleast 1 checkbox
 
+
+## Day 9
+
+### Still implementing an automated "Valmis!" button enabling system
+
+" I am working on the code locally, no commits will be made, unless progress is made "
+
+Managed to get gray backgrounds on unchecked checkboxes and even tested with a 5th accordion block and added more themes into it, but sometimes the code "crashes" and does not count checked boxes.
+Also sometimes one of the checkboxes in the 5th block does not count whilst others in the same accordion block do.
