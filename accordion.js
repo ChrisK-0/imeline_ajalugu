@@ -3,7 +3,19 @@ var accordionBtn = document.getElementsByClassName('accordion');
 var accordionPanel = document.getElementsByClassName('accord_panel');
 var accordionHeader = document.getElementsByClassName('accord_panel_header');
 var themeChangeBtn = document.getElementsByClassName('next_theme');
-// var allCheckboxes = accordionBtn.querySelectorAll("input[type=checkbox][class=accordionInput]");
+var allCheckboxes = document.querySelectorAll("input[type=checkbox][class=accordionInput]");
+
+// Variable for "Valmis!" button element id
+var ValmisID = document.getElementById("doneButton");
+
+// gathers first currently active accordion details
+// for nextTheme function
+var activeAccordion = document.getElementsByClassName("active");
+var openedPanel = document.getElementsByClassName("accord_show");
+var activeHeader = document.getElementsByClassName("accord_panel_header_active");
+var activeThemeBtn = document.getElementsByClassName("themeBtnActive");
+
+
 
 
 for (var i = 0; i < accordionBtn.length; i++) {
@@ -30,7 +42,90 @@ for (var i = 0; i < accordionBtn.length; i++) {
       } else {
         console.log("There is no next accordion to give theme change button active class");
       }
+
+
+
+      var activeCheckboxArray = [];
+      var currentlyAvailableCheckboxes = openedPanel[0].querySelectorAll("input[type=checkbox][class=accordionInput]");
+      for (var o = 0; o < currentlyAvailableCheckboxes.length; o++){
+        var pushActiveCheckboxes = activeCheckboxArray.push(currentlyAvailableCheckboxes[o]);
+      }
+      console.log(activeCheckboxArray);
+
+      var checkedBoxesArray = [];
+
+      // loop to get clicked checkbox index (i) information
+      for (var p = 0; p < currentlyAvailableCheckboxes.length; p++) {
+        currentlyAvailableCheckboxes.forEach(function (checkbox) {
+          checkbox.addEventListener('change', function () {
+
+
+            var checkedBoxesArray =
+              Array.from(currentlyAvailableCheckboxes) // Convert checkboxes to an array to use filter and map.
+                .filter(p => p.checked) // Use Array.filter to remove unchecked checkboxes.
+                .map(p => p.value); // Use Array.map to extract only the checkbox values from the array of objects.
+
+                console.log(checkedBoxesArray);
+
+
+
+
+            var selectCurrentSpan = activeAccordion[0].children[1].children[0];
+
+                if (checkedBoxesArray.length === 0) {
+                  selectCurrentSpan.innerHTML = 0;
+                }
+                // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
+                else if (checkedBoxesArray.length === 3) {
+            
+                  selectCurrentSpan.innerHTML = 3;
+            
+                  for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
+            
+                    // disables unchecked checkboxes when array has length of 3 (3 checkboxes are checked)
+                    if (currentlyAvailableCheckboxes[i].checked == false) {
+                      currentlyAvailableCheckboxes[i].disabled = true;
+                      currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "#ccc";
+
+                    }
+                  }
+            
+                }
+                // If it is less than 3, increment it by 1 whenever a checkbox gets checked. Also remove disabled from disabled checkboxes
+                else if (checkedBoxesArray.length < 3) {
+            
+                  for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
+                    if (currentlyAvailableCheckboxes[i].disabled == true) {
+                      currentlyAvailableCheckboxes[i].disabled = false;
+                      currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "";
+                      
+                    }
+                  }
+            
+                  selectCurrentSpan.innerHTML = checkedBoxesArray.length;
+                }
+
+
+
+
+
+
+
+                
+          })
+          
+        })
+      }
+
+
+
+
+
+
+
+
     }
+    
   }
 
 }
@@ -44,12 +139,8 @@ function setClass(els, className, fnName) {
 
 
 
-// gathers first currently active accordion details
-var activeAccordion = document.getElementsByClassName("active");
-var openedPanel = document.getElementsByClassName("accord_show");
-var activeHeader = document.getElementsByClassName("accord_panel_header_active");
-var activeThemeBtn = document.getElementsByClassName("themeBtnActive");
 
+// Variables are declared at the top
 // declared function for the theme change buttons
 function nextTheme() {
   // gets next elements before the 3 special classes are removed with nextElementSibling
@@ -75,6 +166,99 @@ function nextTheme() {
     console.log("There is no next theme button");
   }
 
+
+
+
+
+  var activeCheckboxArray = [];
+  var currentlyAvailableCheckboxes = openedPanel[0].querySelectorAll("input[type=checkbox][class=accordionInput]");
+  for (var o = 0; o < currentlyAvailableCheckboxes.length; o++){
+    var pushActiveCheckboxes = activeCheckboxArray.push(currentlyAvailableCheckboxes[o]);
+  }
+  console.log(activeCheckboxArray);
+
+  var checkedBoxesArray = [];
+
+  // loop to get clicked checkbox index (i) information
+  for (var p = 0; p < currentlyAvailableCheckboxes.length; p++) {
+    currentlyAvailableCheckboxes.forEach(function (checkbox) {
+      checkbox.addEventListener('change', function () {
+
+
+        var checkedBoxesArray =
+          Array.from(currentlyAvailableCheckboxes) // Convert checkboxes to an array to use filter and map.
+            .filter(p => p.checked) // Use Array.filter to remove unchecked checkboxes.
+            .map(p => p.value); // Use Array.map to extract only the checkbox values from the array of objects.
+
+            console.log(checkedBoxesArray);
+
+
+
+
+        var selectCurrentSpan = activeAccordion[0].children[1].children[0];
+
+            if (checkedBoxesArray.length === 0) {
+              selectCurrentSpan.innerHTML = "0";
+            }
+            // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
+            else if (checkedBoxesArray.length === 3) {
+        
+              selectCurrentSpan.innerHTML = "3";
+        
+              for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
+        
+                // disables unchecked checkboxes when array has length of 3 (3 checkboxes are checked)
+                if (currentlyAvailableCheckboxes[i].checked == false) {
+                  currentlyAvailableCheckboxes[i].disabled = true;
+                  currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "#ccc";
+
+                }
+              }
+        
+            }
+            // If it is less than 3, increment it by 1 whenever a checkbox gets checked. Also remove disabled from disabled checkboxes
+            else if (checkedBoxesArray.length < 3) {
+        
+              for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
+                if (currentlyAvailableCheckboxes[i].disabled == true) {
+                  currentlyAvailableCheckboxes[i].disabled = false;
+                  currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "";
+                  
+                }
+              }
+        
+              selectCurrentSpan.innerHTML = checkedBoxesArray.length;
+            }
+
+
+
+
+            for (var i = 0; i < accordionBtn.length; i++) {
+              var cycleAllSpans = accordionBtn[i].children[1].children[0];
+        
+              if (cycleAllSpans.innerHTML > 0) {
+                ValmisID.disabled = false;
+                ValmisID.classList.add("doneBtnReady");
+          
+              } else {
+                ValmisID.disabled = true;
+                ValmisID.classList.remove("doneBtnReady");
+              }
+        
+            }
+
+
+            
+      })
+      
+    })
+  }
+
+
+
+
+
+
 }
 
 // Next theme button. Closest the current one and opens the next one
@@ -86,72 +270,35 @@ for (var i = 0; i < themeChangeBtn.length; i++) {
 
 // var arrayFromAccordion = Array.from();
 
-var accordionBtnArray = [];
-// Generates arrays on page load equal to the amount of accordion buttons
-function createArrays(){
-  
-  
-  // this cycles inside for between all the accordions (i)
-  
-  // this cycles inside for to find all the children (inputs) from above accordions
-  var elementToPush =  accordionBtn;
-
-  for (var i = 0; i < accordionBtn.length; i++){
-
-    var pushCurrentElement = accordionBtnArray.push(elementToPush[i]);
-
-    // NOTES FOR TOMORROW/TODAY ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-    // counter checker valmis nupu jaoks - for kasutades k2iks k6ik selected_themes span-id l2bi ning igal foril peab olema " span.value >= 1 /// span.value > 0 "
+/*
+var checkboxValueArray = [];
+var onlyCheckedBoxes = document.querySelectorAll("input[class=accordionInput][type=checkbox]:checked");
 
 
-    // var arrayFromAccordion = Array.from(this);
-    // var allCheckboxes = accordionBtn.querySelectorAll("input[type=checkbox][class=accordionInput]");
-    
-    // var getThisBoxes = this.accordionBtn[i].nextElementSibling.children[i].children[0];
-    
-    // var currentAccBoxes = Array.from(`${getThisBoxes}`+`${i}`);
-
-    // var currentAccordionBoxesAmount = document.getElementsByClassName('accordion')[i].nextElementSibling;
-    // var formArray = Array.from(currentAccordionBoxesAmount);
-    // console.log(formArray);
-
-      /*
-      for (var j = 0; j < currentAccordionBoxesAmount;j++) {
-        var cycleBoxSections = currentAccordionBoxesAmount[i].children[i].children[0];
-        var boxSectionNames = cycleBoxSections.getElementsByName('accord_section'+i);
-        console.log(boxSectionNames.length);
-      } 
-      */
-    
-  }
-  
-  console.log(accordionBtnArray.id);
-}
-
-window.addEventListener('load', createArrays);
-
-
-
-
-
-
-var currentActiveCheckboxes = openedPanel[0].querySelectorAll("input[type=checkbox][class=accordionInput]");
-
-// loop to get clicked checkbox index (i) information
-for (var i = 0; i < currentActiveCheckboxes.length; i++) {
-  currentActiveCheckboxes.forEach(function (checkbox) {
+for (var i = 0; i < allCheckboxes.length; i++) {
+  allCheckboxes.forEach(function (checkbox) {
     checkbox.addEventListener('change', function () {
 
-      var createArrayForAccordion =
-        Array.from(currentActiveCheckboxes) // Convert checkboxes to an array to use filter and map.
-          .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
-          .map(i => i.value); // Use Array.map to extract only the checkbox values from the array of objects.
 
-      console.log(createArrayForAccordion);
+      var checkboxValueArray =
+        Array.from(onlyCheckedBoxes) // Convert checkboxes to an array to use filter and map.
+          .filter(p => p.checked) // Use Array.filter to remove unchecked checkboxes.
+          .map(p => p.value); // Use Array.map to extract only the checkbox values from the array of objects.
 
+          console.log(checkboxValueArray);
+          
     })
+    
   })
 }
+
+*/
+
+
+
+
+
+
 
 
 
@@ -229,34 +376,41 @@ window.onclick = function (event) {
 
 
 
-/*
-  // Variable for "Valmis!" button element id
-  var ValmisID = document.getElementById("doneButton");
 
-  // Event listener for every checkbox to determine if there is atleast 1 theme checked in every accordion
-  // Also enable "Valmis!" button if atleast 1 checkbox is checked in every accordion
-  // accordion checkbox selector variable on line 149
-  allCheckboxes.forEach(function (checkbox) {
-    checkbox.addEventListener('change', function () {
-      if (accordionArray1.length != 0 && accordionArray2.length != 0 && accordionArray3.length != 0 && accordionArray4.length != 0) {
+
+
+
+// Event listener for every checkbox to determine if there is atleast 1 theme checked in every accordion
+// Also enable "Valmis!" button if atleast 1 checkbox is checked in every accordion
+// accordion checkbox selector variable on line 149
+/*
+allCheckboxes.forEach(function (checkbox) {
+  checkbox.addEventListener('change', function () {
+
+    
+
+    for (var i = 0; i < accordionBtn.length; i++) {
+      var cycleAllSpans = accordionBtn[i].children[1].children[0];
+
+      if (cycleAllSpans.innerHTML > 0) {
         ValmisID.disabled = false;
         ValmisID.classList.add("doneBtnReady");
-
+  
       } else {
         ValmisID.disabled = true;
         ValmisID.classList.remove("doneBtnReady");
       }
-    })
-  });
+
+    }
 
 
-  // Valmis! button on click refreshes the page
-  ValmisID.onclick = refreshPage;
-
-  function refreshPage() {
-    location.href = 'index.html';
-  }
+  })
+});
 */
 
+// Valmis! button on click refreshes the page
+ValmisID.onclick = refreshPage;
 
-
+function refreshPage() {
+  location.href = 'index.html';
+}
