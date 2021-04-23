@@ -163,11 +163,19 @@ var checkedBoxesArray = [];
     for (var i = 0; i < accordionBtn.length; i++) {
       var accordBtnSpan = accordionBtn[i].children[1].children[0];
 
-      if (accordBtnSpan.innerHTML > 0) {
-          activeCheckboxArray.push(i);
+      if (accordBtnSpan.innerHTML > 0 && activeCheckboxArray.length < 5) {
+          activeCheckboxArray.push(accordionBtn[i]);
 
       } else if (accordBtnSpan.innerHTML == 0) {
-          activeCheckboxArray.push(i);
+        // array gets reset when atleast 1 span is 0, resulting in the array.length not being 5  
+        activeCheckboxArray = [];
+        ValmisID.disabled = true;
+        ValmisID.classList.remove("doneBtnReady");
+          
+      } else if (activeCheckboxArray.length == 5) {
+        ValmisID.disabled = false;
+        ValmisID.classList.add("doneBtnReady");
+
       }
       console.log(activeCheckboxArray)
     }
