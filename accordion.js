@@ -17,12 +17,7 @@ var activeThemeBtn = document.getElementsByClassName("themeBtnActive");
 
 
 
-
 for (var i = 0; i < accordionBtn.length; i++) {
-
-  // Accordion array generator - fetches checkboxes into HTMLcollection array for the currently active accordion
-
-
   // class toggler function on accordion button click
   accordionBtn[i].onclick = function () {
     var setClasses = !this.classList.contains('active');
@@ -37,21 +32,25 @@ for (var i = 0; i < accordionBtn.length; i++) {
       this.classList.toggle("active");
       this.nextElementSibling.classList.toggle("accord_show");
       this.children[0].classList.toggle("accord_panel_header_active");
+
       if (!!findDivThemeBtn) {
         findDivThemeBtn.children[0].classList.toggle("themeBtnActive");
+
       } else {
         console.log("There is no next accordion to give theme change button active class");
+
       }
 
 
 
       var activeCheckboxArray = [];
       var currentlyAvailableCheckboxes = openedPanel[0].querySelectorAll("input[type=checkbox][class=accordionInput]");
-      for (var o = 0; o < currentlyAvailableCheckboxes.length; o++){
+      for (var o = 0; o < currentlyAvailableCheckboxes.length; o++) {
         var pushActiveCheckboxes = activeCheckboxArray.push(currentlyAvailableCheckboxes[o]);
-      }
-      console.log(activeCheckboxArray);
 
+      }
+
+      // (for developement) console.log(activeCheckboxArray);
       var checkedBoxesArray = [];
 
       // loop to get clicked checkbox index (i) information
@@ -65,67 +64,70 @@ for (var i = 0; i < accordionBtn.length; i++) {
                 .filter(p => p.checked) // Use Array.filter to remove unchecked checkboxes.
                 .map(p => p.value); // Use Array.map to extract only the checkbox values from the array of objects.
 
-                console.log(checkedBoxesArray);
-
-
-
-
+            // (for developement) console.log(checkedBoxesArray.length);
             var selectCurrentSpan = activeAccordion[0].children[1].children[0];
 
-                if (checkedBoxesArray.length === 0) {
-                  selectCurrentSpan.innerHTML = 0;
-                }
-                // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
-                else if (checkedBoxesArray.length === 3) {
-            
-                  selectCurrentSpan.innerHTML = 3;
-            
-                  for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
-            
-                    // disables unchecked checkboxes when array has length of 3 (3 checkboxes are checked)
-                    if (currentlyAvailableCheckboxes[i].checked == false) {
-                      currentlyAvailableCheckboxes[i].disabled = true;
-                      currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "#ccc";
+            if (checkedBoxesArray.length === 0) {
+              selectCurrentSpan.innerHTML = 0;
 
-                    }
-                  }
-            
-                }
-                // If it is less than 3, increment it by 1 whenever a checkbox gets checked. Also remove disabled from disabled checkboxes
-                else if (checkedBoxesArray.length < 3) {
-            
-                  for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
-                    if (currentlyAvailableCheckboxes[i].disabled == true) {
-                      currentlyAvailableCheckboxes[i].disabled = false;
-                      currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "";
-                      
-                    }
-                  }
-            
-                  selectCurrentSpan.innerHTML = checkedBoxesArray.length;
+            }
+            // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
+            else if (checkedBoxesArray.length === 3) {
+              selectCurrentSpan.innerHTML = 3;
+
+              for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
+
+                // disables unchecked checkboxes when array has length of 3 (3 checkboxes are checked)
+                if (currentlyAvailableCheckboxes[i].checked == false) {
+                  currentlyAvailableCheckboxes[i].disabled = true;
+                  currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "#ccc";
+
                 }
 
+              }
+
+            }
+            // If it is less than 3, increment it by 1 whenever a checkbox gets checked. Also remove disabled from disabled checkboxes
+            else if (checkedBoxesArray.length < 3) {
+
+              for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
+                if (currentlyAvailableCheckboxes[i].disabled == true) {
+                  currentlyAvailableCheckboxes[i].disabled = false;
+                  currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "";
+
+                }
+
+              }
+              selectCurrentSpan.innerHTML = checkedBoxesArray.length;
+
+            }
 
 
+            for (var i = 0; i < accordionBtn.length; i++) {
+              var accordBtnSpan = accordionBtn[i].children[1].children[0];
+
+              if (accordBtnSpan.innerHTML > 0) {
+                ValmisID.disabled = false;
+                ValmisID.classList.add("doneBtnReady");
+
+              } else if (accordBtnSpan.innerHTML == 0) {
+
+                ValmisID.disabled = true;
+                ValmisID.classList.remove("doneBtnReady");
+              }
 
 
+              // (for developement) console.log("Accordion #" + i + " span = " + accordBtnSpan.innerHTML)
 
+            }
 
-                
           })
-          
+
         })
       }
 
-
-
-
-
-
-
-
     }
-    
+
   }
 
 }
@@ -162,8 +164,10 @@ function nextTheme() {
 
   if (typeof activeThemeBtn[0] !== "undefined") {
     activeThemeBtn[0].classList.remove("themeBtnActive");
+
   } else {
     console.log("There is no next theme button");
+
   }
 
 
@@ -172,10 +176,11 @@ function nextTheme() {
 
   var activeCheckboxArray = [];
   var currentlyAvailableCheckboxes = openedPanel[0].querySelectorAll("input[type=checkbox][class=accordionInput]");
-  for (var o = 0; o < currentlyAvailableCheckboxes.length; o++){
+  for (var o = 0; o < currentlyAvailableCheckboxes.length; o++) {
     var pushActiveCheckboxes = activeCheckboxArray.push(currentlyAvailableCheckboxes[o]);
+
   }
-  console.log(activeCheckboxArray);
+  // (for developement) console.log(activeCheckboxArray);
 
   var checkedBoxesArray = [];
 
@@ -184,133 +189,73 @@ function nextTheme() {
     currentlyAvailableCheckboxes.forEach(function (checkbox) {
       checkbox.addEventListener('change', function () {
 
-
         var checkedBoxesArray =
           Array.from(currentlyAvailableCheckboxes) // Convert checkboxes to an array to use filter and map.
             .filter(p => p.checked) // Use Array.filter to remove unchecked checkboxes.
             .map(p => p.value); // Use Array.map to extract only the checkbox values from the array of objects.
 
-            console.log(checkedBoxesArray);
 
-
-
-
+        // (for developement) console.log(checkedBoxesArray);
         var selectCurrentSpan = activeAccordion[0].children[1].children[0];
 
-            if (checkedBoxesArray.length === 0) {
-              selectCurrentSpan.innerHTML = "0";
-            }
-            // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
-            else if (checkedBoxesArray.length === 3) {
-        
-              selectCurrentSpan.innerHTML = "3";
-        
-              for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
-        
-                // disables unchecked checkboxes when array has length of 3 (3 checkboxes are checked)
-                if (currentlyAvailableCheckboxes[i].checked == false) {
-                  currentlyAvailableCheckboxes[i].disabled = true;
-                  currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "#ccc";
 
-                }
-              }
-        
-            }
-            // If it is less than 3, increment it by 1 whenever a checkbox gets checked. Also remove disabled from disabled checkboxes
-            else if (checkedBoxesArray.length < 3) {
-        
-              for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
-                if (currentlyAvailableCheckboxes[i].disabled == true) {
-                  currentlyAvailableCheckboxes[i].disabled = false;
-                  currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "";
-                  
-                }
-              }
-        
-              selectCurrentSpan.innerHTML = checkedBoxesArray.length;
+        if (checkedBoxesArray.length === 0) {
+          selectCurrentSpan.innerHTML = "0";
+
+        }
+        // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
+        else if (checkedBoxesArray.length === 3) {
+          selectCurrentSpan.innerHTML = "3";
+
+          for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
+
+            // disables unchecked checkboxes when array has length of 3 (3 checkboxes are checked)
+            if (currentlyAvailableCheckboxes[i].checked == false) {
+              currentlyAvailableCheckboxes[i].disabled = true;
+              currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "#ccc";
+
             }
 
+          }
 
+        }
+        // If it is less than 3, increment it by 1 whenever a checkbox gets checked. Also remove disabled from disabled checkboxes
+        else if (checkedBoxesArray.length < 3) {
 
+          for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
+            if (currentlyAvailableCheckboxes[i].disabled == true) {
+              currentlyAvailableCheckboxes[i].disabled = false;
+              currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "";
 
-            for (var i = 0; i < accordionBtn.length; i++) {
-              var cycleAllSpans = accordionBtn[i].children[1].children[0];
-        
-              if (cycleAllSpans.innerHTML > 0) {
-                ValmisID.disabled = false;
-                ValmisID.classList.add("doneBtnReady");
-          
-              } else {
-                ValmisID.disabled = true;
-                ValmisID.classList.remove("doneBtnReady");
-              }
-        
             }
+          }
+
+          selectCurrentSpan.innerHTML = checkedBoxesArray.length;
+        }
 
 
-            
+
       })
-      
+
     })
   }
-
-
-
-
-
-
 }
+
+// refresh function
+function refreshPage() {
+  location.href = 'index.html';
+}
+
+// Valmis! button on click refreshes the page
+ValmisID.onclick = refreshPage;
+
+
 
 // Next theme button. Closest the current one and opens the next one
 // variable for classes declared on line 5
 for (var i = 0; i < themeChangeBtn.length; i++) {
   themeChangeBtn[i].onclick = function () { nextTheme() };
 }
-
-
-// var arrayFromAccordion = Array.from();
-
-/*
-var checkboxValueArray = [];
-var onlyCheckedBoxes = document.querySelectorAll("input[class=accordionInput][type=checkbox]:checked");
-
-
-for (var i = 0; i < allCheckboxes.length; i++) {
-  allCheckboxes.forEach(function (checkbox) {
-    checkbox.addEventListener('change', function () {
-
-
-      var checkboxValueArray =
-        Array.from(onlyCheckedBoxes) // Convert checkboxes to an array to use filter and map.
-          .filter(p => p.checked) // Use Array.filter to remove unchecked checkboxes.
-          .map(p => p.value); // Use Array.map to extract only the checkbox values from the array of objects.
-
-          console.log(checkboxValueArray);
-          
-    })
-    
-  })
-}
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Whenver a checkbox is checked, it will gain background coloring
 // checkbox background color variables
@@ -320,14 +265,17 @@ var gatherInputs = document.getElementsByClassName("accordionInput");
 function isChecked() {
   if (this.checked === true) {
     this.parentElement.style.backgroundColor = "#fff8cd";
+
   } else {
     this.parentElement.style.backgroundColor = "";
+
   }
 }
 
 // checkbox background color event listener
 for (var i = 0; i < gatherInputs.length; i++) {
   gatherInputs[i].addEventListener("change", isChecked);
+
 }
 
 
@@ -337,6 +285,7 @@ document.getElementById("goto_accord_anchor").onclick = scrollToAccord;
 function scrollToAccord() {
   var scrollDestination = document.getElementById("accord_title");
   scrollDestination.scrollIntoView({ behavior: "smooth", block: "start" });
+
 }
 
 // get the modal
@@ -348,11 +297,13 @@ var modalSpan = document.getElementsByClassName("closeModal")[0];
 // modal closing function
 function closeModal() {
   modal.style.display = "none";
+
 };
 
 // when the user clicks on the anchor text, open the modal
 openModal.onclick = function () {
   modal.style.display = "block";
+
 }
 
 // when the user clicks on <span> (x), close the modal
@@ -362,7 +313,9 @@ modalSpan.onclick = closeModal;
 window.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
     closeModal();
+
   }
+
 });
 
 // when the user clicks anywhere outside of the modal, close it (also added ESC key)
@@ -371,46 +324,5 @@ window.onclick = function (event) {
     closeModal();
 
   }
-}
 
-
-
-
-
-
-
-
-// Event listener for every checkbox to determine if there is atleast 1 theme checked in every accordion
-// Also enable "Valmis!" button if atleast 1 checkbox is checked in every accordion
-// accordion checkbox selector variable on line 149
-/*
-allCheckboxes.forEach(function (checkbox) {
-  checkbox.addEventListener('change', function () {
-
-    
-
-    for (var i = 0; i < accordionBtn.length; i++) {
-      var cycleAllSpans = accordionBtn[i].children[1].children[0];
-
-      if (cycleAllSpans.innerHTML > 0) {
-        ValmisID.disabled = false;
-        ValmisID.classList.add("doneBtnReady");
-  
-      } else {
-        ValmisID.disabled = true;
-        ValmisID.classList.remove("doneBtnReady");
-      }
-
-    }
-
-
-  })
-});
-*/
-
-// Valmis! button on click refreshes the page
-ValmisID.onclick = refreshPage;
-
-function refreshPage() {
-  location.href = 'index.html';
 }
