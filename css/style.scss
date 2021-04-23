@@ -494,10 +494,6 @@ footer {
     -ms-user-select: none;
     user-select: none;
 
-    &> input[disabled] {
-        background-color: gray;
-    }
-
     .accord_content_img {
         margin-left: 30px;
         width: 84px;
@@ -598,4 +594,8 @@ footer {
         border: 1px solid #f0ce00;
     }
 
+}
+
+.accordionInput[disabled] {
+    cursor: not-allowed;
 }
