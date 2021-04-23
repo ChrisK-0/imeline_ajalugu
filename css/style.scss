@@ -2,10 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
 
 $color-white: #fff;
-$fontSans: 'PT Sans Narrow', sans-serif;
+$fontSans: 'PT Sans Narrow',
+sans-serif;
 
 * {
     box-sizing: border-box;
+}
+body {
+    margin: 0;
 }
 
 @media only screen and (max-width:1000px) {
@@ -25,17 +29,14 @@ $fontSans: 'PT Sans Narrow', sans-serif;
     }
 }
 
-
 @mixin redButton {
     color: $color-white;
     margin-bottom: 20px;
-
     font-weight: bold;
     line-height: 0.8;
     font-size: 30px;
     font-family: $fontSans;
     text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
-
     border: 1px solid #7b1700;
     border-radius: 6px;
 
@@ -45,7 +46,6 @@ $fontSans: 'PT Sans Narrow', sans-serif;
     background: -ms-linear-gradient(90deg, rgba(183, 42, 0, 1) 0%, rgba(149, 28, 0, 1) 100%);
     box-shadow: inset 0px 1px 1px 0px rgba(197, 82, 48, 0.75);
 }
-
 
 .cover_bg {
     background-image: url(../imgs/cover_bg.png);
@@ -57,16 +57,12 @@ $fontSans: 'PT Sans Narrow', sans-serif;
 .content_cover {
     display: flex;
     flex-flow: column wrap;
-
     width: 100%;
     height: 100%;
     margin-bottom: 50px;
     margin: 0 auto;
 
-
-
     .cover_note {
-
         text-align: center;
         width: 225px;
         height: 75px;
@@ -85,6 +81,7 @@ $fontSans: 'PT Sans Narrow', sans-serif;
             color: $color-white;
 
             transform: matrix(1.17461408039124, 0, 0, 1.17461408039124, 0, 0);
+            // legacy
             -moz-transform: matrix(1.17461408039124, 0, 0, 1.17461408039124, 0, 0);
             -webkit-transform: matrix(1.17461408039124, 0, 0, 1.17461408039124, 0, 0);
             -ms-transform: matrix(1.17461408039124, 0, 0, 1.17461408039124, 0, 0);
@@ -103,60 +100,51 @@ $fontSans: 'PT Sans Narrow', sans-serif;
             height: 0;
             border-left: 112.5px solid transparent;
             border-right: 112.5px solid transparent;
-
             border-top: 20px solid #cc3e0f;
         }
     }
 
+    .cover_text {
+        width: 100%;
+    }
 
+    .coverHeaderTransf {
+        font-size: 10px;
+        position: absolute;
+        top: 14px;
+        left: -4px;
 
+        transform-origin: 0 0;
+        transform: rotate(-65deg);
+        // legacy
+        -webkit-transform: rotate(-65deg);
+        -moz-transform: rotate(-65deg);
+        -ms-transform: rotate(-65deg);
+        -o-transform: rotate(-65deg);
+    }
 
-        .cover_text {
-            width: 100%;
-        }
+    .cover_header {
+        position: relative;
+        width: 100%;
+        margin-top: 80px;
+        font-size: 50px;
+        font-family: "Bienetresocial";
+        line-height: 0;
+    }
 
-        .coverHeaderTransf {
-            font-size: 10px;
-            position: absolute;
-            top: 14px;
-            left: -4px;
-
-
-            transform-origin: 0 0;
-            transform: rotate(-65deg);
-
-            // legacy
-            -webkit-transform: rotate(-65deg);
-            -moz-transform: rotate(-65deg);
-            -ms-transform: rotate(-65deg);
-            -o-transform: rotate(-65deg);
-        }
-
-        .cover_header {
-            position: relative;
-            width: 100%;
-            margin-top: 80px;
-            font-size: 50px;
-            font-family: "Bienetresocial";
-            line-height: 0;
-        }
-
-        .cover_para {
-            float: left;
-            font-size: 20px;
-            font-family: $fontSans;
-            color: #222222;
-            text-shadow: 4px 2px 4px #fff;
-            line-height: 1.5;
-            width: 60%;
-        }
-
-        .cover_glow {
-            background-color: $color-white;
-            width: 100%;
-            height: 100%;
-        }
-
+    .cover_para {
+        float: left;
+        font-size: 20px;
+        font-family: $fontSans;
+        color: #222222;
+        text-shadow: 4px 2px 4px #fff;
+        line-height: 1.5;
+        width: 60%;
+        // background blur for the cover description
+        background-color: $color-white;
+        border-radius: 20%;
+        box-shadow: 0 0 50px 50px $color-white;
+    }
 }
 
 .goto_accord {
@@ -179,7 +167,6 @@ $fontSans: 'PT Sans Narrow', sans-serif;
             width: 25px;
             height: 30px;
         }
-
     }
 }
 
@@ -194,8 +181,6 @@ $fontSans: 'PT Sans Narrow', sans-serif;
     .desc_text {
         width: 100%;
         max-width: 420px;
-
-
         display: flex;
         flex-flow: row wrap;
 
@@ -232,27 +217,23 @@ $fontSans: 'PT Sans Narrow', sans-serif;
             z-index: -1;
         }
     }
-
 }
 
-.contents, .content_cover, .footer_text {
+.contents,
+.content_cover,
+.footer_text {
     max-width: 750px;
 }
 
-
 .contents {
     margin: 0 auto;
-
     display: flex;
     justify-content: center;
     flex-flow: column wrap;
 
-
-
     .doneBtnDiv {
         display: flex;
         justify-content: center;
-
 
         .doneButton {
             @include redButton;
@@ -261,7 +242,6 @@ $fontSans: 'PT Sans Narrow', sans-serif;
             padding: 20px 0;
             margin: 20px 0;
             width: 150px;
-
             font-weight: bold;
             line-height: 0.8;
             text-align: center;
@@ -271,9 +251,6 @@ $fontSans: 'PT Sans Narrow', sans-serif;
             border-radius: 6px;
             background: #b1b1b1;
             box-shadow: inset 0px 1px 1px 0px rgba(192, 192, 192, 0.75);
-
-            ////////////////////////////////////////////////
-
         }
 
         // gets applied to "Valmis!" button when atleast 1 checkbox is checked in every accordion block
@@ -285,7 +262,6 @@ $fontSans: 'PT Sans Narrow', sans-serif;
 
 
     .accord_head {
-
         .accord_head_h {
             font-family: "BienetresocialBold";
             font-size: 30px;
@@ -300,7 +276,6 @@ $fontSans: 'PT Sans Narrow', sans-serif;
             font-size: 16px;
         }
     }
-
 }
 
 footer {
@@ -330,7 +305,6 @@ footer {
             color: $color-white;
             font-size: 16px;
         }
-
     }
 }
 
@@ -392,7 +366,6 @@ footer {
     margin: 25px 0 0 0;
     border-bottom: 1px solid #ffe756;
     padding-bottom: 0px;
-
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -414,8 +387,6 @@ footer {
         border: 1px none;
     }
 
-
-
     .selected_themes {
         color: #3f2916;
         font-family: $fontSans;
@@ -428,8 +399,6 @@ footer {
         }
     }
 }
-
-
 
 // Opened accordion span header will have yellow-ish background
 .accord_panel_header_active {
@@ -476,18 +445,14 @@ footer {
         }
     }
 }
+
 .accord_content {
     border-bottom: 1px solid #ffe756;
-
-
     padding: 10px 0 10px 35px;
-
     position: relative;
-
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -506,13 +471,9 @@ footer {
         font-family: $fontSans;
         text-align: justify;
         margin-left: 20px;
-
-
         height: 100%;
-
         display: flex;
         flex-flow: column nowrap;
-
 
         .accord_content_text_head {
             font-weight: bold;
@@ -528,15 +489,10 @@ footer {
             flex-grow: 1;
             padding-right: 25px;
         }
-
-
     }
-
-
 
     /* custom checkmark */
     .checkmark {
-
         margin-left: 20px;
         position: absolute;
         top: 40%;
@@ -593,7 +549,6 @@ footer {
         background-color: #fff6bf;
         border: 1px solid #f0ce00;
     }
-
 }
 
 .accordionInput[disabled] {

@@ -137,3 +137,11 @@ Functions under this code are:
 
 Managed to get gray backgrounds on unchecked checkboxes and even tested with a 5th accordion block and added more themes into it, but sometimes the code "crashes" and does not count checked boxes.
 Also sometimes one of the checkboxes in the 5th block does not count whilst others in the same accordion block do.
+
+
+## Day 10 
+
+### Finished counter/"Valmis!" button automation
+
+Finished automated theme changing, checkbox counter/disabler and "Valmis!" button enabling without accordion block restrictions.
+Adjusted some CSS accordingly to the PSD file.

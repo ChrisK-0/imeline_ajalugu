@@ -26,7 +26,7 @@ for (var i = 0; i < accordionBtn.length; i++) {
     setClass(accordionHeader, 'accord_panel_header_active', 'remove');
     setClass(themeChangeBtn, 'themeBtnActive', 'remove');
 
-    var findAccordionLastChild = this.nextElementSibling.childElementCount-1;
+    var findAccordionLastChild = this.nextElementSibling.childElementCount - 1;
     var findDivThemeBtn = this.nextElementSibling.children[findAccordionLastChild];
     var checkThemeBtnClass = findDivThemeBtn.classList.contains("theme_change");
 
@@ -37,15 +37,11 @@ for (var i = 0; i < accordionBtn.length; i++) {
 
       if (checkThemeBtnClass == true) {
         findDivThemeBtn.children[0].classList.toggle("themeBtnActive");
-        console.log('theme btn found')
+        // (for developement) console.log('theme btn found')
 
       } else {
-        console.log("There is no next accordion to give theme change button active class");
+        // (for developement) console.log("There is no next accordion to give theme change button active class");
       }
-
-
-
-
 
     }
 
@@ -59,7 +55,6 @@ function setClass(els, className, fnName) {
     els[i].classList[fnName](className);
   }
 }
-
 
 
 
@@ -81,8 +76,7 @@ function nextTheme() {
   openedPanel[0].classList.remove("accord_show");
   activeHeader[0].classList.remove("accord_panel_header_active");
 
-
-  var findAccordionLastChild = nextAccordion.nextElementSibling.childElementCount-1;
+  var findAccordionLastChild = nextAccordion.nextElementSibling.childElementCount - 1;
   var findDivThemeBtn = nextAccordion.nextElementSibling.children[findAccordionLastChild];
   var checkThemeBtnClass = findDivThemeBtn.classList.contains("theme_change");
 
@@ -92,12 +86,11 @@ function nextTheme() {
     activeThemeBtn[0].classList.remove("themeBtnActive");
 
   } else {
-    console.log("There is no next theme button");
+    // (for developement) console.log("There is no next theme button");
 
   }
 
 }
-
 // Next theme button. Closest the current one and opens the next one
 // variable for classes declared on line 5
 for (var i = 0; i < themeChangeBtn.length; i++) {
@@ -113,10 +106,7 @@ var checkedBoxesArray = [];
 
 allCheckboxes.forEach(function (checkbox) {
   checkbox.addEventListener('change', function () {
-
     var currentlyAvailableCheckboxes = openedPanel[0].querySelectorAll("input[type=checkbox][class=accordionInput]");
-
-
 
     // loop to get clicked checkbox index (i) information
     for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
@@ -127,8 +117,7 @@ allCheckboxes.forEach(function (checkbox) {
           .map(i => i.value); // Use Array.map to extract only the checkbox values from the array of objects.
 
     }
-    console.log(checkedBoxesArray);
-    // (for developement) console.log(checkedBoxesArray.length);
+    // (for developement) console.log(checkedBoxesArray);
     var selectCurrentSpan = activeAccordion[0].children[1].children[0];
 
     if (checkedBoxesArray.length === 0) {
@@ -167,12 +156,10 @@ allCheckboxes.forEach(function (checkbox) {
       selectCurrentSpan.innerHTML = checkedBoxesArray.length;
 
     }
-
-
     for (var i = 0; i < accordionBtn.length; i++) {
       var accordBtnSpan = accordionBtn[i].children[1].children[0];
 
-      if (accordBtnSpan.innerHTML > 0 && activeCheckboxArray.length < 5) {
+      if (accordBtnSpan.innerHTML > 0 && activeCheckboxArray.length < accordionBtn.length && activeCheckboxArray.includes(accordionBtn[i]) == false) {
         activeCheckboxArray.push(accordionBtn[i]);
 
       } else if (accordBtnSpan.innerHTML == 0) {
@@ -180,53 +167,19 @@ allCheckboxes.forEach(function (checkbox) {
         activeCheckboxArray = [];
         ValmisID.disabled = true;
         ValmisID.classList.remove("doneBtnReady");
+      }
 
-      } else if (activeCheckboxArray.length == 5) {
+      if (activeCheckboxArray.length == accordionBtn.length) {
         ValmisID.disabled = false;
         ValmisID.classList.add("doneBtnReady");
 
       }
-      console.log(activeCheckboxArray)
+      // (for developement) console.log(activeCheckboxArray.length)
     }
-
-    /*
-    for (var i = 0; i < accordionBtn.length; i++) {
-      var accordBtnSpan = accordionBtn[i].children[1].children[0];
- 
-      if (accordBtnSpan.innerHTML > 0) {
-        ValmisID.disabled = false;
-        ValmisID.classList.add("doneBtnReady");
- 
-      } else if (accordBtnSpan.innerHTML == 0) {
- 
-        ValmisID.disabled = true;
-        ValmisID.classList.remove("doneBtnReady");
-      }
-    }
-      */
-
-    // (for developement) console.log("Accordion #" + i + " span = " + accordBtnSpan.innerHTML)
-
-
 
   })
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // refresh function
 function refreshPage() {
@@ -235,8 +188,6 @@ function refreshPage() {
 
 // Valmis! button on click refreshes the page
 ValmisID.onclick = refreshPage;
-
-
 
 
 
@@ -270,6 +221,8 @@ function scrollToAccord() {
   scrollDestination.scrollIntoView({ behavior: "smooth", block: "start" });
 
 }
+
+
 
 // get the modal
 var modal = document.getElementById("policyModal");

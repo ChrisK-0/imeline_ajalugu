@@ -4,6 +4,10 @@
           box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
+
 @media only screen and (max-width: 1000px) {
   /* For smaller screens */
   .contents,
@@ -123,12 +127,10 @@
   text-shadow: 4px 2px 4px #fff;
   line-height: 1.5;
   width: 60%;
-}
-
-.content_cover .cover_glow {
   background-color: #fff;
-  width: 100%;
-  height: 100%;
+  border-radius: 20%;
+  -webkit-box-shadow: 0 0 50px 50px #fff;
+          box-shadow: 0 0 50px 50px #fff;
 }
 
 .goto_accord {
@@ -223,7 +225,9 @@
   z-index: -1;
 }
 
-.contents, .content_cover, .footer_text {
+.contents,
+.content_cover,
+.footer_text {
   max-width: 750px;
 }
 
