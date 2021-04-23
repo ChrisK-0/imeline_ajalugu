@@ -26,19 +26,21 @@ for (var i = 0; i < accordionBtn.length; i++) {
     setClass(accordionHeader, 'accord_panel_header_active', 'remove');
     setClass(themeChangeBtn, 'themeBtnActive', 'remove');
 
-    var findDivThemeBtn = this.nextElementSibling.children[4];
+    var findAccordionLastChild = this.nextElementSibling.childElementCount-1;
+    var findDivThemeBtn = this.nextElementSibling.children[findAccordionLastChild];
+    var checkThemeBtnClass = findDivThemeBtn.classList.contains("theme_change");
 
     if (setClasses) {
       this.classList.toggle("active");
       this.nextElementSibling.classList.toggle("accord_show");
       this.children[0].classList.toggle("accord_panel_header_active");
 
-      if (!!findDivThemeBtn) {
+      if (checkThemeBtnClass == true) {
         findDivThemeBtn.children[0].classList.toggle("themeBtnActive");
+        console.log('theme btn found')
 
       } else {
         console.log("There is no next accordion to give theme change button active class");
-
       }
 
 
@@ -80,8 +82,13 @@ function nextTheme() {
   activeHeader[0].classList.remove("accord_panel_header_active");
 
 
+  var findAccordionLastChild = nextAccordion.nextElementSibling.childElementCount-1;
+  var findDivThemeBtn = nextAccordion.nextElementSibling.children[findAccordionLastChild];
+  var checkThemeBtnClass = findDivThemeBtn.classList.contains("theme_change");
 
-  if (typeof activeThemeBtn[0] !== "undefined") {
+
+  if (typeof activeThemeBtn[0] !== "undefined" && checkThemeBtnClass == true) {
+    findDivThemeBtn.children[0].classList.add("themeBtnActive");
     activeThemeBtn[0].classList.remove("themeBtnActive");
 
   } else {
@@ -104,7 +111,7 @@ var activeCheckboxArray = [];
 var checkedBoxesArray = [];
 
 
-  allCheckboxes.forEach(function (checkbox) {
+allCheckboxes.forEach(function (checkbox) {
   checkbox.addEventListener('change', function () {
 
     var currentlyAvailableCheckboxes = openedPanel[0].querySelectorAll("input[type=checkbox][class=accordionInput]");
@@ -138,6 +145,7 @@ var checkedBoxesArray = [];
         if (currentlyAvailableCheckboxes[i].checked == false) {
           currentlyAvailableCheckboxes[i].disabled = true;
           currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "#ccc";
+          currentlyAvailableCheckboxes[i].parentElement.style.cursor = "not-allowed";
 
         }
 
@@ -151,6 +159,7 @@ var checkedBoxesArray = [];
         if (currentlyAvailableCheckboxes[i].disabled == true) {
           currentlyAvailableCheckboxes[i].disabled = false;
           currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "";
+          currentlyAvailableCheckboxes[i].parentElement.style.cursor = "pointer";
 
         }
 
@@ -164,14 +173,14 @@ var checkedBoxesArray = [];
       var accordBtnSpan = accordionBtn[i].children[1].children[0];
 
       if (accordBtnSpan.innerHTML > 0 && activeCheckboxArray.length < 5) {
-          activeCheckboxArray.push(accordionBtn[i]);
+        activeCheckboxArray.push(accordionBtn[i]);
 
       } else if (accordBtnSpan.innerHTML == 0) {
         // array gets reset when atleast 1 span is 0, resulting in the array.length not being 5  
         activeCheckboxArray = [];
         ValmisID.disabled = true;
         ValmisID.classList.remove("doneBtnReady");
-          
+
       } else if (activeCheckboxArray.length == 5) {
         ValmisID.disabled = false;
         ValmisID.classList.add("doneBtnReady");
@@ -180,25 +189,25 @@ var checkedBoxesArray = [];
       console.log(activeCheckboxArray)
     }
 
-      /*
-      for (var i = 0; i < accordionBtn.length; i++) {
-        var accordBtnSpan = accordionBtn[i].children[1].children[0];
-  
-        if (accordBtnSpan.innerHTML > 0) {
-          ValmisID.disabled = false;
-          ValmisID.classList.add("doneBtnReady");
-  
-        } else if (accordBtnSpan.innerHTML == 0) {
-  
-          ValmisID.disabled = true;
-          ValmisID.classList.remove("doneBtnReady");
-        }
+    /*
+    for (var i = 0; i < accordionBtn.length; i++) {
+      var accordBtnSpan = accordionBtn[i].children[1].children[0];
+ 
+      if (accordBtnSpan.innerHTML > 0) {
+        ValmisID.disabled = false;
+        ValmisID.classList.add("doneBtnReady");
+ 
+      } else if (accordBtnSpan.innerHTML == 0) {
+ 
+        ValmisID.disabled = true;
+        ValmisID.classList.remove("doneBtnReady");
       }
-        */
+    }
+      */
 
-      // (for developement) console.log("Accordion #" + i + " span = " + accordBtnSpan.innerHTML)
+    // (for developement) console.log("Accordion #" + i + " span = " + accordBtnSpan.innerHTML)
 
-    
+
 
   })
 
