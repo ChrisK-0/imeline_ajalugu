@@ -108,15 +108,12 @@ allCheckboxes.forEach(function (checkbox) {
   checkbox.addEventListener('change', function () {
     var currentlyAvailableCheckboxes = openedPanel[0].querySelectorAll("input[type=checkbox][class=accordionInput]");
 
-    // loop to get clicked checkbox index (i) information
-    for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
+    var checkedBoxesArray =
+      Array.from(currentlyAvailableCheckboxes) // Convert checkboxes to an array to use filter and map.
+        .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
+        .map(i => i.value); // Use Array.map to extract only the checkbox values from the array of objects.
 
-      var checkedBoxesArray =
-        Array.from(currentlyAvailableCheckboxes) // Convert checkboxes to an array to use filter and map.
-          .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
-          .map(i => i.value); // Use Array.map to extract only the checkbox values from the array of objects.
 
-    }
     // (for developement) console.log(checkedBoxesArray);
     var selectCurrentSpan = activeAccordion[0].children[1].children[0];
 
