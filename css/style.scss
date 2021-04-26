@@ -50,8 +50,9 @@ body {
 .cover_bg {
     background-image: url(../imgs/cover_bg.png);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 100%;
+    background-size: 1920px 720px;
+    background-position: center;
+    width: auto;
 }
 
 .content_cover {
@@ -66,6 +67,8 @@ body {
         text-align: center;
         width: 225px;
         height: 75px;
+        margin-top: -10px;
+        z-index: 139;
 
         background: rgb(204, 62, 15), rgb(147, 27, 0);
         background: -moz-linear-gradient(90deg, rgb(204, 62, 15) 0%, rgb(147, 27, 0) 100%);
@@ -109,10 +112,12 @@ body {
     }
 
     .coverHeaderTransf {
-        font-size: 10px;
+        font-size: 20px;
         position: absolute;
-        top: 14px;
-        left: -4px;
+        top: 35px;
+        left: -14px;
+        text-transform: uppercase;
+        line-height: 0.857;
 
         transform-origin: 0 0;
         transform: rotate(-65deg);
@@ -121,15 +126,16 @@ body {
         -moz-transform: rotate(-65deg);
         -ms-transform: rotate(-65deg);
         -o-transform: rotate(-65deg);
+
+
     }
 
     .cover_header {
         position: relative;
         width: 100%;
-        margin-top: 80px;
-        font-size: 50px;
+        font-size: 100px;
         font-family: "Bienetresocial";
-        line-height: 0;
+        line-height: 0.21;
     }
 
     .cover_para {
@@ -141,9 +147,9 @@ body {
         line-height: 1.5;
         width: 60%;
         // background blur for the cover description
-        background-color: $color-white;
+        background-color: rgba($color: #fff, $alpha: 0.65);
         border-radius: 20%;
-        box-shadow: 0 0 50px 50px $color-white;
+        box-shadow: 0 0 40px 70px rgba($color: #fff, $alpha: 0.65);
     }
 }
 
@@ -151,6 +157,7 @@ body {
     width: 100%;
     align-content: center;
     margin-bottom: 100px;
+    margin-top: -20px;
 
     p {
         float: left;
