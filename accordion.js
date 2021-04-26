@@ -94,7 +94,7 @@ function nextTheme() {
 }
 // Next theme button. Closest the current one and opens the next one
 for (var i = 0; i < themeChangeBtn.length; i++) {
-  themeChangeBtn[i].onclick = function () { nextTheme() };
+  themeChangeBtn[i].onclick = nextTheme;
 }
 
 
@@ -158,7 +158,7 @@ allCheckboxes.forEach(function (checkbox) {
         activeCheckboxArray.push(accordionBtn[i]);
 
       } else if (accordBtnSpan.innerHTML == 0) {
-        // array gets reset when atleast 1 span is 0, resulting in the array.length not being 5  
+        // array gets reset when atleast 1 span is 0, resulting in the array.length not being equal to the amount of accordion blocks
         activeCheckboxArray = [];
         doneBtnId.disabled = true;
         doneBtnId.classList.remove("doneBtnReady");
