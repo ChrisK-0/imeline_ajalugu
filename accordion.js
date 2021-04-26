@@ -6,7 +6,7 @@ var themeChangeBtn = document.getElementsByClassName('next_theme');
 var allCheckboxes = document.querySelectorAll("input[type=checkbox][class=accordionInput]");
 
 // Variable for "Valmis!" button element id
-var ValmisID = document.getElementById("doneButton");
+var doneBtnId = document.getElementById("doneButton");
 
 // gathers first currently active accordion details
 // for nextTheme function
@@ -20,7 +20,7 @@ var activeThemeBtn = document.getElementsByClassName("themeBtnActive");
 for (var i = 0; i < accordionBtn.length; i++) {
   // class toggler function on accordion button click
   accordionBtn[i].onclick = function () {
-    var setClasses = !this.classList.contains('active');
+    var toggleActiveClass = !this.classList.contains('active');
     setClass(accordionBtn, 'active', 'remove');
     setClass(accordionPanel, 'accord_show', 'remove');
     setClass(accordionHeader, 'accord_panel_header_active', 'remove');
@@ -30,14 +30,15 @@ for (var i = 0; i < accordionBtn.length; i++) {
     var findDivThemeBtn = this.nextElementSibling.children[findAccordionLastChild];
     var checkThemeBtnClass = findDivThemeBtn.classList.contains("theme_change");
 
-    if (setClasses) {
+    if (toggleActiveClass) {
       this.classList.toggle("active");
       this.nextElementSibling.classList.toggle("accord_show");
       this.children[0].classList.toggle("accord_panel_header_active");
 
-      if (checkThemeBtnClass == true) {
+      if (checkThemeBtnClass) {
         findDivThemeBtn.children[0].classList.toggle("themeBtnActive");
-        // (for developement) console.log('theme btn found')
+        // (for developement) 
+        console.log('theme btn found')
 
       } else {
         // (for developement) console.log("There is no next accordion to give theme change button active class");
@@ -81,18 +82,17 @@ function nextTheme() {
   var checkThemeBtnClass = findDivThemeBtn.classList.contains("theme_change");
 
 
-  if (typeof activeThemeBtn[0] !== "undefined" && checkThemeBtnClass == true) {
+  if (typeof activeThemeBtn[0] !== "undefined" && checkThemeBtnClass) {
     findDivThemeBtn.children[0].classList.add("themeBtnActive");
     activeThemeBtn[0].classList.remove("themeBtnActive");
 
-  } else {
-    // (for developement) console.log("There is no next theme button");
+  } /* else {
+    (for developement) console.log("There is no next theme button");
 
-  }
+  } */
 
 }
 // Next theme button. Closest the current one and opens the next one
-// variable for classes declared on line 5
 for (var i = 0; i < themeChangeBtn.length; i++) {
   themeChangeBtn[i].onclick = function () { nextTheme() };
 }
@@ -130,8 +130,7 @@ allCheckboxes.forEach(function (checkbox) {
         // disables unchecked checkboxes when array has length of 3 (3 checkboxes are checked)
         if (currentlyAvailableCheckboxes[i].checked == false) {
           currentlyAvailableCheckboxes[i].disabled = true;
-          currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "#ccc";
-          currentlyAvailableCheckboxes[i].parentElement.style.cursor = "not-allowed";
+          currentlyAvailableCheckboxes[i].parentElement.classList.add("disabledCheckbox");
 
         }
 
@@ -144,8 +143,7 @@ allCheckboxes.forEach(function (checkbox) {
       for (var i = 0; i < currentlyAvailableCheckboxes.length; i++) {
         if (currentlyAvailableCheckboxes[i].disabled == true) {
           currentlyAvailableCheckboxes[i].disabled = false;
-          currentlyAvailableCheckboxes[i].parentElement.style.backgroundColor = "";
-          currentlyAvailableCheckboxes[i].parentElement.style.cursor = "pointer";
+          currentlyAvailableCheckboxes[i].parentElement.classList.remove("disabledCheckbox");
 
         }
 
@@ -162,13 +160,13 @@ allCheckboxes.forEach(function (checkbox) {
       } else if (accordBtnSpan.innerHTML == 0) {
         // array gets reset when atleast 1 span is 0, resulting in the array.length not being 5  
         activeCheckboxArray = [];
-        ValmisID.disabled = true;
-        ValmisID.classList.remove("doneBtnReady");
+        doneBtnId.disabled = true;
+        doneBtnId.classList.remove("doneBtnReady");
       }
 
       if (activeCheckboxArray.length == accordionBtn.length) {
-        ValmisID.disabled = false;
-        ValmisID.classList.add("doneBtnReady");
+        doneBtnId.disabled = false;
+        doneBtnId.classList.add("doneBtnReady");
 
       }
       // (for developement) console.log(activeCheckboxArray.length)
@@ -184,7 +182,7 @@ function refreshPage() {
 }
 
 // Valmis! button on click refreshes the page
-ValmisID.onclick = refreshPage;
+doneBtnId.onclick = refreshPage;
 
 
 
@@ -226,7 +224,7 @@ var modal = document.getElementById("policyModal");
 // get the anchor text that opens the modal
 var openModal = document.getElementById("policyOpen");
 // get the <span> element that closes the modal
-var modalSpan = document.getElementsByClassName("closeModal")[0];
+var closeModalBtn = document.getElementsByClassName("closeModal")[0];
 // modal closing function
 function closeModal() {
   modal.style.display = "none";
@@ -240,7 +238,7 @@ openModal.onclick = function () {
 }
 
 // when the user clicks on <span> (x), close the modal
-modalSpan.onclick = closeModal;
+closeModalBtn.onclick = closeModal;
 
 // when the user clicks ESC on their keyboard, close the modal
 window.addEventListener('keydown', function (event) {

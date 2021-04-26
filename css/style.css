@@ -635,4 +635,9 @@ footer .footer_text p {
 .accordionInput[disabled] {
   cursor: not-allowed;
 }
+
+.disabledCheckbox {
+  cursor: not-allowed;
+  background-color: #ccc;
+}
 /*# sourceMappingURL=style.css.map */
