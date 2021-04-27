@@ -8,25 +8,26 @@ body {
   margin: 0;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 790px) {
   /* For smaller screens */
   .contents,
   .desc_text,
   .desc_img,
   .content_cover,
   footer {
+    padding: 0px 25px;
     width: 100%;
     float: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-flow: column wrap;
             flex-flow: column wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -237,17 +238,17 @@ body {
 }
 
 .contents {
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
 }
 
 .contents .doneBtnDiv {
@@ -456,7 +457,7 @@ footer .footer_text p {
 }
 
 .accord_panel_header_active {
-  border: px solid #ffeb6b;
+  border: 1px solid #ffeb6b;
   border-radius: 10px 10px 0 0;
   display: block !important;
   background: #ffeb6b;
