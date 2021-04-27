@@ -145,3 +145,10 @@ Also sometimes one of the checkboxes in the 5th block does not count whilst othe
 
 Finished automated theme changing, checkbox counter/disabler and "Valmis!" button enabling without accordion block restrictions.
 Adjusted some CSS accordingly to the PSD file.
+
+
+## Day 11
+
+### Polishing the code a bit
+
+Removed unnecessary lines (like ==/=== true where it wasn't needed) and re-ordered code in JS file.
