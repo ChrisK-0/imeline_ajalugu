@@ -151,4 +151,12 @@ Adjusted some CSS accordingly to the PSD file.
 
 ### Polishing the code a bit
 
-Removed unnecessary lines (like ==/=== true where it wasn't needed) and re-ordered code in JS file.
+Went through the HTML, CSS and JS files.
+* Removed unnecessary lines (like ==/=== true where it wasn't needed) and re-ordered code in JS file.
+
+## Day 12
+
+### Webpack installation and ES6 JS rework
+
+Installed and configured webpack for the project and started on rewriting JS to ES6 standards.
+JS is now separated. Main.js is the mothership and accordion.js, modal.js and gotoAccord.js are imported modules.
