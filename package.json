@@ -5,7 +5,8 @@
   "main": "accordion.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --w"
+    "build": "webpack",
+    "run": "npm run build"
   },
   "repository": {
     "type": "git",

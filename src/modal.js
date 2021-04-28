@@ -5,13 +5,13 @@ var openModal = document.getElementById("policyOpen");
 // get the <span> element that closes the modal
 var closeModalBtn = document.getElementsByClassName("closeModal")[0];
 // modal closing function
-function closeModal() {
+closeModal = () => {
   modal.style.display = "none";
 
 };
 
 // when the user clicks on the anchor text, open the modal
-openModal.onclick = function () {
+openModal.onclick = () => {
   modal.style.display = "block";
 
 }

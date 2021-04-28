@@ -160,3 +160,10 @@ Went through the HTML, CSS and JS files.
 
 Installed and configured webpack for the project and started on rewriting JS to ES6 standards.
 JS is now separated. Main.js is the mothership and accordion.js, modal.js and gotoAccord.js are imported modules.
+
+
+## Day 13
+
+### Dealing with node and VSC errors
+
+Node didn't want to cooperate with VSC so this day I spent dealing with ways to workaround errors, but also looked into what I could implement from ES6 to my current code.
