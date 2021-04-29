@@ -167,3 +167,11 @@ JS is now separated. Main.js is the mothership and accordion.js, modal.js and go
 ### Dealing with node and VSC errors
 
 Node didn't want to cooperate with VSC so this day I spent dealing with ways to workaround errors, but also looked into what I could implement from ES6 to my current code.
+
+
+## Day 14
+
+### Made more modules(JS files) and separated codes
+
+Made constants.js to hold constants, that more than 1 JS file requires. Could not implemenet this small feature into main.js, because you can't import code from a file that imports code from the same file. Webpack module system is quite interesting.
+Also re-named some variables from var to const.
