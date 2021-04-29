@@ -25,7 +25,7 @@ eval("// accordion opening/closing animation\r\nvar accordionBtn = document.getE
   \***************************/
 /***/ (() => {
 
-eval("// scrolls to accordion on red anchor text click\r\ndocument.getElementById(\"goto_accord_anchor\").onclick = scrollToAccord;\r\nfunction scrollToAccord() {\r\n  var scrollDestination = document.getElementById(\"accord_title\");\r\n  scrollDestination.scrollIntoView({ behavior: \"smooth\", block: \"start\" });\r\n\r\n}\n\n//# sourceURL=webpack://imeline_ajalugu/./src/gotoAccord.js?");
+eval("// scrolls to accordion on red anchor text click\r\nvar scrollDestination = document.getElementById(\"accord_title\");\r\nfunction scrollToAccord() {\r\n  scrollDestination.scrollIntoView({ behavior: \"smooth\", block: \"start\" });\r\n\r\n}\r\n\r\ndocument.getElementById(\"goto_accord_anchor\").onclick = scrollToAccord;\n\n//# sourceURL=webpack://imeline_ajalugu/./src/gotoAccord.js?");
 
 /***/ }),
 
