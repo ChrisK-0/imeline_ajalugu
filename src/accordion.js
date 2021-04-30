@@ -3,18 +3,18 @@ import {globalVariables} from './constants';
 const accordionPanel = document.getElementsByClassName('accord_panel');
 const accordionHeader = document.getElementsByClassName('accord_panel_header');
 
-for (var i of globalVariables.accordionBtn) {
+for (let i of globalVariables.accordionBtn) {
   // class toggler function on accordion button click
   i.onclick = function () {
-    var toggleActiveClass = !this.classList.contains('active');
+    const toggleActiveClass = !this.classList.contains('active');
     classToggler(globalVariables.accordionBtn, 'active', 'remove');
     classToggler(accordionPanel, 'accord_show', 'remove');
     classToggler(accordionHeader, 'accord_panel_header_active', 'remove');
     classToggler(globalVariables.themeChangeBtn, 'themeBtnActive', 'remove');
 
-    var findAccordionLastChild = this.nextElementSibling.childElementCount - 1;
-    var findDivThemeBtn = this.nextElementSibling.children[findAccordionLastChild];
-    var checkThemeBtnClass = findDivThemeBtn.classList.contains("theme_change");
+    const findAccordionLastChild = this.nextElementSibling.childElementCount - 1;
+    const findDivThemeBtn = this.nextElementSibling.children[findAccordionLastChild];
+    const checkThemeBtnClass = findDivThemeBtn.classList.contains("theme_change");
 
     if (toggleActiveClass) {
       this.classList.toggle("active");
@@ -36,7 +36,7 @@ for (var i of globalVariables.accordionBtn) {
 }
 
 // template for class toggling
-let classToggler = (els, className, fnName) => {
+const classToggler = (els, className, fnName) => {
   for (var i of els) {
     i.classList[fnName](className);
   }

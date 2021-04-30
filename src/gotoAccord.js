@@ -1,7 +1,7 @@
 // scrolls to accordion on red anchor text click
-var scrollDestination = document.getElementById("accord_title");
+const scrollAnchor = document.getElementById("accord_title");
 function scrollToAccord() {
-  scrollDestination.scrollIntoView({ behavior: "smooth", block: "start" });
+  scrollAnchor.scrollIntoView({ behavior: "smooth", block: "start" });
 
 }
 

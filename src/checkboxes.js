@@ -3,29 +3,28 @@ import {globalVariables} from './constants';
 const allCheckboxes = document.querySelectorAll("input[type=checkbox][class=accordionInput]");
 
 // arrays for checking the current accordion checked checkbox lengths
-var activeCheckboxArray = [];
-var checkedBoxesArray = [];
+let activeCheckboxArray = [];
+let checkedBoxesArray = [];
 
 allCheckboxes.forEach(function (checkbox) {
   checkbox.addEventListener('change', function () {
-    var currentlyAvailableCheckboxes = globalVariables.openedPanel[0].querySelectorAll("input[type=checkbox][class=accordionInput]");
+    const currentlyAvailableCheckboxes = globalVariables.openedPanel[0].querySelectorAll("input[type=checkbox][class=accordionInput]");
 
-    var checkedBoxesArray =
+    let checkedBoxesArray =
       Array.from(currentlyAvailableCheckboxes) // Convert checkboxes to an array to use filter and map.
         .filter(i => i.checked) // Use Array.filter to remove unchecked checkboxes.
         .map(i => i.value); // Use Array.map to extract only the checkbox values from the array of objects.
-
-
     // (for developement) console.log(checkedBoxesArray);
-    var selectCurrentSpan = globalVariables.activeAccordion[0].children[1].children[0];
+
+    let activeAccordionSpan = globalVariables.activeAccordion[0].children[1].children[0];
 
     if (checkedBoxesArray.length == 0) {
-      selectCurrentSpan.innerHTML = 0;
+      activeAccordionSpan.innerHTML = 0;
 
     }
     // When counter is equal to 3, set the counter to 3 / 3 and disable unchecked checkboxes
     else if (checkedBoxesArray.length == 3) {
-      selectCurrentSpan.innerHTML = 3;
+      activeAccordionSpan.innerHTML = 3;
 
       for (let i of currentlyAvailableCheckboxes) {
 
@@ -50,11 +49,11 @@ allCheckboxes.forEach(function (checkbox) {
         }
 
       }
-      selectCurrentSpan.innerHTML = checkedBoxesArray.length;
+      activeAccordionSpan.innerHTML = checkedBoxesArray.length;
 
     }
     for (let i of globalVariables.accordionBtn) {
-      var accordBtnSpan = i.children[1].children[0];
+      let accordBtnSpan = i.children[1].children[0];
 
       if (accordBtnSpan.innerHTML > 0 && activeCheckboxArray.length < globalVariables.accordionBtn.length && activeCheckboxArray.includes(i) == false) {
         activeCheckboxArray.push(i);
@@ -83,7 +82,7 @@ allCheckboxes.forEach(function (checkbox) {
 
 
 // checkbox background color variables
-const gatherInputs = document.getElementsByClassName("accordionInput");
+const accordionInputs = document.getElementsByClassName("accordionInput");
 // Whenver a checkbox is checked, it will gain background coloring
 function isChecked() {
     if (this.checked) {
@@ -96,7 +95,7 @@ function isChecked() {
   }
   
   // checkbox background color event listener
-  for (var i of gatherInputs) {
+  for (let i of accordionInputs) {
     i.addEventListener("change", isChecked);
   
   }

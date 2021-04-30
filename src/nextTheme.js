@@ -8,7 +8,7 @@ const activeThemeBtn = document.getElementsByClassName("themeBtnActive");
 
 
 // declared function for the theme change buttons
-let nextTheme = () => {
+const nextTheme = () => {
     // gets next elements before the 3 special classes are removed with nextElementSibling
     const nextAccordion = globalVariables.activeAccordion[0].nextElementSibling.nextElementSibling;
     const nextPanel = globalVariables.openedPanel[0].nextElementSibling.nextElementSibling;
@@ -24,9 +24,9 @@ let nextTheme = () => {
     globalVariables.openedPanel[0].classList.remove("accord_show");
     activeHeader[0].classList.remove("accord_panel_header_active");
   
-    let findAccordionLastChild = nextAccordion.nextElementSibling.childElementCount - 1;
-    let findDivThemeBtn = nextAccordion.nextElementSibling.children[findAccordionLastChild];
-    let checkThemeBtnClass = findDivThemeBtn.classList.contains("theme_change");
+    const findAccordionLastChild = nextAccordion.nextElementSibling.childElementCount - 1;
+    const findDivThemeBtn = nextAccordion.nextElementSibling.children[findAccordionLastChild];
+    const checkThemeBtnClass = findDivThemeBtn.classList.contains("theme_change");
   
   
     if (typeof activeThemeBtn[0] !== "undefined" && checkThemeBtnClass) {
@@ -40,6 +40,6 @@ let nextTheme = () => {
   
   }
   // Next theme button. Closest the current one and opens the next one
-  for (let i of globalVariables.themeChangeBtn) {
+  for (const i of globalVariables.themeChangeBtn) {
     i.onclick = nextTheme;
   }

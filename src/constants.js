@@ -3,5 +3,5 @@ export const globalVariables = {
     accordionBtn : document.getElementsByClassName('accordion'),
     openedPanel : document.getElementsByClassName("accord_show"),
     activeAccordion : document.getElementsByClassName("active"),
-     doneBtn : document.getElementById("doneButton")
+    doneBtn : document.getElementById("doneButton")
 };
