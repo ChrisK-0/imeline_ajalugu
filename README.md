@@ -175,3 +175,10 @@ Node didn't want to cooperate with VSC so this day I spent dealing with ways to 
 
 Made constants.js to hold constants, that more than 1 JS file requires. Could not implemenet this small feature into main.js, because you can't import code from a file that imports code from the same file. Webpack module system is quite interesting.
 Also re-named some variables from var to const.
+
+
+## Day 15
+
+### Fixed newly occuring issues with let/const
+
+Some lines in JS files were causing issues when changing from var to const, but this issue has been fixed. Also worked on my Visual Studio Code to allow the use of NPM commands, to fasten page function control. Previously I needed to run the command "npm run build" to sync my JS modules into bundle.js from the windows CMD.
