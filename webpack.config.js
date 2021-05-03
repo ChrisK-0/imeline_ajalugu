@@ -2,7 +2,7 @@ const { watch } = require('fs');
 const path = require('path');
 
 module.exports = {
-  mode: "development", // could be "production" as well
+  mode: "development",
   entry: './src/js/main.js', 
   output: {
     path: path.resolve(__dirname, 'public'), 
@@ -29,7 +29,17 @@ module.exports = {
             'sass-loader'
 
         ]
+      },
+
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       }
+
     ]
   },
 };
