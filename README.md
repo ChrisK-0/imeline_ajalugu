@@ -182,3 +182,12 @@ Also re-named some variables from var to const.
 ### Fixed newly occuring issues with let/const
 
 Some lines in JS files were causing issues when changing from var to const, but this issue has been fixed. Also worked on my Visual Studio Code to allow the use of NPM commands, to fasten page function control. Previously I needed to run the command "npm run build" to sync my JS modules into bundle.js from the windows CMD.
+
+
+## Day 16
+
+### Turned SASS into a module model
+
+Added SASS and css loaders and plugins with NPM and made a module format for SASS styling aswell. Renamed style.css to main.css, but styling is still using main.css, but work done on CSS is through SASS. Main.scss has been split into 7 other modules and are all imported into main.scss, which is compiled into main.css. 
+
+Also moved images folder to src and tested with webpack watch for improved code control time.
