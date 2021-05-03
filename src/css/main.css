@@ -1,29 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
-/* For smaller screens */
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
-@media only screen and (max-width: 790px) {
-  .contents,
-.desc_text,
-.desc_img,
-.content_cover,
-footer {
-    padding: 0px 25px;
-    width: 100%;
-    float: none;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #policyModal .modal_content {
-    width: 80%;
-  }
-}
 .cover_bg {
   background-image: url("../imgs/coverbg.png");
   background-repeat: no-repeat;
