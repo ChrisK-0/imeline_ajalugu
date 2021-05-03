@@ -7,17 +7,17 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'public'), 
     filename: 'bundle.js' 
+    
   },
 
   module: {
-
     rules: [
-
       {
         test: /\.css$/,
         use: [
           'style-loader',
           'css-loader'
+
         ]
       },
 
@@ -27,18 +27,14 @@ module.exports = {
             'style-loader',
             'css-loader',
             'sass-loader'
+
         ]
       }
-
     ]
-
   },
-  
-
-
-
 };
 
 node: {
   fs: "empty"
+
 };
