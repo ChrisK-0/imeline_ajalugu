@@ -1,0 +1,35 @@
+// sass variables
+
+// x/3 selected themes font
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+
+$color-white: #fff;
+$fontSans: 'PT Sans Narrow',sans-serif;
+
+@mixin displayFlexColumn {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+@mixin displayFlexRow {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+@mixin redButton {
+    color: $color-white;
+    margin-bottom: 20px;
+    font-weight: bold;
+    line-height: 0.8;
+    font-size: 30px;
+    font-family: $fontSans;
+    text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #7b1700;
+    border-radius: 6px;
+
+    background: #b72a00;
+    background: -moz-linear-gradient(90deg, rgba(183, 42, 0, 1) 0%, rgba(149, 28, 0, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(183, 42, 0, 1) 0%, rgba(149, 28, 0, 1) 100%);
+    background: -ms-linear-gradient(90deg, rgba(183, 42, 0, 1) 0%, rgba(149, 28, 0, 1) 100%);
+    box-shadow: inset 0px 1px 1px 0px rgba(197, 82, 48, 0.75);
+}

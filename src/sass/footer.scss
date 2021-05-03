@@ -1,0 +1,32 @@
+// variables import
+@import "./variables.scss";
+
+
+footer {
+    z-index: 2;
+    background-color: #3b3530;
+    width: 100%;
+    @include displayFlexColumn;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+
+    .footer_text {
+        width: 100%;
+        padding: 25px 0;
+
+        font-family: $fontSans;
+
+        a {
+            color: #ffe756;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        p {
+            color: $color-white;
+            font-size: 16px;
+        }
+    }
+}

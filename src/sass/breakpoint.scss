@@ -1,0 +1,27 @@
+// breakpoint sass for different screen sizes
+
+// variables import
+@import "./variables.scss";
+
+
+/* For smaller screens */
+@media only screen and (max-width:790px) {
+    .contents,
+    .desc_text,
+    .desc_img,
+    .content_cover,
+    footer {
+        padding: 0px 25px;
+        width: 100%;
+        float: none;
+        @include displayFlexColumn;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #policyModal {
+        .modal_content {
+            width: 80%;
+        }
+    }
+}

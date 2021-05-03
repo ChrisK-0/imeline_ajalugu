@@ -1,0 +1,50 @@
+// variables import
+@import "./variables.scss";
+
+
+.description {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    .desc_text {
+        width: 100%;
+        max-width: 420px;
+        display: flex;
+        flex-flow: row wrap;
+
+        @mixin description_decoration {
+            line-height: 1.5;
+            font-size: 20px;
+            font-family: $fontSans;
+        }
+
+        .desc_para {
+            @include description_decoration;
+            flex-grow: 3;
+
+            .desc_sentence {
+                @include description_decoration;
+                color: #951c00;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .desc_img {
+        @include displayFlexRow;
+
+        img {
+            padding-left: 40px;
+            align-self: flex-end;
+            max-width: 500px;
+            max-height: 200px;
+            margin-bottom: -30px;
+            z-index: -1;
+        }
+    }
+}

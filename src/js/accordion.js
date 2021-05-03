@@ -37,7 +37,7 @@ for (let i of globalVariables.accordionBtn) {
 
 // template for class toggling
 const classToggler = (els, className, fnName) => {
-  for (var i of els) {
+  for (let i of els) {
     i.classList[fnName](className);
   }
 }

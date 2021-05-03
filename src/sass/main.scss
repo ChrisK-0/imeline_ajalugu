@@ -1,0 +1,30 @@
+// variables/imports for important utilities
+@import "./variables.scss";
+@import "./breakpoint.scss";
+// imports for page content
+@import "./cover.scss";
+@import "./accordion.scss";
+@import "./description.scss";
+@import "./footer.scss";
+@import "./modal.scss";
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.contents,
+.content_cover,
+.footer_text {
+    max-width: 750px;
+}
+
+.contents {
+    @include displayFlexColumn;
+    justify-content: center;
+    margin: 0 auto;
+}
