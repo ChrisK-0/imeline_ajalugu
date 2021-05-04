@@ -36,14 +36,21 @@ module.exports = {
 
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]',
+              name: '../src/imgs/[name].[ext]',
               emitFile: false,
             }
 
       }
 
     ]
-  }
+  },
+
+  resolve: {
+    preferAbsolute: true,
+  },
+
+
+
 };
 
 node: {
