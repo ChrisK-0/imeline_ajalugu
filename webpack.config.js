@@ -22,26 +22,28 @@ module.exports = {
       },
 
       {
-        test: /\.scss$/,
+        test: /\.(scss)$/,
         use: [
             'style-loader',
             'css-loader',
-            'sass-loader'
-
+            'sass-loader',
+  
         ]
       },
 
       {
         test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
+
             loader: 'file-loader',
-          },
-        ],
+            options: {
+              name: '[path][name].[ext]',
+              emitFile: false,
+            }
+
       }
 
     ]
-  },
+  }
 };
 
 node: {

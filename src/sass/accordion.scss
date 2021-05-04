@@ -27,7 +27,7 @@
         left: -1%;
         font-weight: bold;
 
-        // to counter the 1px from the active class
+        /* to counter the 1px from the active class */
         border: 1px none;
     }
 
@@ -45,13 +45,13 @@
 }
 
 
-// Opened accordion span header will have yellow-ish background
+/* Opened accordion span header will have yellow-ish background */
 .accord_panel_header_active {
     border: 1px solid #ffeb6b;
     border-radius: 10px 10px 0 0;
     display: block !important;
 
-    // special coloring
+    /* special coloring */
     background: #ffeb6b;
     background: -moz-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
     background: -webkit-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
@@ -212,7 +212,7 @@
         box-shadow: inset 0px 1px 1px 0px rgba(192, 192, 192, 0.75);
     }
 
-    // gets applied to "Valmis!" button when atleast 1 checkbox is checked in every accordion block
+    /* gets applied to "Valmis!" button when atleast 1 checkbox is checked in every accordion block */
     .doneBtnReady {
         @include redButton;
     }

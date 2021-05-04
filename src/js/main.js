@@ -6,8 +6,10 @@ import * as gotoAccordModule from './gotoAccord.js';
 import {globalVariables} from './constants';
 
 // sass
-import '../css/main.css';
+import '../../public/main.css';
 import '../sass/main.scss';
+// cover bg import
+import img from '../../src/imgs/coverbg.png';
 
 
 // refresh function

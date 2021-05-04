@@ -1,8 +1,9 @@
-// variables/imports for important utilities
+/* variables/imports for important utilities */
 @import "./variables.scss";
+@import "./mixins.scss";
 @import "./breakpoint.scss";
 
-// imports for page content
+/* imports for page content */
 @import "./cover.scss";
 @import "./accordion.scss";
 @import "./description.scss";
@@ -29,3 +30,4 @@ body {
     justify-content: center;
     margin: 0 auto;
 }
+
