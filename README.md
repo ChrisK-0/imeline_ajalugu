@@ -191,3 +191,12 @@ Some lines in JS files were causing issues when changing from var to const, but 
 Added SASS and css loaders and plugins with NPM and made a module format for SASS styling aswell. Renamed style.css to main.css, but styling is still using main.css, but work done on CSS is through SASS. Main.scss has been split into 7 other modules and are all imported into main.scss, which is compiled into main.css. 
 
 Also moved images folder to src and tested with webpack watch for improved code control time.
+
+
+## Day 17
+
+### Fixed newly occuring SASS module problems
+
+Webpack couldn't cooperate with SASS and load a .png file, so a file-loader was needed. The file loader at first caused a lot of problems, like turning the .png file content into 1 line path code that did and meant nothing. Fixed that and Cover section background is now functioning with the module model.
+
+Added more mixins and variables to the pool, removed breakpoints.scss, made a mixin for some mobile view lines and added the shorter necessary media query to their respective lines.
