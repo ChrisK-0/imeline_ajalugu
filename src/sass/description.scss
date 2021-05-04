@@ -12,22 +12,26 @@
         display: flex;
         flex-flow: row wrap;
 
+        @include mobileView;
         @include description_decoration;
 
         .desc_para {
-            @include description_decoration;
             flex-grow: 3;
 
+            @include description_decoration;
+
             .desc_sentence {
-                @include description_decoration;
                 color: #951c00;
                 text-decoration: underline;
-                font-weight: bold;
+                
+                @include boldFont;
+                @include description_decoration;
             }
         }
     }
 
     .desc_img {
+        @include mobileView;
         @include displayFlexRow;
 
         img {

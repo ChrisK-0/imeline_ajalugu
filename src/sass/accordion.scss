@@ -9,30 +9,31 @@
     outline: none;
     transition: 0.4s;
     margin: 25px 0 0 0;
-    border-bottom: 1px solid #ffe756;
+    border-bottom: 1px solid $accordion-yellow;
     padding-bottom: 0px;
-    @include displayFlexRow;
     justify-content: space-between;
 
+    @include displayFlexRow;
+
     &:hover {
-        background-color: #ccc;
+        background-color: $color-gray;
     }
 
     .accord_panel_header {
         font-family: "BienetresocialBold";
-        font-size: 20px;
-        color: #3f2916;
+        font-size: $font-size-regular;
+        color: $panel-brown;
         padding: 10px;
         position: relative;
         left: -1%;
-        font-weight: bold;
-
+        
+        @include boldFont;
         /* to counter the 1px from the active class */
         border: 1px none;
     }
 
     .selected_themes {
-        color: #3f2916;
+        color: $panel-brown;
         font-family: $fontSans;
         font-size: 24px;
         line-height: 0.875;
@@ -47,12 +48,12 @@
 
 /* Opened accordion span header will have yellow-ish background */
 .accord_panel_header_active {
-    border: 1px solid #ffeb6b;
+    border: 1px solid $panel-yellow;
     border-radius: 10px 10px 0 0;
     display: block !important;
 
     /* special coloring */
-    background: #ffeb6b;
+    background: $panel-yellow;
     background: -moz-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
     background: -webkit-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
     background: -ms-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
@@ -66,7 +67,7 @@
     height: 100%;
     background-color: $color-white;
     overflow: hidden;
-    border-bottom: 1px solid #ffe756;
+    border-bottom: 1px solid $accordion-yellow;
 
     /* For JS accordion */
     display: none;
@@ -79,6 +80,7 @@
             margin-top: 20px;
             width: 220px;
             padding: 20px 10px;
+
             @include redButton;
         }
     }
@@ -86,16 +88,17 @@
 
 
 .accord_content {
-    border-bottom: 1px solid #ffe756;
+    border-bottom: 1px solid $accordion-yellow;
     padding: 10px 0 10px 35px;
     position: relative;
-    @include displayFlexRow;
     align-items: center;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    @include displayFlexRow;
 
     .accord_content_img {
         margin-left: 30px;
@@ -114,15 +117,15 @@
         flex-flow: column nowrap;
 
         .accord_content_text_head {
-            font-weight: bold;
             flex-basis: auto;
             flex-grow: 1;
             margin-bottom: -10px;
 
+            @include boldFont;
         }
 
         .accord_content_text_para {
-            line-height: 1.5;
+            line-height: $line-height-big;
             flex-basis: auto;
             flex-grow: 1;
             padding-right: 25px;
@@ -179,7 +182,7 @@
 
     /* on checkmark hover, make background gray */
     &:hover input~.checkmark {
-        background-color: #ccc;
+        background-color: $color-gray;
     }
 
     /* when checked, give it yellow background */
@@ -196,15 +199,16 @@
 
     .doneButton {
         @include redButton;
+        @include boldFont;
+
         color: #e2e2e2;
         position: relative;
         padding: 20px 0;
         margin: 20px 0;
         width: 150px;
-        font-weight: bold;
-        line-height: 0.8;
+        line-height: $line-height-regular;
         text-align: center;
-        font-size: 30px;
+        font-size: $font-size-big;
 
         border: 1px solid #999999;
         border-radius: 6px;
@@ -221,16 +225,16 @@
 .accord_head {
     .accord_head_h {
         font-family: "BienetresocialBold";
-        font-size: 30px;
-        color: #3f2916;
-        line-height: 0.7;
+        font-size: $font-size-big;
+        color: $panel-brown;
+        line-height: $line-height-smaller;
     }
 
     .accord_head_p {
         font-family: $fontSans;
-        color: #222222;
-        line-height: 1.5;
-        font-size: 16px;
+        color: $color-black222;
+        line-height: $line-height-big;
+        font-size: $font-size-small;
     }
 }
 
@@ -240,7 +244,7 @@
 
 .disabledCheckbox {
     cursor: not-allowed;
-    background-color: #ccc;
+    background-color: $color-gray;
 }
 
 .accord_show {

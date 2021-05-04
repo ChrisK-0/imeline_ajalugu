@@ -13,7 +13,7 @@
     margin-bottom: 20px;
     font-weight: bold;
     line-height: 0.8;
-    font-size: 30px;
+    font-size: $font-size-big;
     font-family: $fontSans;
     text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
     border: 1px solid #7b1700;
@@ -28,6 +28,21 @@
 
 @mixin description_decoration {
     line-height: 1.5;
-    font-size: 20px;
+    font-size: $font-size-regular;
     font-family: $fontSans;
+}
+
+@mixin mobileView {
+    @media only screen and (max-width:790px) {
+        padding: 0px 25px;
+        width: 100%;
+        float: none;
+        @include displayFlexColumn;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@mixin boldFont {
+    font-weight: bold;
 }

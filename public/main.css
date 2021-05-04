@@ -2,27 +2,6 @@
 /* sass variables */
 /* x/3 selected themes font */
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
-/* breakpoint sass for different screen sizes */
-/* For smaller screens */
-@media only screen and (max-width: 790px) {
-  .contents,
-.desc_text,
-.desc_img,
-.content_cover,
-footer {
-    padding: 0px 25px;
-    width: 100%;
-    float: none;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #policyModal .modal_content {
-    width: 80%;
-  }
-}
 /* imports for page content */
 .cover_bg {
   background-image: url("../../src/imgs/coverbg.png");
@@ -33,12 +12,23 @@ footer {
 }
 
 .content_cover {
-  display: flex;
-  flex-flow: column wrap;
   width: 100%;
   height: 100%;
   margin-bottom: 500px;
   margin: 0 auto;
+  display: flex;
+  flex-flow: column wrap;
+}
+@media only screen and (max-width: 790px) {
+  .content_cover {
+    padding: 0px 25px;
+    width: 100%;
+    float: none;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .content_cover .cover_note {
   text-align: center;
@@ -153,9 +143,9 @@ footer {
   margin: 25px 0 0 0;
   border-bottom: 1px solid #ffe756;
   padding-bottom: 0px;
+  justify-content: space-between;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
 }
 .accordion:hover {
   background-color: #ccc;
@@ -233,14 +223,14 @@ footer {
   border-bottom: 1px solid #ffe756;
   padding: 10px 0 10px 35px;
   position: relative;
-  display: flex;
-  flex-flow: row nowrap;
   align-items: center;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  display: flex;
+  flex-flow: row nowrap;
   /* custom checkmark */
   /* hides browser's default checkbox */
   /* on checkmark hover, make background gray */
@@ -417,6 +407,17 @@ footer {
   font-size: 20px;
   font-family: "PT Sans Narrow", sans-serif;
 }
+@media only screen and (max-width: 790px) {
+  .description .desc_text {
+    padding: 0px 25px;
+    width: 100%;
+    float: none;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .description .desc_text .desc_para {
   line-height: 1.5;
   font-size: 20px;
@@ -435,6 +436,17 @@ footer {
   display: flex;
   flex-flow: row nowrap;
 }
+@media only screen and (max-width: 790px) {
+  .description .desc_img {
+    padding: 0px 25px;
+    width: 100%;
+    float: none;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .description .desc_img img {
   padding-left: 40px;
   align-self: flex-end;
@@ -448,12 +460,23 @@ footer {
   z-index: 2;
   background-color: #3b3530;
   width: 100%;
-  display: flex;
-  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
   padding: 10px;
+  display: flex;
+  flex-flow: column wrap;
+}
+@media only screen and (max-width: 790px) {
+  footer {
+    padding: 0px 25px;
+    width: 100%;
+    float: none;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
 }
 footer .footer_text {
   width: 100%;
@@ -495,6 +518,11 @@ footer .footer_text p {
   border: 1px solid #888;
   width: 30%;
 }
+@media only screen and (max-width: 790px) {
+  .modal_content {
+    width: 80%;
+  }
+}
 
 /* The Close Button */
 .closeModal {
@@ -528,10 +556,21 @@ body {
 }
 
 .contents {
-  display: flex;
-  flex-flow: column wrap;
   justify-content: center;
   margin: 0 auto;
+  display: flex;
+  flex-flow: column wrap;
+}
+@media only screen and (max-width: 790px) {
+  .contents {
+    padding: 0px 25px;
+    width: 100%;
+    float: none;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

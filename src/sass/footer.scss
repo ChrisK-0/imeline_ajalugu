@@ -2,11 +2,13 @@ footer {
     z-index: 2;
     background-color: #3b3530;
     width: 100%;
-    @include displayFlexColumn;
     justify-content: center;
     align-items: center;
     align-content: center;
     padding: 10px;
+
+    @include displayFlexColumn;
+    @include mobileView;
 
     .footer_text {
         width: 100%;
@@ -22,7 +24,7 @@ footer {
 
         p {
             color: $color-white;
-            font-size: 16px;
+            font-size: $font-size-small;
         }
     }
 }

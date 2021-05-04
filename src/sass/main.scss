@@ -1,7 +1,6 @@
 /* variables/imports for important utilities */
 @import "./variables.scss";
 @import "./mixins.scss";
-@import "./breakpoint.scss";
 
 /* imports for page content */
 @import "./cover.scss";
@@ -26,8 +25,10 @@ body {
 }
 
 .contents {
-    @include displayFlexColumn;
     justify-content: center;
     margin: 0 auto;
+
+    @include displayFlexColumn;
+    @include mobileView;
 }
 
