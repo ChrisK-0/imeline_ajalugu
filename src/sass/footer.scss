@@ -10,7 +10,7 @@ footer {
     @include displayFlexColumn;
     @include mobileView;
 
-    .footer_text {
+    &_text {
         width: 100%;
         padding: 25px 0;
 
