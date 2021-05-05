@@ -15,11 +15,16 @@
 
     @include displayFlexRow;
 
+    &_show {
+        /* Important - Accordion panel has display:none, this class will negate that and show the panel with JS */
+        display: block !important;
+    }
+
     &:hover {
         background-color: $color-gray;
     }
 
-    .accord_panel_header {
+    &_header {
         font-family: "BienetresocialBold";
         font-size: $font-size-regular;
         color: $panel-brown;
@@ -32,37 +37,51 @@
         border: 1px none;
     }
 
-    .selected_themes {
-        color: $panel-brown;
-        font-family: $fontSans;
-        font-size: 24px;
-        line-height: 0.875;
-        padding: 10px;
+    /* Opened accordion span header will have yellow-ish background */
+    &_header_active {
+        border: 1px solid $panel-yellow;
+        border-radius: 10px 10px 0 0;
+        display: block !important;
 
-        span {
-            padding: 0;
+        /* special coloring */
+        background: $panel-yellow;
+        background: -moz-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
+        background: -webkit-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
+        background: -ms-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
+        box-shadow: inset 0px 1px 1px 0px rgba(255, 231, 86, 0.75);
+    }
+
+    &_head {
+        &_h {
+            font-family: "BienetresocialBold";
+            font-size: $font-size-big;
+            color: $panel-brown;
+            line-height: $line-height-smaller;
+        }
+    
+        &_p {
+            font-family: $fontSans;
+            color: $color-black222;
+            line-height: $line-height-big;
+            font-size: $font-size-small;
         }
     }
 }
 
+.selected_themes {
+    color: $panel-brown;
+    font-family: $fontSans;
+    font-size: 24px;
+    line-height: 0.875;
+    padding: 10px;
 
-/* Opened accordion span header will have yellow-ish background */
-.accord_panel_header_active {
-    border: 1px solid $panel-yellow;
-    border-radius: 10px 10px 0 0;
-    display: block !important;
-
-    /* special coloring */
-    background: $panel-yellow;
-    background: -moz-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
-    background: -webkit-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
-    background: -ms-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
-    box-shadow: inset 0px 1px 1px 0px rgba(255, 231, 86, 0.75);
+    span {
+        padding: 0;
+    }
 }
 
-
 /* Sliding content style */
-.accord_panel {
+.panel {
     width: 100%;
     height: 100%;
     background-color: $color-white;
@@ -72,22 +91,21 @@
     /* For JS accordion */
     display: none;
 
-    .theme_change {
+    &_next {
         display: flex;
         justify-content: center;
-
-        .next_theme {
-            margin-top: 20px;
-            width: 220px;
-            padding: 20px 10px;
-
-            @include redButton;
-        }
     }
 }
 
+.next_theme {
+    margin-top: 20px;
+    width: 220px;
+    padding: 20px 10px;
 
-.accord_content {
+    @include redButton;
+}
+
+.panel_content {
     border-bottom: 1px solid $accordion-yellow;
     padding: 10px 0 10px 35px;
     position: relative;
@@ -100,7 +118,7 @@
 
     @include displayFlexRow;
 
-    .accord_content_img {
+    &_img {
         margin-left: 30px;
         width: 84px;
         height: 84px;
@@ -108,7 +126,7 @@
         flex-basis: auto;
     }
 
-    .accord_content_text {
+    &_text {
         font-family: $fontSans;
         text-align: justify;
         margin-left: 20px;
@@ -116,7 +134,7 @@
         display: flex;
         flex-flow: column nowrap;
 
-        .accord_content_text_head {
+        &_head {
             flex-basis: auto;
             flex-grow: 1;
             margin-bottom: -10px;
@@ -124,12 +142,37 @@
             @include boldFont;
         }
 
-        .accord_content_text_para {
+        &_para {
             line-height: $line-height-big;
             flex-basis: auto;
             flex-grow: 1;
             padding-right: 25px;
         }
+    }
+
+    /* hides browser's default checkbox */
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        /* show the checkmark when checked */
+        &:checked~.checkmark:after {
+            display: block;
+        }
+    }
+
+    /* on checkmark hover, make background gray */
+    &:hover input~.checkmark {
+        background-color: $color-gray;
+    }
+
+    /* when checked, give it yellow background */
+    input:checked~.checkmark {
+        background-color: #fff6bf;
+        border: 1px solid #f0ce00;
     }
 
     /* custom checkmark */
@@ -165,89 +208,44 @@
             transform: rotate(45deg);
         }
     }
-
-    /* hides browser's default checkbox */
-    input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-
-        /* show the checkmark when checked */
-        &:checked~.checkmark:after {
-            display: block;
-        }
-    }
-
-    /* on checkmark hover, make background gray */
-    &:hover input~.checkmark {
-        background-color: $color-gray;
-    }
-
-    /* when checked, give it yellow background */
-    input:checked~.checkmark {
-        background-color: #fff6bf;
-        border: 1px solid #f0ce00;
-    }
 }
 
 
-.doneBtnDiv {
+.btn-wrapper {
     display: flex;
     justify-content: center;
 
-    .doneButton {
+    .btn {
         @include redButton;
-        @include boldFont;
 
-        color: #e2e2e2;
+        line-height: $line-height-regular;
+        text-align: center;
+        font-size: $font-size-big;
         position: relative;
         padding: 20px 0;
         margin: 20px 0;
         width: 150px;
-        line-height: $line-height-regular;
-        text-align: center;
-        font-size: $font-size-big;
+    }
 
+    /* gets applied to "Valmis!" button when atleast 1 checkbox is checked in every accordion block */
+    .btn-disabled {
+        @include boldFont;
+
+        color: #e2e2e2;
         border: 1px solid #999999;
         border-radius: 6px;
         background: #b1b1b1;
         box-shadow: inset 0px 1px 1px 0px rgba(192, 192, 192, 0.75);
     }
-
-    /* gets applied to "Valmis!" button when atleast 1 checkbox is checked in every accordion block */
-    .doneBtnReady {
-        @include redButton;
-    }
 }
 
-.accord_head {
-    .accord_head_h {
-        font-family: "BienetresocialBold";
-        font-size: $font-size-big;
-        color: $panel-brown;
-        line-height: $line-height-smaller;
-    }
 
-    .accord_head_p {
-        font-family: $fontSans;
-        color: $color-black222;
-        line-height: $line-height-big;
-        font-size: $font-size-small;
-    }
-}
 
 .accordionInput[disabled] {
     cursor: not-allowed;
 }
 
-.disabledCheckbox {
+.checkbox-disabled {
     cursor: not-allowed;
     background-color: $color-gray;
-}
-
-.accord_show {
-    /* Important - Accordion panel has display:none, this class will negate that and show the panel with JS */
-    display: block !important;
 }

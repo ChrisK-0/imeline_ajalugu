@@ -3,7 +3,7 @@ import {globalVariables} from './constants';
 
 // gathers first currently active accordion details
 // for nextTheme.js
-const activeHeader = document.getElementsByClassName("accord_panel_header_active");
+const activeHeader = document.getElementsByClassName("accordion_header_active");
 const activeThemeBtn = document.getElementsByClassName("themeBtnActive");
 
 
@@ -16,13 +16,13 @@ const nextTheme = () => {
   
     // adds 3 actives to the next ones
     nextPanel.classList.add("accord_show");
-    nextHeader.classList.add("accord_panel_header_active");
+    nextHeader.classList.add("accordion_header_active");
     nextAccordion.classList.add("active");
   
     // removes the first found active class and since now there are 2, it removes the 3 classes from the first to close it, because only 1 accordion should be open at a time
     globalVariables.activeAccordion[0].classList.remove("active");
     globalVariables.openedPanel[0].classList.remove("accord_show");
-    activeHeader[0].classList.remove("accord_panel_header_active");
+    activeHeader[0].classList.remove("accordion_header_active");
   
     const findAccordionLastChild = nextAccordion.nextElementSibling.childElementCount - 1;
     const findDivThemeBtn = nextAccordion.nextElementSibling.children[findAccordionLastChild];

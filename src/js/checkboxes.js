@@ -31,7 +31,7 @@ allCheckboxes.forEach(function (checkbox) {
         // disables unchecked checkboxes when array has length of 3 (3 checkboxes are checked)
         if (!i.checked) {
           i.disabled = true;
-          i.parentElement.classList.add("disabledCheckbox");
+          i.parentElement.classList.add("checkbox-disabled");
 
         }
 
@@ -44,7 +44,7 @@ allCheckboxes.forEach(function (checkbox) {
       for (let i of currentlyAvailableCheckboxes) {
         if (i.disabled) {
           i.disabled = false;
-          i.parentElement.classList.remove("disabledCheckbox");
+          i.parentElement.classList.remove("checkbox-disabled");
 
         }
 
@@ -62,12 +62,12 @@ allCheckboxes.forEach(function (checkbox) {
         // array gets reset when atleast 1 span is 0, resulting in the array.length not being equal to the amount of accordion blocks
         activeCheckboxArray = [];
         globalVariables.doneBtn.disabled = true;
-        globalVariables.doneBtn.classList.remove("doneBtnReady");
+        globalVariables.doneBtn.classList.add("btn-disabled");
       }
 
       if (activeCheckboxArray.length == globalVariables.accordionBtn.length) {
         globalVariables.doneBtn.disabled = false;
-        globalVariables.doneBtn.classList.add("doneBtnReady");
+        globalVariables.doneBtn.classList.remove("btn-disabled");
 
       }
       // (for developement) console.log(activeCheckboxArray.length)
