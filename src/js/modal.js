@@ -3,7 +3,7 @@ let modal = document.getElementById("policyModal");
 // get the anchor text that opens the modal
 let openModal = document.getElementById("policyOpen");
 // get the <span> element that closes the modal
-let closeModalBtn = document.getElementsByClassName("closeModal")[0];
+let closeModalBtn = document.getElementById("closeModal");
 // modal closing function
 closeModal = () => {
   modal.style.display = "none";
