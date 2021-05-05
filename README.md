@@ -200,3 +200,10 @@ Also moved images folder to src and tested with webpack watch for improved code 
 Webpack couldn't cooperate with SASS and load a .png file, so a file-loader was needed. The file loader at first caused a lot of problems, like turning the .png file content into 1 line path code that did and meant nothing. Fixed that and Cover section background is now functioning with the module model.
 
 Added more mixins and variables to the pool, removed breakpoints.scss, made a mixin for some mobile view lines and added the shorter necessary media query to their respective lines.
+
+
+## Day 18
+
+### Adjusting SASS structure to BEM 
+
+Learning to write code structure to be more universal among other developers. Changed SASS files to make use of the ampersand (&) and changed JS files and index.html content accordingly.
