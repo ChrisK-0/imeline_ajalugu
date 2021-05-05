@@ -6,7 +6,7 @@
     align-items: stretch;
     justify-content: flex-start;
 
-    .desc_text {
+    &_text {
         width: 100%;
         max-width: 420px;
         display: flex;
@@ -15,12 +15,12 @@
         @include mobileView;
         @include description_decoration;
 
-        .desc_para {
+        &_para {
             flex-grow: 3;
 
             @include description_decoration;
 
-            .desc_sentence {
+            &_sentence {
                 color: #951c00;
                 text-decoration: underline;
                 
@@ -30,7 +30,7 @@
         }
     }
 
-    .desc_img {
+    &_img {
         @include mobileView;
         @include displayFlexRow;
 
