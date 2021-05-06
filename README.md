@@ -207,3 +207,10 @@ Added more mixins and variables to the pool, removed breakpoints.scss, made a mi
 ### Adjusting SASS structure to BEM 
 
 Learning to write code structure to be more universal among other developers. Changed SASS files to make use of the ampersand (&) and changed JS files and index.html content accordingly.
+
+
+## Day 19
+
+### Adjusting SASS structure to BEM #2
+
+Continued to re-write code classes to BEM structure. Made globals.scss and more color variables in variables.scss. Unfinished.
