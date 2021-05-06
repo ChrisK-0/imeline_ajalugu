@@ -13,7 +13,6 @@
     margin: 0 auto;
 
     @include displayFlexColumn;
-    @include mobileView;
 
     &_note {
         text-align: center;
@@ -28,7 +27,7 @@
         background-image: -ms-linear-gradient(90deg, rgb(204, 62, 15) 0%, rgb(147, 27, 0) 100%);
 
         p {
-            font-family: $fontSans;
+            font-family: $font-family-primary;
             font-size: 42.567px;
             text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
             line-height: 0;
@@ -85,15 +84,15 @@
         position: relative;
         width: 100%;
         font-size: $font-size-verybig;
-        font-family: "Bienetresocial";
+        font-family: $font-family-secondary;
         line-height: 0.21;
     }
 
     &_paragraph {
         float: left;
         font-size: $font-size-regular;
-        font-family: $fontSans;
-        color: $color-black222;
+        font-family: $font-family-primary;
+        color: #222;
         text-shadow: 4px 2px 4px $color-white;
         line-height: $line-height-big;
         width: 60%;
@@ -113,8 +112,8 @@
         p {
             float: left;
             font-size: $font-size-big;
-            font-family: $fontSans;
-            color: $achor-red;
+            font-family: $font-family-primary;
+            color: $color-anchor-red;
             line-height: $line-height-smaller;
             text-shadow: 0.707px 0.707px 1px rgba(255, 255, 255, 0.004);
     

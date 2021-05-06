@@ -12,7 +12,6 @@
         display: flex;
         flex-flow: row wrap;
 
-        @include mobileView;
         @include description_decoration;
 
         &_para {
@@ -31,7 +30,6 @@
     }
 
     &_img {
-        @include mobileView;
         @include displayFlexRow;
 
         img {

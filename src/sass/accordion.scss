@@ -9,7 +9,7 @@
     outline: none;
     transition: 0.4s;
     margin: 25px 0 0 0;
-    border-bottom: 1px solid $accordion-yellow;
+    border-bottom: 1px solid $color-accordion-yellow;
     padding-bottom: 0px;
     justify-content: space-between;
 
@@ -25,9 +25,10 @@
     }
 
     &_header {
-        font-family: "BienetresocialBold";
+        font-family: $font-family-secondary;
+        font-weight: bold;
         font-size: $font-size-regular;
-        color: $panel-brown;
+        color: $color-panel-brown;
         padding: 10px;
         position: relative;
         left: -1%;
@@ -39,12 +40,12 @@
 
     /* Opened accordion span header will have yellow-ish background */
     &_header_active {
-        border: 1px solid $panel-yellow;
+        border: 1px solid $color-panel-yellow;
         border-radius: 10px 10px 0 0;
         display: block !important;
 
         /* special coloring */
-        background: $panel-yellow;
+        background: $color-panel-yellow;
         background: -moz-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
         background: -webkit-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
         background: -ms-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
@@ -53,15 +54,16 @@
 
     &_head {
         &_h {
-            font-family: "BienetresocialBold";
+            font-family: $font-family-secondary;
+            font-weight: bold;
             font-size: $font-size-big;
-            color: $panel-brown;
+            color: $color-panel-brown;
             line-height: $line-height-smaller;
         }
     
         &_p {
-            font-family: $fontSans;
-            color: $color-black222;
+            font-family: $font-family-primary;
+            color: #222;
             line-height: $line-height-big;
             font-size: $font-size-small;
         }
@@ -69,8 +71,8 @@
 }
 
 .selected_themes {
-    color: $panel-brown;
-    font-family: $fontSans;
+    color: $color-panel-brown;
+    font-family: $font-family-primary;
     font-size: 24px;
     line-height: 0.875;
     padding: 10px;
@@ -86,7 +88,7 @@
     height: 100%;
     background-color: $color-white;
     overflow: hidden;
-    border-bottom: 1px solid $accordion-yellow;
+    border-bottom: 1px solid $color-accordion-yellow;
 
     /* For JS accordion */
     display: none;
@@ -106,7 +108,7 @@
 }
 
 .panel_content {
-    border-bottom: 1px solid $accordion-yellow;
+    border-bottom: 1px solid $color-accordion-yellow;
     padding: 10px 0 10px 35px;
     position: relative;
     align-items: center;
@@ -127,7 +129,7 @@
     }
 
     &_text {
-        font-family: $fontSans;
+        font-family: $font-family-primary;
         text-align: justify;
         margin-left: 20px;
         height: 100%;
@@ -183,17 +185,10 @@
         left: 0%;
         height: 25px;
         width: 25px;
-        border-top: 2px solid #787878;
-        border-left: 2px solid #b3b3b3;
-        border-right: 2px solid #b3b3b3;
-        border-bottom: 2px solid #dbdbdb;
+        border: 2px solid;
+        border-color: #787878 #b3b3b3 #dbdbdb #b3b3b3;
         background-color: #efefef;
 
-        &:after {
-            content: "";
-            position: absolute;
-            display: none;
-        }
 
         /* checkmark indicator style */
         &:after {
@@ -201,11 +196,14 @@
             top: 5px;
             width: 5px;
             height: 10px;
-            border: 1px solid #3f2916;
+            border: 1px solid $color-panel-brown;
             border-width: 0 3px 3px 0;
             -webkit-transform: rotate(45deg);
             -ms-transform: rotate(45deg);
             transform: rotate(45deg);
+            content: "";
+            position: absolute;
+            display: none;
         }
     }
 }

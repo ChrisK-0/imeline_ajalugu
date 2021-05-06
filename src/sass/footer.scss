@@ -8,13 +8,13 @@ footer {
     padding: 10px;
 
     @include displayFlexColumn;
-    @include mobileView;
+    @include mobile;
 
     &_text {
         width: 100%;
         padding: 25px 0;
 
-        font-family: $fontSans;
+        font-family: $font-family-primary;
 
         a {
             color: #ffe756;

@@ -18,6 +18,17 @@ body {
     margin: 0;
 }
 
+.mobile-container {
+    @include mobile {
+        padding: 0px 25px;
+        width: 100%;
+        float: none;
+        @include displayFlexColumn;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .contents,
 .cover,
 .footer_text {
@@ -29,6 +40,5 @@ body {
     margin: 0 auto;
 
     @include displayFlexColumn;
-    @include mobileView;
+    @include mobile;
 }
-
