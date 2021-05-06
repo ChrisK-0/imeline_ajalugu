@@ -36,7 +36,6 @@
             @include boldFont;
 
             transform: matrix(1.17461408039124, 0, 0, 1.17461408039124, 0, 0);
-            /* legacy */
             -moz-transform: matrix(1.17461408039124, 0, 0, 1.17461408039124, 0, 0);
             -webkit-transform: matrix(1.17461408039124, 0, 0, 1.17461408039124, 0, 0);
             -ms-transform: matrix(1.17461408039124, 0, 0, 1.17461408039124, 0, 0);
@@ -55,7 +54,7 @@
             height: 0;
             border-left: 112.5px solid transparent;
             border-right: 112.5px solid transparent;
-            border-top: 20px solid #cc3e0f;
+            border-top: 20px solid $color-ribbon;
         }
     }
 
@@ -73,26 +72,26 @@
 
         transform-origin: 0 0;
         transform: rotate(-65deg);
-        /* legacy */
+
         -webkit-transform: rotate(-65deg);
         -moz-transform: rotate(-65deg);
         -ms-transform: rotate(-65deg);
         -o-transform: rotate(-65deg);
     }
 
-    &_header {
+    &_text_title {
         position: relative;
         width: 100%;
         font-size: $font-size-verybig;
         font-family: $font-family-secondary;
         line-height: 0.21;
     }
-
+    
     &_paragraph {
         float: left;
         font-size: $font-size-regular;
         font-family: $font-family-primary;
-        color: #222;
+        color: $color-cover-font;
         text-shadow: 4px 2px 4px $color-white;
         line-height: $line-height-big;
         width: 60%;

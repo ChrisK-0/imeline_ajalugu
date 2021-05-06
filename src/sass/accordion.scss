@@ -26,7 +26,6 @@
 
     &_header {
         font-family: $font-family-secondary;
-        font-weight: bold;
         font-size: $font-size-regular;
         color: $color-panel-brown;
         padding: 10px;
@@ -39,7 +38,7 @@
     }
 
     /* Opened accordion span header will have yellow-ish background */
-    &_header_active {
+    &_header-active {
         border: 1px solid $color-panel-yellow;
         border-radius: 10px 10px 0 0;
         display: block !important;
@@ -51,22 +50,24 @@
         background: -ms-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
         box-shadow: inset 0px 1px 1px 0px rgba(255, 231, 86, 0.75);
     }
+}
 
-    &_head {
-        &_h {
-            font-family: $font-family-secondary;
-            font-weight: bold;
-            font-size: $font-size-big;
-            color: $color-panel-brown;
-            line-height: $line-height-smaller;
-        }
-    
-        &_p {
-            font-family: $font-family-primary;
-            color: #222;
-            line-height: $line-height-big;
-            font-size: $font-size-small;
-        }
+.intro {
+
+    &_title {
+        font-family: $font-family-secondary;
+        font-size: $font-size-big;
+        color: $color-panel-brown;
+        line-height: $line-height-smaller;
+
+        @include boldFont;
+    }
+
+    &_text {
+        font-family: $font-family-primary;
+        color: $color-cover-font;
+        line-height: $line-height-big;
+        font-size: $font-size-small;
     }
 }
 
@@ -120,7 +121,7 @@
 
     @include displayFlexRow;
 
-    &_img {
+    &_div_img {
         margin-left: 30px;
         width: 84px;
         height: 84px;
@@ -136,7 +137,7 @@
         display: flex;
         flex-flow: column nowrap;
 
-        &_head {
+        &_title {
             flex-basis: auto;
             flex-grow: 1;
             margin-bottom: -10px;
@@ -144,7 +145,7 @@
             @include boldFont;
         }
 
-        &_para {
+        &_description {
             line-height: $line-height-big;
             flex-basis: auto;
             flex-grow: 1;
@@ -156,9 +157,9 @@
     input {
         position: absolute;
         opacity: 0;
-        cursor: pointer;
         height: 0;
         width: 0;
+        cursor: pointer;
 
         /* show the checkmark when checked */
         &:checked~.checkmark:after {
@@ -173,8 +174,8 @@
 
     /* when checked, give it yellow background */
     input:checked~.checkmark {
-        background-color: #fff6bf;
-        border: 1px solid #f0ce00;
+        background-color: $color-checkmark-checked;
+        border: 1px solid $color-checkmark-checked-border;
     }
 
     /* custom checkmark */
@@ -186,8 +187,8 @@
         height: 25px;
         width: 25px;
         border: 2px solid;
-        border-color: #787878 #b3b3b3 #dbdbdb #b3b3b3;
-        background-color: #efefef;
+        border-color: $color-checkmark-border-top $color-checkmark-border-right $color-checkmark-border-bottom $color-checkmark-border-left;
+        background-color: $color-checkmark-background;
 
 
         /* checkmark indicator style */
@@ -227,13 +228,13 @@
 
     /* gets applied to "Valmis!" button when atleast 1 checkbox is checked in every accordion block */
     .btn-disabled {
-        @include boldFont;
-
-        color: #e2e2e2;
-        border: 1px solid #999999;
+        color: $color-btn-font;
+        border: 1px solid $color-darkgray;
         border-radius: 6px;
-        background: #b1b1b1;
+        background: $color-btn-background;
         box-shadow: inset 0px 1px 1px 0px rgba(192, 192, 192, 0.75);
+
+        @include boldFont;
     }
 }
 

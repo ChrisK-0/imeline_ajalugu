@@ -9,7 +9,7 @@ for (let i of globalVariables.accordionBtn) {
     const toggleActiveClass = !this.classList.contains('active');
     classToggler(globalVariables.accordionBtn, 'active', 'remove');
     classToggler(accordionPanel, 'accord_show', 'remove');
-    classToggler(accordionHeader, 'accordion_header_active', 'remove');
+    classToggler(accordionHeader, 'accordion_header-active', 'remove');
     classToggler(globalVariables.themeChangeBtn, 'themeBtnActive', 'remove');
 
     const findAccordionLastChild = this.nextElementSibling.childElementCount - 1;
@@ -19,7 +19,7 @@ for (let i of globalVariables.accordionBtn) {
     if (toggleActiveClass) {
       this.classList.toggle("active");
       this.nextElementSibling.classList.toggle("accord_show");
-      this.children[0].classList.toggle("accordion_header_active");
+      this.children[0].classList.toggle("accordion_header-active");
 
       if (checkThemeBtnClass) {
         findDivThemeBtn.children[0].classList.toggle("themeBtnActive");

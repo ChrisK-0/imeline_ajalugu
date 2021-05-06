@@ -4,12 +4,30 @@
 
 $color-white: #fff;
 $color-gray: #ccc;
+$color-darkgray: #999;
 $color-black: #000;
-$color-black222: #222;
+
+
+$color-cover-font: #222;
+$color-btn-font:#e2e2e2;
+$color-btn-background:#b1b1b1;
 $color-panel-yellow: #ffeb6b;
 $color-panel-brown: #3f2916;
 $color-accordion-yellow: #ffe756;
 $color-anchor-red: #a62300;
+$color-description-red: #951c00;
+
+// ribbon color
+$color-ribbon: #cc3e0f;
+
+// custom checkmark coloring
+$color-checkmark-checked: #fff6bf;
+$color-checkmark-checked-border: #f0ce00;
+$color-checkmark-border-top: #787878;
+$color-checkmark-border-right: #b3b3b3;
+$color-checkmark-border-bottom: #dbdbdb;
+$color-checkmark-border-left: #b3b3b3;
+$color-checkmark-background: #efefef;
 
 $line-height-big: 1.5;
 $line-height-regular: 0.8;

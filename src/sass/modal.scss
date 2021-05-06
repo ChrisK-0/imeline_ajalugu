@@ -20,8 +20,8 @@
         border: 1px solid #888;
         width: 700px;
     
-        @media only screen and (max-width:790px) {
-            width: 70%;
+        @include mobile {
+            width: 75%;
         }
     }
 

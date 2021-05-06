@@ -78,9 +78,6 @@ allCheckboxes.forEach(function (checkbox) {
 })
 
 
-
-
-
 // checkbox background color variables
 const accordionInputs = document.getElementsByClassName("accordionInput");
 // Whenver a checkbox is checked, it will gain background coloring

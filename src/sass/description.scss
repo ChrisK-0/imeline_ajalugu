@@ -6,26 +6,21 @@
     align-items: stretch;
     justify-content: flex-start;
 
-    &_text {
+    &_text-wrapper {
         width: 100%;
         max-width: 420px;
         display: flex;
         flex-flow: row wrap;
+    }
 
-        @include description_decoration;
+    &_text {
+        flex-grow: 3;
 
-        &_para {
-            flex-grow: 3;
-
-            @include description_decoration;
-
-            &_sentence {
-                color: #951c00;
-                text-decoration: underline;
-                
-                @include boldFont;
-                @include description_decoration;
-            }
+        span {
+            color: $color-description-red;
+            text-decoration: underline;
+            
+            @include boldFont;
         }
     }
 
@@ -41,4 +36,8 @@
             z-index: -1;
         }
     }
+}
+
+.description_text-wrapper, .description_text, .description_text span {
+    @include description_decoration;
 }
