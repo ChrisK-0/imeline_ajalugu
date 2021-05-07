@@ -45,10 +45,10 @@
 
         /* special coloring */
         background: $color-panel-yellow;
-        background: -moz-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
-        background: -webkit-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
-        background: -ms-linear-gradient(90deg, rgb(255, 239, 128) 0%, rgb(255, 231, 86) 100%);
-        box-shadow: inset 0px 1px 1px 0px rgba(255, 231, 86, 0.75);
+        background: -moz-linear-gradient(90deg, $color-active-header-light, 0%, $color-active-header-dark 100%);
+        background: -webkit-linear-gradient(90deg, $color-active-header-light, 0%, $color-active-header-dark 100%);
+        background: -ms-linear-gradient(90deg, $color-active-header-light 0%, $color-active-header-dark 100%);
+        box-shadow: inset 0px 1px 1px 0px rgba($color-active-header-dark, 0.75);
     }
 }
 
@@ -232,7 +232,7 @@
         border: 1px solid $color-darkgray;
         border-radius: 6px;
         background: $color-btn-background;
-        box-shadow: inset 0px 1px 1px 0px rgba(192, 192, 192, 0.75);
+        box-shadow: inset 0px 1px 1px 0px rgba($color-btn-disabled, 0.75);
 
         @include boldFont;
     }
