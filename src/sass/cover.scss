@@ -63,29 +63,29 @@
         width: 100%;
     }
 
-    &-transform {
-        font-size: $font-size-regular;
-        position: absolute;
-        top: 2.188rem;
-        left: -0.875rem;
-        text-transform: uppercase;
-        line-height: 0.857;
-
-        transform-origin: 0 0;
-        transform: rotate(-65deg);
-
-        -webkit-transform: rotate(-65deg);
-        -moz-transform: rotate(-65deg);
-        -ms-transform: rotate(-65deg);
-        -o-transform: rotate(-65deg);
-    }
-
-    &_text_title {
+    &_title {
         position: relative;
         width: 100%;
         font-size: $font-size-verybig;
         font-family: $font-family-secondary;
         line-height: 0.21;
+
+        &-transform {
+            font-size: $font-size-regular;
+            position: absolute;
+            top: 2.188rem;
+            left: -0.875rem;
+            text-transform: uppercase;
+            line-height: 0.857;
+    
+            transform-origin: 0 0;
+            transform: rotate(-65deg);
+    
+            -webkit-transform: rotate(-65deg);
+            -moz-transform: rotate(-65deg);
+            -ms-transform: rotate(-65deg);
+            -o-transform: rotate(-65deg);
+        }
     }
     
     &_paragraph {

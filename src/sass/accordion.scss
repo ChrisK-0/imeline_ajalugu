@@ -98,6 +98,38 @@
         display: flex;
         justify-content: center;
     }
+
+    &_text {
+        font-family: $font-family-primary;
+        text-align: justify;
+        margin-left: 1.25rem;
+        height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+
+        &_title {
+            flex-basis: auto;
+            flex-grow: 1;
+            margin-bottom: -0.625rem;
+
+            @include boldFont;
+        }
+
+        &_description {
+            line-height: $line-height-big;
+            flex-basis: auto;
+            flex-grow: 1;
+            padding-right: 1.563rem;
+        }
+    }
+
+    &_img img {
+        margin-left: 1.875rem;
+        width: 5.25rem;
+        height: 5.25rem;
+        flex-grow: 1;
+        flex-basis: auto;
+    }
 }
 
 .next_theme {
@@ -123,38 +155,6 @@
     user-select: none;
 
     @include displayFlexRow;
-
-    &_img img {
-        margin-left: 1.875rem;
-        width: 5.25rem;
-        height: 5.25rem;
-        flex-grow: 1;
-        flex-basis: auto;
-    }
-
-    &_text {
-        font-family: $font-family-primary;
-        text-align: justify;
-        margin-left: 1.25rem;
-        height: 100%;
-        display: flex;
-        flex-flow: column nowrap;
-
-        &_title {
-            flex-basis: auto;
-            flex-grow: 1;
-            margin-bottom: -0.625rem;
-
-            @include boldFont;
-        }
-
-        &_description {
-            line-height: $line-height-big;
-            flex-basis: auto;
-            flex-grow: 1;
-            padding-right: 1.563rem;
-        }
-    }
 
     /* hides browser's default checkbox */
     input {
