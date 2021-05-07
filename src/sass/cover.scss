@@ -1,7 +1,7 @@
 .cover-bg {
     background-image: url("../../src/imgs/coverbg.png");
     background-repeat: no-repeat;
-    background-size: 1920px 720px;
+    background-size: 120rem 45rem;
     background-position: center;
     width: auto;
 }
@@ -16,9 +16,9 @@
 
     &_note {
         text-align: center;
-        width: 225px;
-        height: 75px;
-        margin-top: -10px;
+        width: 14.063rem;
+        height: 4.688rem;
+        margin-top: -0.625rem;
         z-index: 139;
 
         background: $color-ribbon-light, $color-ribbon-dark;
@@ -28,8 +28,9 @@
 
         p {
             font-family: $font-family-primary;
-            font-size: 42.567px;
-            text-shadow: -0.707px -0.707px 0px rgba($color-black, 0.2);
+            // 42.567px = 2.66rem
+            font-size: 2.66rem;
+            text-shadow: -0.044rem -0.044rem 0px rgba($color-black, 0.2);
             line-height: 0;
             color: $color-white;
 
@@ -65,8 +66,8 @@
     &-transform {
         font-size: $font-size-regular;
         position: absolute;
-        top: 35px;
-        left: -14px;
+        top: 2.188rem;
+        left: -0.875rem;
         text-transform: uppercase;
         line-height: 0.857;
 
@@ -92,13 +93,13 @@
         font-size: $font-size-regular;
         font-family: $font-family-primary;
         color: $color-cover-font;
-        text-shadow: 4px 2px 4px $color-white;
+        text-shadow: 0.25rem 0.125rem 0.25rem $color-white;
         line-height: $line-height-big;
         width: 60%;
         /* background blur for the cover description */
         background-color: rgba($color-white, 0.65);
         border-radius: 20%;
-        box-shadow: 0 0 40px 70px rgba($color-white, 0.65);
+        box-shadow: 0 0 2.5rem 4.375rem rgba($color-white, 0.65);
     }
 
     &_anchor {
@@ -114,16 +115,17 @@
             font-family: $font-family-primary;
             color: $color-anchor-red;
             line-height: $line-height-smaller;
-            text-shadow: 0.707px 0.707px 1px rgba(255, 255, 255, 0.004);
+            // 0.707px ; 0.707px ; 1px
+            text-shadow: 0.044rem 0.044rem 0.063rem rgba(255, 255, 255, 0.004);
     
             @include boldFont;
         }
 
         &-arrow {
-            margin-right: 10px;
+            margin-right: 0.625rem;
             float: left;
-            width: 25px;
-            height: 30px;
+            width: 1.563rem;
+            height: 1.875rem;
         }
     }
 }
