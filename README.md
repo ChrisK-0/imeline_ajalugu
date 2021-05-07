@@ -214,3 +214,11 @@ Learning to write code structure to be more universal among other developers. Ch
 ### Adjusting SASS structure to BEM #2
 
 Continued to re-write code classes to BEM structure. Made globals.scss and more color variables in variables.scss. Unfinished.
+
+
+## Day 20
+
+### SASS variables and sizing
+
+Finished exchanging backgrounds and colors to SASS variables. Changed PX sizing to REM, except for borders.
+Re-wrote old structure classes to BEM style. Removed irrelevant HTML attributes, like element IDs, which were not connected to anything.
