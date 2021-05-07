@@ -15,15 +15,15 @@
     line-height: 0.8;
     font-size: $font-size-big;
     font-family: $font-family-primary;
-    text-shadow: -0.707px -0.707px 0px rgba(0, 0, 0, 0.2);
-    border: 1px solid #7b1700;
+    text-shadow: -0.707px -0.707px 0px rgba($color-black, 0.2);
+    border: 1px solid $color-button-red-border;
     border-radius: 6px;
 
-    background: #b72a00;
-    background: -moz-linear-gradient(90deg, rgba(183, 42, 0, 1) 0%, rgba(149, 28, 0, 1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(183, 42, 0, 1) 0%, rgba(149, 28, 0, 1) 100%);
-    background: -ms-linear-gradient(90deg, rgba(183, 42, 0, 1) 0%, rgba(149, 28, 0, 1) 100%);
-    box-shadow: inset 0px 1px 1px 0px rgba(197, 82, 48, 0.75);
+    background: $color-button-red-light;
+    background: -moz-linear-gradient(90deg, rgba($color-button-red-light, 1) 0%, rgba($color-button-red-dark, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba($color-button-red-light, 1) 0%, rgba($color-button-red-dark, 1) 100%);
+    background: -ms-linear-gradient(90deg, rgba($color-button-red-light, 1) 0%, rgba($color-button-red-dark, 1) 100%);
+    box-shadow: inset 0px 1px 1px 0px rgba($color-button-red-shadow, 0.75);
 }
 
 @mixin description_decoration {
