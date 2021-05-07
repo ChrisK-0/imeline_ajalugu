@@ -1,6 +1,6 @@
 import {globalVariables} from './constants';
 
-const allCheckboxes = document.querySelectorAll("input[type=checkbox][class=accordionInput]");
+const allCheckboxes = document.querySelectorAll("input[type=checkbox][class=panel_content_input]");
 
 // arrays for checking the current accordion checked checkbox lengths
 let activeCheckboxArray = [];
@@ -8,7 +8,7 @@ let checkedBoxesArray = [];
 
 allCheckboxes.forEach(function (checkbox) {
   checkbox.addEventListener('change', function () {
-    const currentlyAvailableCheckboxes = globalVariables.openedPanel[0].querySelectorAll("input[type=checkbox][class=accordionInput]");
+    const currentlyAvailableCheckboxes = globalVariables.openedPanel[0].querySelectorAll("input[type=checkbox][class=panel_content_input]");
 
     let checkedBoxesArray =
       Array.from(currentlyAvailableCheckboxes) // Convert checkboxes to an array to use filter and map.
@@ -79,7 +79,7 @@ allCheckboxes.forEach(function (checkbox) {
 
 
 // checkbox background color variables
-const accordionInputs = document.getElementsByClassName("accordionInput");
+const accordionInput = document.getElementsByClassName("panel_content_input");
 // Whenver a checkbox is checked, it will gain background coloring
 function isChecked() {
     if (this.checked) {
@@ -92,7 +92,7 @@ function isChecked() {
   }
   
   // checkbox background color event listener
-  for (let i of accordionInputs) {
+  for (let i of accordionInput) {
     i.addEventListener("change", isChecked);
   
   }

@@ -71,7 +71,7 @@
     }
 }
 
-.selected_themes {
+.accordion_counter {
     color: $color-panel-brown;
     font-family: $font-family-primary;
     font-size: 1.5rem;
@@ -121,7 +121,7 @@
 
     @include displayFlexRow;
 
-    &_div_img {
+    &_img img {
         margin-left: 1.875rem;
         width: 5.25rem;
         height: 5.25rem;
@@ -240,7 +240,7 @@
 
 
 
-.accordionInput[disabled] {
+.panel_content_input[disabled] {
     cursor: not-allowed;
 }
 
