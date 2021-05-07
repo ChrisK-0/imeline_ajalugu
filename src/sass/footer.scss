@@ -1,6 +1,6 @@
 footer {
     z-index: 3;
-    background-color: #3b3530;
+    background-color: $color-footer;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -26,7 +26,8 @@ footer {
         font-family: $font-family-primary;
 
         a {
-            color: #ffe756;
+            // footer anchor text uses same color as active header dark
+            color: $color-active-header-dark;
             text-decoration: underline;
             cursor: pointer;
         }
