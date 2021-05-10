@@ -222,3 +222,12 @@ Continued to re-write code classes to BEM structure. Made globals.scss and more 
 
 Finished exchanging backgrounds and colors to SASS variables. Changed PX sizing to REM, except for borders.
 Re-wrote old structure classes to BEM style. Removed irrelevant HTML attributes, like element IDs, which were not connected to anything.
+
+
+## Day 21
+
+### Implementing the project to a local Wordpress environment
+
+Set up a local XAMPP server for PHP and Wordpress to start the implementation process. Currently I am turning the made project into a custom theme for wordpress.
+
+Editing the htdocs folder for XAMPP, which is not included in this repository.
