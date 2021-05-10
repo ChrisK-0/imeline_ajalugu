@@ -45,9 +45,10 @@
 
         /* special coloring */
         background: $color-active-header;
-        background: -moz-linear-gradient(90deg, $color-active-header-light, 0%, $color-active-header-dark 100%);
-        background: -webkit-linear-gradient(90deg, $color-active-header-light, 0%, $color-active-header-dark 100%);
-        background: -ms-linear-gradient(90deg, $color-active-header-light 0%, $color-active-header-dark 100%);
+        background-image: linear-gradient(90deg, $color-active-header-light 0%, $color-active-header-dark 100%);
+        background-image: -moz-linear-gradient(90deg, $color-active-header-light 0%, $color-active-header-dark 100%);
+        background-image: -webkit-linear-gradient(90deg, $color-active-header-light 0%, $color-active-header-dark 100%);
+        background-image: -ms-linear-gradient(90deg, $color-active-header-light 0%, $color-active-header-dark 100%);
         box-shadow: inset 0 0.063rem 0.063rem 0 rgba($color-active-header-dark, 0.75);
     }
 }
@@ -106,29 +107,35 @@
         height: 100%;
         display: flex;
         flex-flow: column nowrap;
+    }
 
-        &_title {
-            flex-basis: auto;
-            flex-grow: 1;
-            margin-bottom: -0.625rem;
+    &_title {
+        flex-basis: auto;
+        flex-grow: 1;
+        margin-bottom: -0.625rem;
 
-            @include boldFont;
-        }
+        @include boldFont;
+    }
 
-        &_description {
-            line-height: $line-height-big;
-            flex-basis: auto;
-            flex-grow: 1;
-            padding-right: 1.563rem;
-        }
+    &_description {
+        line-height: $line-height-big;
+        color: $color-cover-font;
+        flex-basis: auto;
+        flex-grow: 1;
+        padding-right: 1.5rem;
+        width: 37.5rem;
+        font-size: $font-size-small;
+        font-family: $font-family-tertiary;
     }
 
     &_img img {
-        margin-left: 1.875rem;
+        margin-left: 5rem;
+        margin-right: 1.563rem;
         width: 5.25rem;
         height: 5.25rem;
         flex-grow: 1;
         flex-basis: auto;
+        border: 1px solid $color-image-border;
     }
 }
 
@@ -145,7 +152,7 @@
 }
 
 .panel_content {
-    padding: 0.625rem 0 0.625rem 2.188rem;
+    padding: 0.625rem 0 0.625rem 0;
     position: relative;
     align-items: center;
     cursor: pointer;
@@ -183,7 +190,7 @@
 
     /* custom checkmark */
     .checkmark {
-        margin-left: 1.25rem;
+        margin: 0 1.25rem;
         position: absolute;
         top: 40%;
         left: 0%;
@@ -196,8 +203,8 @@
 
         /* checkmark indicator style */
         &:after {
-            left: 0.563rem;
-            top: 0.313rem;
+            left: 0.5rem;
+            top: 0.25rem;
             width: 0.313rem;
             height: 0.625rem;
             border: 1px solid $color-panel-brown;
@@ -227,6 +234,7 @@
         padding: 1.25rem 0;
         margin: 1.25rem 0;
         width: 9.375rem;
+        height: 4rem;
     }
 
     /* gets applied to "Valmis!" button when atleast 1 checkbox is checked in every accordion block */
