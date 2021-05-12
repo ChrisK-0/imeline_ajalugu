@@ -1,33 +1,31 @@
 const { watch } = require('fs');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 
 module.exports = {
   mode: "development",
-  entry: './src/js/main.js', 
+  entry: [
+    __dirname + '/src/js/main.js',
+    '/src/sass/main.scss'
+  ],
   output: {
     path: path.resolve(__dirname, 'public'), 
-    filename: 'bundle.js' 
+    filename: 'bundle.js'
     
   },
 
   module: {
+
     rules: [
       {
-        test: /\.css$/,
+        test: /\.js$/i,
+        use: [],
+      }, {
+        test: /\.s?css$/i,
         use: [
-          'style-loader',
-          'css-loader'
-
-        ]
-      },
-
-      {
-        test: /\.(scss)$/,
-        use: [
-            'style-loader',
-            'css-loader',
-            'sass-loader',
-  
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
         ]
       },
 
@@ -39,9 +37,7 @@ module.exports = {
               name: '../src/imgs/[name].[ext]',
               emitFile: false,
             }
-
       }
-
     ]
   },
 
@@ -49,7 +45,12 @@ module.exports = {
     preferAbsolute: true,
   },
 
-
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    })
+  ]
 
 };
 
