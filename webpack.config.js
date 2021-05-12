@@ -1,17 +1,16 @@
 const { watch } = require('fs');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 
 module.exports = {
   mode: "development",
   entry: [
-    __dirname + '/src/js/main.js',
+    '/src/js/main.js',
     '/src/sass/main.scss'
   ],
+  
   output: {
     path: path.resolve(__dirname, 'public'), 
     filename: 'bundle.js'
-    
   },
 
   module: {
@@ -19,12 +18,17 @@ module.exports = {
     rules: [
       {
         test: /\.js$/i,
-        use: [],
+        exclude: /node_modules/,
+        // 'babel-loader'
+        use: 'babel-loader',
       }, {
-        test: /\.s?css$/i,
+        test: /\.scss$/,
+        exclude: /node_modules/,
         use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
+          {
+            loader: 'file-loader',
+            options: { outputPath: '', name: 'main.css'}
+        },
           "sass-loader",
         ]
       },
@@ -40,21 +44,4 @@ module.exports = {
       }
     ]
   },
-
-  resolve: {
-    preferAbsolute: true,
-  },
-
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
-  ]
-
-};
-
-node: {
-  fs: "empty"
-
 };
